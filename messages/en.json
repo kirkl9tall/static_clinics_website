@@ -1,0 +1,333 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "team": "Team",
+    "services": "Services",
+    "clinics": "Clinics",
+    "gallery": "Gallery",
+    "news": "News",
+    "faq": "FAQs",
+    "contact": "Contact",
+    "bookAppointment": "Book Appointment"
+  },
+  "home": {
+    "hero": {
+      "badge": "Your Health Partner in Switzerland",
+      "title": "Your Health,",
+      "titleHighlight": "Our Commitment",
+      "subtitle": "Praxen Jerumed is a network of specialized medical practices distinguished by high quality, trust, and patient-centered care.",
+      "ctaPrimary": "Book Appointment",
+      "ctaSecondary": "Explore Our Clinics"
+    },
+    "stats": {
+      "clinics": "Clinics & Locations",
+      "patients": "Satisfied Patients",
+      "specialists": "Specialist Physicians",
+      "years": "Years of Experience"
+    },
+    "about": {
+      "badge": "About Praxen Jerumed",
+      "title": "Excellence in Healthcare",
+      "titleHighlight": "meets Innovation",
+      "description": "Our company was formed from the merger of highly specialized clinics. We provide comprehensive medical care with state-of-the-art technology and a dedicated team of experienced physicians.",
+      "cta": "Learn More About Us",
+      "values": {
+        "trust": {
+          "title": "Trust",
+          "description": "Your health is our priority. We rely on trustful cooperation and transparent communication."
+        },
+        "competence": {
+          "title": "Competence",
+          "description": "Our physicians and specialists are highly qualified and always up to date with the latest medical research."
+        },
+        "access": {
+          "title": "Access",
+          "description": "We provide you with fast access to high-quality medical services in a pleasant and modern atmosphere."
+        },
+        "care": {
+          "title": "Care",
+          "description": "Holistic care tailored to your personal needs and wellbeing."
+        }
+      }
+    },
+    "network": {
+      "badge": "Our Network",
+      "title": "Our Clinics",
+      "titleHighlight": "Near You",
+      "subtitle": "Discover our network of modern locations, ready to serve all your medical needs professionally and personally.",
+      "cta": "View All Clinics"
+    },
+    "services": {
+      "badge": "Our Services",
+      "title": "Comprehensive",
+      "titleHighlight": "Medical Care",
+      "subtitle": "From primary care to specialized treatment – we offer you a wide range of medical services.",
+      "cta": "View All Services"
+    },
+    "team": {
+      "badge": "Our Team",
+      "title": "Always Here",
+      "titleHighlight": "for You",
+      "subtitle": "Experienced physicians and specialists who are passionate about your health.",
+      "cta": "Meet Our Team"
+    },
+    "testimonials": {
+      "badge": "Patient Reviews",
+      "title": "What Our Patients",
+      "titleHighlight": "Say About Us"
+    },
+    "news": {
+      "badge": "News",
+      "title": "Latest Updates from",
+      "titleHighlight": "Our Practices",
+      "subtitle": "Stay informed with the latest health news and updates from Praxen Jerumed.",
+      "cta": "View All Posts"
+    },
+    "faq": {
+      "badge": "FAQ",
+      "title": "Your Questions,",
+      "titleHighlight": "Our Answers"
+    },
+    "contact": {
+      "badge": "Contact",
+      "title": "Get in",
+      "titleHighlight": "Touch",
+      "subtitle": "We are here for you. Contact us by phone, email, or visit us at one of our clinics.",
+      "callUs": "Call Us",
+      "emailUs": "Email Us",
+      "visitUs": "Visit Us",
+      "locations": "10 Locations",
+      "bookCta": "Book an Appointment",
+      "contactCta": "Contact Us"
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "About Us",
+      "title": "Our Commitment to",
+      "titleHighlight": "Your Health",
+      "subtitle": "Praxen Jerumed – a network of specialized practices with the highest quality standards and patient-centered care."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "We are a network of specialized practices distinguished by high quality, trust, and patient-centered care. Our goal is to provide you with excellent medical care tailored to your individual needs.",
+      "description2": "With state-of-the-art technology and a dedicated team of experienced physicians and specialists, we are here for you in all matters relating to your health."
+    },
+    "founder": {
+      "name": "A. Abuawad",
+      "title": "CEO & Founder",
+      "quote": "Our network offers a variety of specialties to provide you with comprehensive medical care under one roof."
+    },
+    "values": {
+      "title": "Our Values",
+      "trust": {
+        "title": "Trust",
+        "description": "Your health is our priority. We rely on trustful cooperation and transparent communication."
+      },
+      "competence": {
+        "title": "Competence",
+        "description": "Our physicians and specialists are highly qualified and always up to date with the latest medical research."
+      },
+      "access": {
+        "title": "Access",
+        "description": "We provide you with fast access to high-quality medical services in a pleasant and modern atmosphere."
+      }
+    }
+  },
+  "contact": {
+    "hero": {
+      "badge": "Contact",
+      "title": "We Are Here",
+      "titleHighlight": "for You",
+      "subtitle": "Contact us by phone, email, or visit us directly at one of our clinics."
+    },
+    "info": {
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address",
+      "hours": "Opening Hours"
+    },
+    "form": {
+      "title": "Send a Message",
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "clinic": "Select a Clinic",
+      "subject": "Subject",
+      "message": "Your Message",
+      "submit": "Send Message",
+      "success": "Thank you! We will get back to you soon.",
+      "selectClinic": "Please select a clinic"
+    }
+  },
+  "services": {
+    "hero": {
+      "badge": "Services",
+      "title": "Our Medical",
+      "titleHighlight": "Offerings",
+      "subtitle": "Comprehensive medical care for the whole family – from prevention to treatment."
+    },
+    "items": {
+      "xray": {
+        "name": "X-Ray Examination",
+        "description": "Modern digital X-ray diagnostics for precise findings."
+      },
+      "pharmacy": {
+        "name": "In-House Pharmacy",
+        "description": "Direct medication dispensing at the practice for your convenience."
+      },
+      "earCleaning": {
+        "name": "Ear Irrigation",
+        "description": "Professional ear cleaning by experienced specialists."
+      },
+      "drivingFitness": {
+        "name": "Driving Fitness Assessment",
+        "description": "Medical assessment of driving fitness according to legal requirements."
+      },
+      "heart": {
+        "name": "Heart Examination (ECG)",
+        "description": "Comprehensive cardiological examinations and ECG diagnostics."
+      },
+      "lung": {
+        "name": "Lung Examinations",
+        "description": "Spirometry and further pulmonary function tests."
+      },
+      "labIron": {
+        "name": "Iron Deficiency Lab",
+        "description": "Laboratory diagnostics for iron deficiency and anemia."
+      },
+      "generalPractice": {
+        "name": "General Practice Medicine",
+        "description": "Comprehensive primary care for the whole family."
+      },
+      "aesthetics": {
+        "name": "Aesthetic Medicine",
+        "description": "Cosmetic treatments and aesthetic procedures at Medesthec."
+      },
+      "lab": {
+        "name": "Laboratory & Diagnostics",
+        "description": "State-of-the-art laboratory equipment for fast and reliable results."
+      }
+    }
+  },
+  "team": {
+    "hero": {
+      "badge": "Our Team",
+      "title": "Experienced Physicians,",
+      "titleHighlight": "Personal Care",
+      "subtitle": "Our dedicated team of qualified physicians and specialists is here for you with competence and warmth."
+    }
+  },
+  "clinics": {
+    "hero": {
+      "badge": "Our Clinics",
+      "title": "Modern Clinics",
+      "titleHighlight": "Near You",
+      "subtitle": "Discover our network of practices – professional, modern and always close to you."
+    },
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "hours": "Opening Hours",
+    "bookHere": "Book Here",
+    "directions": "Get Directions"
+  },
+  "gallery": {
+    "hero": {
+      "badge": "Gallery",
+      "title": "Our Clinics &",
+      "titleHighlight": "Facilities",
+      "subtitle": "Modern, welcoming spaces designed for your comfort and the best possible care experience."
+    },
+    "filters": {
+      "all": "All",
+      "clinics": "Clinics",
+      "laboratories": "Laboratories",
+      "treatment": "Treatment Rooms",
+      "waiting": "Waiting Areas",
+      "equipment": "Equipment"
+    }
+  },
+  "news": {
+    "hero": {
+      "badge": "News & Updates",
+      "title": "Latest from",
+      "titleHighlight": "Our Practices",
+      "subtitle": "Stay informed with the latest health news and updates from Praxen Jerumed."
+    }
+  },
+  "faq": {
+    "hero": {
+      "badge": "FAQ",
+      "title": "Your Questions,",
+      "titleHighlight": "Our Answers"
+    }
+  },
+  "booking": {
+    "hero": {
+      "badge": "Appointment",
+      "title": "Book an",
+      "titleHighlight": "Appointment",
+      "subtitle": "Choose your clinic and preferred appointment time. We'll take care of the rest."
+    },
+    "steps": {
+      "clinic": "Choose Clinic",
+      "service": "Choose Service",
+      "datetime": "Date & Time",
+      "details": "Your Details"
+    },
+    "form": {
+      "selectClinic": "Select a Clinic",
+      "selectService": "Select a Service",
+      "selectDate": "Select Date",
+      "selectTime": "Select Time",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "notes": "Notes (optional)",
+      "submit": "Confirm Appointment",
+      "next": "Next",
+      "back": "Back",
+      "success": "Your appointment has been successfully booked!"
+    }
+  },
+  "footer": {
+    "description": "Praxen Jerumed – Your network for comprehensive healthcare in Switzerland.",
+    "links": {
+      "title": "Quick Links"
+    },
+    "clinics": {
+      "title": "Our Clinics"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "placeholder": "Your email address",
+      "subscribe": "Subscribe"
+    },
+    "copyright": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "imprint": "Imprint"
+  },
+  "common": {
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "bookAppointment": "Book Appointment",
+    "backToList": "Back to List",
+    "loading": "Loading...",
+    "error": "An error occurred.",
+    "notFound": "Page not found.",
+    "comingSoon": "Coming Soon",
+    "available": "Available",
+    "limited": "Limited",
+    "bookNow": "Book",
+    "profile": "Profile",
+    "yearsExperience": "{years} years experience",
+    "moreServices": "+{count} more"
+  }
+}

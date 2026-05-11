@@ -1,0 +1,175 @@
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import type { Metadata } from "next";
+import { CheckCircle, MapPin, Phone, Calendar, ArrowRight, Stethoscope, Heart, FlaskConical, Wind, ScanLine, Sparkles, Pill, Shield, Siren, Droplets } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { services, getServiceBySlug } from "@/data/services";
+import { clinics } from "@/data/clinics";
+
+const iconMap: Record<string, LucideIcon> = { Stethoscope, Heart, FlaskConical, Wind, ScanLine, Sparkles, Pill, Shield, Siren, Droplets };
+
+export async function generateStaticParams() {
+  return services.map((s) => ({ slug: s.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const service = getServiceBySlug(slug);
+  return { title: service?.name ?? "Service", description: service?.shortDescription };
+}
+
+export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const service = getServiceBySlug(slug);
+  if (!service) notFound();
+
+  const Icon = iconMap[service.icon] ?? Stethoscope;
+  const availableClinics = clinics.filter((c) => service.clinicIds.includes(c.id));
+  const related = services.filter((s) => s.id !== service.id && s.category === service.category).slice(0, 3);
+  const fallbackRelated = services.filter((s) => s.id !== service.id).slice(0, 3);
+  const relatedServices = related.length > 0 ? related : fallbackRelated;
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero */}
+      <section className="gradient-hero py-20 lg:py-28">
+        <div className="container-wide">
+          <div className="flex items-start gap-6">
+            <div className="w-16 h-16 rounded-2xl gradient-primary flex items-center justify-center text-white shadow-lg flex-shrink-0">
+              <Icon className="w-8 h-8" />
+            </div>
+            <div>
+              <div className="flex items-center gap-3 mb-3">
+                <span className="px-3 py-1 text-sm font-medium rounded-full bg-white dark:bg-surface-dark-dim text-text-secondary dark:text-text-dark-secondary border border-border-light dark:border-border-dark capitalize">
+                  {service.category}
+                </span>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-text-primary dark:text-text-dark-primary mb-3">
+                {service.name}
+              </h1>
+              <p className="text-xl text-text-secondary dark:text-text-dark-secondary max-w-2xl">{service.shortDescription}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Overview */}
+      <section className="py-16 bg-white dark:bg-surface-dark">
+        <div className="container-wide">
+          <div className="grid lg:grid-cols-3 gap-10">
+            <div className="lg:col-span-2 space-y-8">
+              <div className="p-6 rounded-2xl bg-surface-dim dark:bg-surface-dark-dim border border-border-light dark:border-border-dark">
+                <h2 className="text-xl font-bold text-text-primary dark:text-text-dark-primary mb-4">About This Service</h2>
+                <p className="text-text-secondary dark:text-text-dark-secondary leading-relaxed text-lg">{service.longDescription}</p>
+              </div>
+
+              {/* Features */}
+              <div>
+                <h2 className="text-xl font-bold text-text-primary dark:text-text-dark-primary mb-6">What&apos;s Included</h2>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {service.features.map((feature) => (
+                    <div key={feature} className="flex items-center gap-3 p-4 rounded-xl bg-surface-dim dark:bg-surface-dark-dim border border-border-light dark:border-border-dark">
+                      <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
+                      <span className="text-sm font-medium text-text-primary dark:text-text-dark-primary">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Sidebar */}
+            <div className="space-y-6">
+              <div className="p-6 rounded-2xl bg-white dark:bg-surface-dark-dim border border-border-light dark:border-border-dark shadow-card">
+                <h3 className="font-bold text-text-primary dark:text-text-dark-primary mb-2">Available at {availableClinics.length} {availableClinics.length === 1 ? "clinic" : "clinics"}</h3>
+                <p className="text-sm text-text-muted dark:text-text-dark-muted mb-4">This service is offered at the following locations.</p>
+                <div className="space-y-2">
+                  {availableClinics.map((clinic) => (
+                    <div key={clinic.id} className="flex items-center gap-2 text-sm">
+                      <div className="w-2 h-2 rounded-full" style={{ backgroundColor: clinic.accentColor }} />
+                      <span className="text-text-primary dark:text-text-dark-primary font-medium">{clinic.shortName}</span>
+                      <span className="text-text-muted dark:text-text-dark-muted">·</span>
+                      <span className="text-text-muted dark:text-text-dark-muted">{clinic.city}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <Link
+                href={`/book-appointment?service=${service.slug}`}
+                className="flex items-center justify-center gap-2 w-full py-3.5 text-sm font-semibold text-white gradient-primary rounded-2xl hover:shadow-xl hover:shadow-primary-500/25 transition-all hover:-translate-y-0.5"
+              >
+                <Calendar className="w-4 h-4" />
+                Book This Service
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Available Clinics */}
+      <section className="py-16 bg-surface-dim dark:bg-surface-dark-dim">
+        <div className="container-wide">
+          <h2 className="text-2xl font-bold text-text-primary dark:text-text-dark-primary mb-8">Where to Find This Service</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {availableClinics.map((clinic) => (
+              <Link key={clinic.id} href={`/clinics/${clinic.slug}`} className="group block p-5 rounded-2xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-card hover:shadow-card-hover transition-all hover:-translate-y-1">
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold flex-shrink-0" style={{ backgroundColor: clinic.accentColor }}>
+                    {clinic.shortName[0]}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-text-primary dark:text-text-dark-primary group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{clinic.shortName}</p>
+                    <p className="text-xs text-text-muted dark:text-text-dark-muted">{clinic.city}</p>
+                  </div>
+                </div>
+                <div className="space-y-1 text-xs text-text-muted dark:text-text-dark-muted">
+                  <div className="flex items-center gap-1.5"><MapPin className="w-3 h-3" />{clinic.address}</div>
+                  <div className="flex items-center gap-1.5"><Phone className="w-3 h-3" />{clinic.phone}</div>
+                </div>
+                <div className="flex items-center gap-1 text-xs font-semibold text-primary-600 dark:text-primary-400 mt-3 group-hover:gap-2 transition-all">
+                  View Clinic <ArrowRight className="w-3 h-3" />
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Book CTA */}
+      <section className="py-16 bg-gradient-to-r from-primary-600 to-emerald-600 text-white">
+        <div className="container-wide text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Ready to Book {service.name}?</h2>
+          <p className="text-primary-100 mb-6 max-w-xl mx-auto">Schedule your appointment online and our team will confirm within 24 hours.</p>
+          <Link href={`/book-appointment?service=${service.slug}`} className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-primary-700 font-semibold rounded-2xl hover:bg-primary-50 transition-all hover:shadow-xl">
+            <Calendar className="w-5 h-5" /> Book Now
+          </Link>
+        </div>
+      </section>
+
+      {/* Related */}
+      {relatedServices.length > 0 && (
+        <section className="py-16 bg-white dark:bg-surface-dark">
+          <div className="container-wide">
+            <h2 className="text-2xl font-bold text-text-primary dark:text-text-dark-primary mb-6">Related Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {relatedServices.map((rel) => {
+                const RelIcon = iconMap[rel.icon] ?? Stethoscope;
+                return (
+                  <Link key={rel.id} href={`/services/${rel.slug}`} className="group flex items-center gap-4 p-5 rounded-2xl border border-border-light dark:border-border-dark bg-surface-dim dark:bg-surface-dark-dim hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-card transition-all">
+                    <div className="w-10 h-10 rounded-xl bg-primary-50 dark:bg-primary-500/10 flex items-center justify-center text-primary-600 dark:text-primary-400 flex-shrink-0">
+                      <RelIcon className="w-5 h-5" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-semibold text-text-primary dark:text-text-dark-primary group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors text-sm">{rel.name}</p>
+                      <p className="text-xs text-text-muted dark:text-text-dark-muted line-clamp-1 mt-0.5">{rel.shortDescription}</p>
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-text-muted group-hover:text-primary-500 transition-colors flex-shrink-0" />
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+    </div>
+  );
+}

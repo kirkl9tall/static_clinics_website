@@ -1,0 +1,333 @@
+{
+  "nav": {
+    "home": "Start",
+    "about": "Über uns",
+    "team": "Team",
+    "services": "Angebote",
+    "clinics": "Praxen",
+    "gallery": "Galerie",
+    "news": "News",
+    "faq": "FAQs",
+    "contact": "Kontakt",
+    "bookAppointment": "Termin vereinbaren"
+  },
+  "home": {
+    "hero": {
+      "badge": "Ihr Gesundheitspartner in der Schweiz",
+      "title": "Ihre Gesundheit,",
+      "titleHighlight": "unser Engagement",
+      "subtitle": "Praxen Jerumed ist ein Netzwerk spezialisierter Fachpraxen, das sich durch hohe Qualität, Vertrauen und patientenorientierte Betreuung auszeichnet.",
+      "ctaPrimary": "Termin vereinbaren",
+      "ctaSecondary": "Unsere Praxen entdecken"
+    },
+    "stats": {
+      "clinics": "Praxen & Standorte",
+      "patients": "Zufriedene Patienten",
+      "specialists": "Fachärzte",
+      "years": "Jahre Erfahrung"
+    },
+    "about": {
+      "badge": "Über Praxen Jerumed",
+      "title": "Exzellenz im Gesundheitswesen",
+      "titleHighlight": "trifft Innovation",
+      "description": "Unser Unternehmen ist aus dem Zusammenschluss hochspezialisierter Kliniken entstanden. Wir bieten umfassende medizinische Versorgung mit modernster Technik und einem engagierten Team aus erfahrenen Ärzten.",
+      "cta": "Mehr über uns",
+      "values": {
+        "trust": {
+          "title": "Vertrauen",
+          "description": "Ihre Gesundheit liegt uns am Herzen. Wir setzen auf vertrauensvolle Zusammenarbeit und transparente Kommunikation."
+        },
+        "competence": {
+          "title": "Kompetenz",
+          "description": "Unsere Ärzte und Fachkräfte sind hochqualifiziert und immer auf dem neuesten Stand der medizinischen Forschung."
+        },
+        "access": {
+          "title": "Zugang",
+          "description": "Wir bieten Ihnen schnellen Zugang zu hochwertigen medizinischen Leistungen in einer angenehmen, modernen Atmosphäre."
+        },
+        "care": {
+          "title": "Fürsorge",
+          "description": "Ganzheitliche Betreuung, die auf Ihre persönlichen Bedürfnisse zugeschnitten ist."
+        }
+      }
+    },
+    "network": {
+      "badge": "Unser Netzwerk",
+      "title": "Unsere Praxen",
+      "titleHighlight": "in Ihrer Nähe",
+      "subtitle": "Entdecken Sie unser Netzwerk moderner Standorte, bereit, alle Ihre medizinischen Bedürfnisse professionell und persönlich zu betreuen.",
+      "cta": "Alle Praxen anzeigen"
+    },
+    "services": {
+      "badge": "Unsere Leistungen",
+      "title": "Umfassende",
+      "titleHighlight": "Medizinische Versorgung",
+      "subtitle": "Von der Grundversorgung bis zur spezialisierten Behandlung – wir bieten Ihnen ein breites Spektrum an medizinischen Leistungen.",
+      "cta": "Alle Leistungen anzeigen"
+    },
+    "team": {
+      "badge": "Unser Team",
+      "title": "Immer für",
+      "titleHighlight": "Sie da",
+      "subtitle": "Erfahrene Ärzte und Fachkräfte, die sich mit Leidenschaft für Ihre Gesundheit einsetzen.",
+      "cta": "Unser Team kennenlernen"
+    },
+    "testimonials": {
+      "badge": "Patientenstimmen",
+      "title": "Was unsere Patienten",
+      "titleHighlight": "sagen"
+    },
+    "news": {
+      "badge": "Neuigkeiten",
+      "title": "Aktuelles aus",
+      "titleHighlight": "unseren Praxen",
+      "subtitle": "Bleiben Sie informiert mit den neuesten Gesundheitsnachrichten und Updates von Praxen Jerumed.",
+      "cta": "Alle Beiträge anzeigen"
+    },
+    "faq": {
+      "badge": "Häufige Fragen",
+      "title": "Ihre Fragen,",
+      "titleHighlight": "unsere Antworten"
+    },
+    "contact": {
+      "badge": "Kontakt",
+      "title": "Sprechen Sie",
+      "titleHighlight": "mit uns",
+      "subtitle": "Wir sind für Sie da. Kontaktieren Sie uns per Telefon, E-Mail oder besuchen Sie uns in einer unserer Praxen.",
+      "callUs": "Rufen Sie uns an",
+      "emailUs": "Schreiben Sie uns",
+      "visitUs": "Besuchen Sie uns",
+      "locations": "10 Standorte",
+      "bookCta": "Termin vereinbaren",
+      "contactCta": "Kontaktieren Sie uns"
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "Über uns",
+      "title": "Unser Engagement für",
+      "titleHighlight": "Ihre Gesundheit",
+      "subtitle": "Praxen Jerumed – ein Netzwerk von Fachpraxen mit höchsten Qualitätsstandards und patientenorientierter Betreuung."
+    },
+    "mission": {
+      "title": "Unsere Mission",
+      "description": "Wir sind ein Netzwerk von Fachpraxen, das sich durch hohe Qualität, Vertrauen und eine patientenorientierte Betreuung auszeichnet. Unser Ziel ist es, Ihnen eine exzellente medizinische Versorgung zu bieten, die sich an Ihren individuellen Bedürfnissen orientiert.",
+      "description2": "Mit modernster Technik und einem engagierten Team aus erfahrenen Ärzten und Fachkräften stehen wir Ihnen in allen Fragen rund um Ihre Gesundheit zur Seite."
+    },
+    "founder": {
+      "name": "A. Abuawad",
+      "title": "CEO & Gründer",
+      "quote": "Unser Netzwerk bietet eine Vielzahl von Fachrichtungen, um Ihnen umfassende medizinische Betreuung unter einem Dach zu ermöglichen."
+    },
+    "values": {
+      "title": "Unsere Werte",
+      "trust": {
+        "title": "Vertrauen",
+        "description": "Ihre Gesundheit liegt uns am Herzen. Wir setzen auf eine vertrauensvolle Zusammenarbeit und transparente Kommunikation."
+      },
+      "competence": {
+        "title": "Kompetenz",
+        "description": "Unsere Ärzte und Fachkräfte sind hochqualifiziert und immer auf dem neuesten Stand der medizinischen Forschung."
+      },
+      "access": {
+        "title": "Zugang",
+        "description": "Wir bieten Ihnen einen schnellen Zugang zu hochwertigen medizinischen Leistungen in einer angenehmen und modernen Atmosphäre."
+      }
+    }
+  },
+  "contact": {
+    "hero": {
+      "badge": "Kontakt",
+      "title": "Wir sind für",
+      "titleHighlight": "Sie da",
+      "subtitle": "Kontaktieren Sie uns per Telefon, E-Mail oder besuchen Sie uns direkt in einer unserer Praxen."
+    },
+    "info": {
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "address": "Adresse",
+      "hours": "Öffnungszeiten"
+    },
+    "form": {
+      "title": "Nachricht senden",
+      "name": "Vollständiger Name",
+      "email": "E-Mail-Adresse",
+      "phone": "Telefonnummer",
+      "clinic": "Praxis auswählen",
+      "subject": "Betreff",
+      "message": "Ihre Nachricht",
+      "submit": "Nachricht senden",
+      "success": "Vielen Dank! Wir melden uns bald bei Ihnen.",
+      "selectClinic": "Bitte wählen Sie eine Praxis"
+    }
+  },
+  "services": {
+    "hero": {
+      "badge": "Leistungen",
+      "title": "Unsere medizinischen",
+      "titleHighlight": "Angebote",
+      "subtitle": "Umfassende medizinische Versorgung für die ganze Familie – von der Vorsorge bis zur Behandlung."
+    },
+    "items": {
+      "xray": {
+        "name": "Röntgenuntersuchung",
+        "description": "Moderne digitale Röntgendiagnostik für präzise Befunde."
+      },
+      "pharmacy": {
+        "name": "Hauseigene Apotheke",
+        "description": "Direkte Medikamentenabgabe in der Praxis für Ihre Bequemlichkeit."
+      },
+      "earCleaning": {
+        "name": "Ohrenspülung",
+        "description": "Professionelle Ohrenreinigung durch erfahrene Fachkräfte."
+      },
+      "drivingFitness": {
+        "name": "Fahreignungsabklärung",
+        "description": "Medizinische Beurteilung der Fahreignung nach gesetzlichen Anforderungen."
+      },
+      "heart": {
+        "name": "Herzuntersuchung (EKG)",
+        "description": "Umfassende kardiologische Untersuchungen und EKG-Diagnostik."
+      },
+      "lung": {
+        "name": "Lungenuntersuchungen",
+        "description": "Spirometrie und weitere Lungenfunktionstests."
+      },
+      "labIron": {
+        "name": "Eisenmangel Labor",
+        "description": "Labordiagnostik für Eisenmangel und Blutarmut."
+      },
+      "generalPractice": {
+        "name": "Hausarztmedizin",
+        "description": "Umfassende Grundversorgung für die ganze Familie."
+      },
+      "aesthetics": {
+        "name": "Ästhetische Medizin",
+        "description": "Kosmetische Behandlungen und ästhetische Eingriffe bei Medesthec."
+      },
+      "lab": {
+        "name": "Labor & Diagnostik",
+        "description": "Modernste Laborgeräte für schnelle und zuverlässige Ergebnisse."
+      }
+    }
+  },
+  "team": {
+    "hero": {
+      "badge": "Unser Team",
+      "title": "Erfahrene Ärzte,",
+      "titleHighlight": "persönliche Betreuung",
+      "subtitle": "Unser engagiertes Team aus qualifizierten Ärzten und Fachkräften steht Ihnen mit Kompetenz und Herzlichkeit zur Seite."
+    }
+  },
+  "clinics": {
+    "hero": {
+      "badge": "Unsere Praxen",
+      "title": "Moderne Praxen",
+      "titleHighlight": "in Ihrer Nähe",
+      "subtitle": "Entdecken Sie unser Netzwerk von Praxen – professionell, modern und immer nah bei Ihnen."
+    },
+    "address": "Adresse",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "hours": "Öffnungszeiten",
+    "bookHere": "Hier Termin buchen",
+    "directions": "Route anzeigen"
+  },
+  "gallery": {
+    "hero": {
+      "badge": "Galerie",
+      "title": "Unsere Praxen &",
+      "titleHighlight": "Räumlichkeiten",
+      "subtitle": "Moderne, einladende Räumlichkeiten, gestaltet für Ihren Komfort und die bestmögliche Versorgung."
+    },
+    "filters": {
+      "all": "Alle",
+      "clinics": "Praxen",
+      "laboratories": "Labore",
+      "treatment": "Behandlungsräume",
+      "waiting": "Wartebereiche",
+      "equipment": "Ausstattung"
+    }
+  },
+  "news": {
+    "hero": {
+      "badge": "News & Updates",
+      "title": "Aktuelles aus",
+      "titleHighlight": "unseren Praxen",
+      "subtitle": "Bleiben Sie informiert mit den neuesten Gesundheitsnachrichten und Updates von Praxen Jerumed."
+    }
+  },
+  "faq": {
+    "hero": {
+      "badge": "Häufige Fragen",
+      "title": "Ihre Fragen,",
+      "titleHighlight": "unsere Antworten"
+    }
+  },
+  "booking": {
+    "hero": {
+      "badge": "Termin",
+      "title": "Termin",
+      "titleHighlight": "vereinbaren",
+      "subtitle": "Wählen Sie Ihre Praxis und Ihren Wunschtermin. Wir kümmern uns um den Rest."
+    },
+    "steps": {
+      "clinic": "Praxis wählen",
+      "service": "Leistung wählen",
+      "datetime": "Datum & Zeit",
+      "details": "Ihre Daten"
+    },
+    "form": {
+      "selectClinic": "Praxis auswählen",
+      "selectService": "Leistung auswählen",
+      "selectDate": "Datum auswählen",
+      "selectTime": "Zeit auswählen",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "email": "E-Mail-Adresse",
+      "phone": "Telefonnummer",
+      "notes": "Anmerkungen (optional)",
+      "submit": "Termin bestätigen",
+      "next": "Weiter",
+      "back": "Zurück",
+      "success": "Ihr Termin wurde erfolgreich gebucht!"
+    }
+  },
+  "footer": {
+    "description": "Praxen Jerumed – Ihr Netzwerk für umfassende Gesundheitsversorgung in der Schweiz.",
+    "links": {
+      "title": "Schnelllinks"
+    },
+    "clinics": {
+      "title": "Unsere Praxen"
+    },
+    "contact": {
+      "title": "Kontakt"
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "placeholder": "Ihre E-Mail-Adresse",
+      "subscribe": "Abonnieren"
+    },
+    "copyright": "Alle Rechte vorbehalten.",
+    "privacy": "Datenschutz",
+    "imprint": "Impressum"
+  },
+  "common": {
+    "readMore": "Weiterlesen",
+    "learnMore": "Mehr erfahren",
+    "viewAll": "Alle anzeigen",
+    "bookAppointment": "Termin vereinbaren",
+    "backToList": "Zurück zur Übersicht",
+    "loading": "Wird geladen...",
+    "error": "Ein Fehler ist aufgetreten.",
+    "notFound": "Seite nicht gefunden.",
+    "comingSoon": "Bald verfügbar",
+    "available": "Verfügbar",
+    "limited": "Begrenzt",
+    "bookNow": "Buchen",
+    "profile": "Profil",
+    "yearsExperience": "{years} Jahre Erfahrung",
+    "moreServices": "+{count} weitere"
+  }
+}
