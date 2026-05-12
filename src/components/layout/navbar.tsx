@@ -173,12 +173,6 @@ export default function Navbar() {
 
           {/* Right Actions */}
           <div className="flex items-center gap-3">
-            <Link
-              href="/book-appointment"
-              className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white gradient-primary rounded-xl hover:shadow-lg hover:shadow-primary-500/25 transition-all duration-300 hover:-translate-y-0.5"
-            >
-              {t("bookAppointment")}
-            </Link>
             {/* Mobile language toggle */}
             <div className="lg:hidden flex items-center gap-1 border border-border-light dark:border-border-dark rounded-lg overflow-hidden">
               <button onClick={() => switchLocale("de")} className={cn("px-2 py-1 text-xs font-medium transition-colors", locale === "de" ? "bg-primary-500 text-white" : "text-text-muted")}>DE</button>
@@ -231,11 +225,6 @@ export default function Navbar() {
                   )}
                 </motion.div>
               ))}
-              <div className="pt-4 border-t border-border-light dark:border-border-dark">
-                <Link href="/book-appointment" className="block w-full text-center px-5 py-3 text-sm font-semibold text-white gradient-primary rounded-xl">
-                  {t("bookAppointment")}
-                </Link>
-              </div>
             </div>
           </motion.div>
         )}

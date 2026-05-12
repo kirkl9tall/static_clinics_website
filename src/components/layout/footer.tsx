@@ -63,9 +63,6 @@ export default function Footer() {
                 { key: "about", href: "/about" },
                 { key: "services", href: "/services" },
                 { key: "team", href: "/team" },
-                { key: "bookAppointment", href: "/book-appointment" },
-                { key: "news", href: "/news" },
-                { key: "gallery", href: "/gallery" },
                 { key: "contact", href: "/contact" },
               ] as const).map((link) => (
                 <li key={link.href}>

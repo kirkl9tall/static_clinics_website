@@ -3,7 +3,7 @@
 import { Link } from "@/navigation";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, Building2, Calendar, Shield, Heart, Stethoscope, FlaskConical } from "lucide-react";
+import { ArrowRight, Building2, Shield, Heart, Stethoscope, FlaskConical } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 const floatingCards = [
@@ -55,15 +55,8 @@ export default function Hero() {
 
             <div className="flex flex-wrap gap-4 mb-12">
               <Link
-                href="/book-appointment"
-                className="inline-flex items-center gap-2 px-7 py-3.5 text-white gradient-primary rounded-2xl font-semibold hover:shadow-xl hover:shadow-primary-500/25 transition-all duration-300 hover:-translate-y-0.5"
-              >
-                <Calendar className="w-5 h-5" />
-                {t("ctaPrimary")}
-              </Link>
-              <Link
                 href="/clinics"
-                className="inline-flex items-center gap-2 px-7 py-3.5 font-semibold text-primary-700 dark:text-text-dark-primary border-2 border-primary-300 dark:border-border-dark rounded-2xl hover:border-primary-500 dark:hover:border-primary-600 hover:text-primary-600 dark:hover:text-primary-400 bg-white/60 dark:bg-transparent backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-7 py-3.5 text-white gradient-primary rounded-2xl font-semibold hover:shadow-xl hover:shadow-primary-500/25 transition-all duration-300 hover:-translate-y-0.5"
               >
                 <Building2 className="w-5 h-5" />
                 {t("ctaSecondary")}

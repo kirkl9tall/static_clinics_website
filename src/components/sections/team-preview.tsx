@@ -6,7 +6,7 @@ import Image from "next/image";
 import ScrollReveal from "@/components/shared/scroll-reveal";
 import SectionHeader from "@/components/shared/section-header";
 import { doctors } from "@/data/doctors";
-import { Calendar, Globe, Award, ArrowRight } from "lucide-react";
+import { Globe, Award, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 
@@ -78,15 +78,9 @@ export default function TeamPreview() {
                   <div className="flex gap-2">
                     <Link
                       href={`/team/${doc.slug}`}
-                      className="flex-1 text-center px-3 py-2 text-xs font-semibold text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-500/10 rounded-xl hover:bg-primary-100 dark:hover:bg-primary-500/20 transition-colors"
+                      className="w-full text-center px-3 py-2 text-xs font-semibold text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-500/10 rounded-xl hover:bg-primary-100 dark:hover:bg-primary-500/20 transition-colors"
                     >
                       {tc("profile")}
-                    </Link>
-                    <Link
-                      href="/book-appointment"
-                      className="flex-1 text-center px-3 py-2 text-xs font-semibold text-white gradient-primary rounded-xl hover:shadow-md transition-all"
-                    >
-                      <Calendar className="w-3.5 h-3.5 inline mr-1" />{tc("bookNow")}
                     </Link>
                   </div>
                 </div>

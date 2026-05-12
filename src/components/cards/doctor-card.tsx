@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Calendar } from "lucide-react";
 import { Doctor } from "@/types";
 import { cn } from "@/lib/utils";
 
@@ -91,20 +90,12 @@ export default function DoctorCard({ doctor, index = 0 }: DoctorCardProps) {
           ))}
         </div>
 
-        <div className="flex gap-2 mt-auto">
-          <Link
-            href={`/team/${doctor.slug}`}
-            className="flex-1 py-2 text-xs font-semibold rounded-xl border border-primary-200 dark:border-primary-700 text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-500/10 transition-colors text-center"
-          >
-            Profil
-          </Link>
-          <Link
-            href={`/book-appointment?doctor=${doctor.slug}`}
-            className="flex-1 py-2 text-xs font-semibold rounded-xl text-white gradient-primary hover:shadow-md hover:shadow-primary-500/20 transition-all flex items-center justify-center gap-1"
-          >
-            <Calendar className="w-3 h-3" /> Buchen
-          </Link>
-        </div>
+        <Link
+          href={`/team/${doctor.slug}`}
+          className="w-full py-2 text-xs font-semibold rounded-xl border border-primary-200 dark:border-primary-700 text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-500/10 transition-colors text-center"
+        >
+          Profil
+        </Link>
       </div>
     </motion.div>
   );

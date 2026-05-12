@@ -138,15 +138,6 @@ export default async function ClinicPage({ params }: { params: Promise<{ slug: s
                 </div>
               </div>
 
-              {!clinic.isComingSoon && (
-                <Link
-                  href={`/book-appointment?clinic=${clinic.slug}`}
-                  className="flex items-center justify-center gap-2 w-full py-3.5 text-sm font-semibold text-white gradient-primary rounded-2xl hover:shadow-xl hover:shadow-primary-500/25 transition-all hover:-translate-y-0.5"
-                >
-                  <Calendar className="w-4 h-4" />
-                  Book Appointment
-                </Link>
-              )}
             </div>
           </div>
         </div>
@@ -171,23 +162,6 @@ export default async function ClinicPage({ params }: { params: Promise<{ slug: s
                 </Link>
               ))}
             </div>
-          </div>
-        </section>
-      )}
-
-      {/* Book CTA */}
-      {!clinic.isComingSoon && (
-        <section className="py-16 bg-gradient-to-r from-primary-600 to-emerald-600 text-white">
-          <div className="container-wide text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">Book an Appointment at {clinic.shortName}</h2>
-            <p className="text-primary-100 mb-6 max-w-xl mx-auto">Ready to see one of our physicians? Schedule your visit in just a few minutes.</p>
-            <Link
-              href={`/book-appointment?clinic=${clinic.slug}`}
-              className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-primary-700 font-semibold rounded-2xl hover:bg-primary-50 transition-all hover:shadow-xl"
-            >
-              <Calendar className="w-5 h-5" />
-              Book Now
-            </Link>
           </div>
         </section>
       )}

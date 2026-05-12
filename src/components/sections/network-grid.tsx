@@ -6,7 +6,7 @@ import Image from "next/image";
 import ScrollReveal from "@/components/shared/scroll-reveal";
 import SectionHeader from "@/components/shared/section-header";
 import { clinics } from "@/data/clinics";
-import { MapPin, ArrowUpRight, ExternalLink, Calendar, Building2 } from "lucide-react";
+import { MapPin, ArrowUpRight, ExternalLink, Building2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 
@@ -96,14 +96,6 @@ export default function NetworkGrid() {
                     >
                       {tc("learnMore")} <ArrowUpRight className="w-3.5 h-3.5" />
                     </Link>
-                    {!clinic.isComingSoon && (
-                      <Link
-                        href="/book-appointment"
-                        className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-xs font-semibold text-white gradient-primary rounded-xl hover:shadow-md transition-all"
-                      >
-                        <Calendar className="w-3.5 h-3.5" /> {tc("bookNow")}
-                      </Link>
-                    )}
                     {clinic.website && clinic.website !== "#" && (
                       <a
                         href={clinic.website}
