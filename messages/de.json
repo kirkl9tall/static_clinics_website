@@ -169,13 +169,45 @@
       "subtitle": "Umfassende medizinische Versorgung für die ganze Familie – von der Vorsorge bis zur Behandlung."
     },
     "items": {
+      "generalMedicine": {
+        "name": "Hausarztmedizin",
+        "description": "Umfassende Grundversorgung für die ganze Familie – von der Vorsorge bis zur Behandlung akuter Erkrankungen."
+      },
       "xray": {
         "name": "Röntgenuntersuchung",
-        "description": "Moderne digitale Röntgendiagnostik für präzise Befunde."
+        "description": "Moderne digitale Röntgendiagnostik für präzise und schnelle Befunde direkt in der Praxis."
+      },
+      "heart": {
+        "name": "Herzuntersuchung (EKG)",
+        "description": "Umfassende kardiologische Diagnostik – EKG, Belastungstest und Herzgesundheits-Check."
+      },
+      "lung": {
+        "name": "Lungenuntersuchungen",
+        "description": "Spirometrie und Lungenfunktionstests für eine vollständige Beurteilung der Atemwege."
+      },
+      "lab": {
+        "name": "Labor & Diagnostik",
+        "description": "Hauseigenes Labor mit schnellen Ergebnissen für Blutanalysen und umfassende Diagnostik."
+      },
+      "aesthetics": {
+        "name": "Ästhetische Medizin",
+        "description": "Premium-Ästhetikbehandlungen – Botox, Filler und Hautrejuvenation bei Medesthec."
       },
       "pharmacy": {
         "name": "Hauseigene Apotheke",
-        "description": "Direkte Medikamentenabgabe in der Praxis für Ihre Bequemlichkeit."
+        "description": "Direkte Medikamentenabgabe in der Praxis – bequem nach der Konsultation."
+      },
+      "preventive": {
+        "name": "Prävention & Vorsorge",
+        "description": "Proaktive Gesundheitsvorsorge und Screening-Programme für Ihre langfristige Gesundheit."
+      },
+      "emergency": {
+        "name": "Notfallbehandlung",
+        "description": "Walk-in-Notfallversorgung für akute Erkrankungen ohne lange Wartezeiten."
+      },
+      "ironTherapy": {
+        "name": "Eisenmangel-Therapie",
+        "description": "Spezialisierte Eiseninfusionen bei Erschöpfung und Eisenmangel – schnell und wirksam."
       },
       "earCleaning": {
         "name": "Ohrenspülung",
@@ -183,31 +215,7 @@
       },
       "drivingFitness": {
         "name": "Fahreignungsabklärung",
-        "description": "Medizinische Beurteilung der Fahreignung nach gesetzlichen Anforderungen."
-      },
-      "heart": {
-        "name": "Herzuntersuchung (EKG)",
-        "description": "Umfassende kardiologische Untersuchungen und EKG-Diagnostik."
-      },
-      "lung": {
-        "name": "Lungenuntersuchungen",
-        "description": "Spirometrie und weitere Lungenfunktionstests."
-      },
-      "labIron": {
-        "name": "Eisenmangel Labor",
-        "description": "Labordiagnostik für Eisenmangel und Blutarmut."
-      },
-      "generalPractice": {
-        "name": "Hausarztmedizin",
-        "description": "Umfassende Grundversorgung für die ganze Familie."
-      },
-      "aesthetics": {
-        "name": "Ästhetische Medizin",
-        "description": "Kosmetische Behandlungen und ästhetische Eingriffe bei Medesthec."
-      },
-      "lab": {
-        "name": "Labor & Diagnostik",
-        "description": "Modernste Laborgeräte für schnelle und zuverlässige Ergebnisse."
+        "description": "Medizinische Beurteilung der Fahreignung nach gesetzlichen Anforderungen der Schweiz."
       }
     }
   },
@@ -313,6 +321,20 @@
     "privacy": "Datenschutz",
     "imprint": "Impressum"
   },
+  "clinics": {
+    "descriptions": {
+      "seefeld": "Ihre vertrauenswürdige Hausarztpraxis im Herzen von Zürich Seefeld mit umfassender Grundversorgung und persönlichem Service.",
+      "duebendorf": "Eine moderne Hausarztpraxis in Dübendorf mit Schwerpunkt auf Allgemeinmedizin, Notfallbehandlung und Prävention.",
+      "altstetten": "Umfassende Grundversorgung in Zürich Altstetten mit erweiterten Dienstleistungen wie Röntgen und hauseigener Apotheke.",
+      "winterthur": "Qualitätsvolle Allgemeinmedizin im Herzen von Winterthur mit individualisierter Betreuung und moderner Diagnostik.",
+      "wald": "Gemeinschaftsorientierte Hausarztpraxis in Wald, die zugängliche und einfühlsame Gesundheitsversorgung bietet.",
+      "medesthec": "Premium-Ästhetikmedizin und Schönheitsbehandlungen in Zürich, die Wissenschaft mit Kunst für natürliche Ergebnisse verbindet.",
+      "beauty-altstetten": "Ästhetik- und Beauty-Center in Zürich Altstetten mit umfassendem Angebot an kosmetischen und Verjüngungsbehandlungen.",
+      "naturheilmedizin": "Ganzheitliches Naturheilzentrum mit komplementären Therapien und integrativen Gesundheitsansätzen.",
+      "urohealth": "Spezialisiertes Urologiezentrum mit umfassender urologischer Versorgung und modernster Technologie.",
+      "jerumed-shop": "Online-Shop für Medizinprodukte mit Arzneimitteln, Gesundheitsartikel und Wellness-Produkten."
+    }
+  },
   "common": {
     "readMore": "Weiterlesen",
     "learnMore": "Mehr erfahren",
@@ -328,6 +350,8 @@
     "bookNow": "Buchen",
     "profile": "Profil",
     "yearsExperience": "{years} Jahre Erfahrung",
-    "moreServices": "+{count} weitere"
+    "moreServices": "+{count} weitere",
+    "emergencyMessage": "Falls Sie keinen verfügbaren Termin finden, kontaktieren Sie uns bitte unter",
+    "emergencyPhone": "+41 44 244 09 99"
   }
 }

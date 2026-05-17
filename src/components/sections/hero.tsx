@@ -3,15 +3,44 @@
 import { Link } from "@/navigation";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, Building2, Shield, Heart, Stethoscope, FlaskConical } from "lucide-react";
+import { ArrowRight, Building2, Shield, Heart, Stethoscope, FlaskConical, ScanLine, Wind, Pill, Droplets, Siren, Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { services } from "@/data/services";
 
-const floatingCards = [
-  { icon: Stethoscope, labelKey: "Hausarztmedizin", color: "bg-primary-500", delay: 0 },
-  { icon: Heart, labelKey: "Kardiologie", color: "bg-rose-500", delay: 0.2 },
-  { icon: FlaskConical, labelKey: "Labor", color: "bg-emerald-500", delay: 0.4 },
-  { icon: Shield, labelKey: "Prävention", color: "bg-violet-500", delay: 0.6 },
+const iconMap: Record<string, React.ComponentType<any>> = {
+  Stethoscope,
+  Heart,
+  FlaskConical,
+  Shield,
+  ScanLine,
+  Wind,
+  Pill,
+  Droplets,
+  Siren,
+  Sparkles,
+};
+
+const colorPalette = [
+  "bg-primary-500",
+  "bg-rose-500",
+  "bg-emerald-500",
+  "bg-violet-500",
+  "bg-blue-500",
+  "bg-amber-500",
+  "bg-cyan-500",
+  "bg-pink-500",
+  "bg-indigo-500",
+  "bg-teal-500",
+  "bg-orange-500",
+  "bg-fuchsia-500",
 ];
+
+const floatingCards = services.map((service, index) => ({
+  name: service.name,
+  icon: iconMap[service.icon] || Stethoscope,
+  color: colorPalette[index % colorPalette.length],
+  delay: (index * 0.1) % 0.9,
+}));
 
 export default function Hero() {
   const t = useTranslations("home.hero");
@@ -92,12 +121,12 @@ export default function Hero() {
 
               {/* Center Logo */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-36 h-36 rounded-3xl bg-white dark:bg-surface-dark-dim flex items-center justify-center shadow-2xl border border-primary-100 dark:border-border-dark p-4">
+                <div className="w-36 h-36 rounded-full bg-white dark:bg-surface-dark-dim flex items-center justify-center shadow-2xl border border-primary-100 dark:border-border-dark p-4">
                   <Image
-                    src="/nobakjerumed.png"
+                    src="/lastwebjerumed.webp"
                     alt="Praxen Jerumed"
                     width={140}
-                    height={80}
+                    height={140}
                     className="w-full h-full object-contain"
                     unoptimized
                     priority
@@ -105,27 +134,34 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Floating service cards */}
+              {/* Floating service cards in circular layout */}
               {floatingCards.map((card, i) => {
-                const positions = [
-                  "top-0 left-1/2 -translate-x-1/2 -translate-y-1/2",
-                  "top-1/2 right-0 translate-x-1/2 -translate-y-1/2",
-                  "bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2",
-                  "top-1/2 left-0 -translate-x-1/2 -translate-y-1/2",
-                ];
+                const totalCards = floatingCards.length;
+                const angle = (i / totalCards) * Math.PI * 2 - Math.PI / 2;
+                const radius = 280;
+                const x = Math.round(Math.cos(angle) * radius * 100) / 100;
+                const y = Math.round(Math.sin(angle) * radius * 100) / 100;
+
                 return (
                   <motion.div
-                    key={card.labelKey}
+                    key={card.name}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.5 + card.delay }}
-                    className={`absolute ${positions[i]} bg-white dark:bg-surface-dark-dim rounded-2xl px-4 py-3 shadow-xl border border-primary-200 dark:border-border-dark flex items-center gap-3 min-w-[160px]`}
+                    style={{
+                      position: "absolute",
+                      left: "50%",
+                      top: "50%",
+                      x,
+                      y,
+                    }}
+                    className="bg-white dark:bg-surface-dark-dim rounded-2xl px-4 py-3 shadow-xl border border-primary-200 dark:border-border-dark flex items-center gap-3 min-w-max -translate-x-1/2 -translate-y-1/2"
                   >
                     <div className={`w-9 h-9 rounded-xl ${card.color} flex items-center justify-center flex-shrink-0`}>
                       <card.icon className="w-5 h-5 text-white" />
                     </div>
-                    <span className="text-sm font-semibold text-text-primary dark:text-text-dark-primary">
-                      {card.labelKey}
+                    <span className="text-sm font-semibold text-text-primary dark:text-text-dark-primary whitespace-nowrap">
+                      {card.name}
                     </span>
                   </motion.div>
                 );

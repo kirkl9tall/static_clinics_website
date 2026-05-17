@@ -169,13 +169,45 @@
       "subtitle": "Comprehensive medical care for the whole family – from prevention to treatment."
     },
     "items": {
+      "generalMedicine": {
+        "name": "General Practice Medicine",
+        "description": "Comprehensive primary care for the whole family – from prevention to treatment of acute illnesses."
+      },
       "xray": {
         "name": "X-Ray Examination",
-        "description": "Modern digital X-ray diagnostics for precise findings."
+        "description": "Modern digital X-ray diagnostics for precise and fast findings directly at the practice."
+      },
+      "heart": {
+        "name": "Heart Examination (ECG)",
+        "description": "Comprehensive cardiological diagnostics – ECG, stress tests, and heart health checks."
+      },
+      "lung": {
+        "name": "Lung Examinations",
+        "description": "Spirometry and pulmonary function tests for complete respiratory assessment."
+      },
+      "lab": {
+        "name": "Laboratory & Diagnostics",
+        "description": "In-house laboratory with fast results for blood tests and comprehensive diagnostics."
+      },
+      "aesthetics": {
+        "name": "Aesthetic Medicine",
+        "description": "Premium aesthetic treatments – Botox, fillers, and skin rejuvenation at Medesthec."
       },
       "pharmacy": {
         "name": "In-House Pharmacy",
-        "description": "Direct medication dispensing at the practice for your convenience."
+        "description": "Direct medication dispensing at the practice – convenient after your consultation."
+      },
+      "preventive": {
+        "name": "Prevention & Wellness",
+        "description": "Proactive health prevention and screening programs for your long-term health."
+      },
+      "emergency": {
+        "name": "Emergency Care",
+        "description": "Walk-in emergency care for acute illnesses without long waiting times."
+      },
+      "ironTherapy": {
+        "name": "Iron Deficiency Therapy",
+        "description": "Specialized iron infusions for fatigue and iron deficiency – quick and effective."
       },
       "earCleaning": {
         "name": "Ear Irrigation",
@@ -183,31 +215,7 @@
       },
       "drivingFitness": {
         "name": "Driving Fitness Assessment",
-        "description": "Medical assessment of driving fitness according to legal requirements."
-      },
-      "heart": {
-        "name": "Heart Examination (ECG)",
-        "description": "Comprehensive cardiological examinations and ECG diagnostics."
-      },
-      "lung": {
-        "name": "Lung Examinations",
-        "description": "Spirometry and further pulmonary function tests."
-      },
-      "labIron": {
-        "name": "Iron Deficiency Lab",
-        "description": "Laboratory diagnostics for iron deficiency and anemia."
-      },
-      "generalPractice": {
-        "name": "General Practice Medicine",
-        "description": "Comprehensive primary care for the whole family."
-      },
-      "aesthetics": {
-        "name": "Aesthetic Medicine",
-        "description": "Cosmetic treatments and aesthetic procedures at Medesthec."
-      },
-      "lab": {
-        "name": "Laboratory & Diagnostics",
-        "description": "State-of-the-art laboratory equipment for fast and reliable results."
+        "description": "Medical assessment of driving fitness according to Swiss legal requirements."
       }
     }
   },
@@ -313,6 +321,20 @@
     "privacy": "Privacy Policy",
     "imprint": "Imprint"
   },
+  "clinics": {
+    "descriptions": {
+      "seefeld": "Your trusted family practice in the heart of Zürich Seefeld, offering comprehensive primary care with a personal touch.",
+      "duebendorf": "A modern general practice in Dübendorf providing family medicine, emergency treatments, and preventive care.",
+      "altstetten": "Comprehensive primary care in Zürich Altstetten with extended services including X-ray and in-house pharmacy.",
+      "winterthur": "Quality family medicine in the heart of Winterthur, offering personalized healthcare with modern diagnostics.",
+      "wald": "A community-focused family practice in Wald, providing accessible healthcare in a caring environment.",
+      "medesthec": "Premium medical aesthetics and beauty treatments in Zürich, combining science with artistry for natural results.",
+      "beauty-altstetten": "Aesthetic and beauty center in Zürich Altstetten, offering a wide range of cosmetic and rejuvenation treatments.",
+      "naturheilmedizin": "Holistic natural medicine center offering complementary therapies and integrative healthcare approaches.",
+      "urohealth": "Specialized urology center providing comprehensive urological care with cutting-edge technology.",
+      "jerumed-shop": "Online medical shop offering pharmaceutical products, health supplies, and wellness items."
+    }
+  },
   "common": {
     "readMore": "Read More",
     "learnMore": "Learn More",
@@ -328,6 +350,8 @@
     "bookNow": "Book",
     "profile": "Profile",
     "yearsExperience": "{years} years experience",
-    "moreServices": "+{count} more"
+    "moreServices": "+{count} more",
+    "emergencyMessage": "If you cannot find an available appointment, please contact us at",
+    "emergencyPhone": "+41 44 244 09 99"
   }
 }

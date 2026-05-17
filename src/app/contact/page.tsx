@@ -48,7 +48,7 @@ export default function ContactPage() {
       <div className="bg-rose-600 text-white py-3">
         <div className="container-wide flex items-center justify-center gap-3 text-sm font-medium">
           <AlertTriangle className="w-4 h-4 flex-shrink-0" />
-          <span>For medical emergencies, call <a href="tel:144" className="font-bold underline">144</a> immediately or visit your nearest emergency room.</span>
+          <span>If you cannot find an available appointment, please contact us at <a href="tel:+41442440990" className="font-bold underline">+41 44 244 09 99</a></span>
         </div>
       </div>
 

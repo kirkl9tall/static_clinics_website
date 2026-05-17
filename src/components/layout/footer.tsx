@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-flex mb-6">
               <Image
-                src="/nobakjerumed.png"
+                src="/lastwebjerumed.webp"
                 alt="Praxen Jerumed"
                 width={180}
                 height={54}
@@ -100,7 +100,7 @@ export default function Footer() {
 
       <div className="border-t border-gray-800">
         <div className="container-wide py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} Praxen Jerumed. {t("copyright")}</p>
+          <p>Designed by Jerumed Nexus</p>
           <div className="flex items-center gap-6">
             <Link href="/" className="hover:text-gray-300 transition-colors">{t("privacy")}</Link>
             <Link href="/" className="hover:text-gray-300 transition-colors">{t("imprint")}</Link>

@@ -13,7 +13,7 @@ import { useTranslations } from "next-intl";
 export default function TeamPreview() {
   const t = useTranslations("home.team");
   const tc = useTranslations("common");
-  const featured = doctors.slice(0, 4);
+  const featured = doctors.slice(0, 6);
 
   return (
     <section className="py-24 lg:py-32 bg-surface-dim dark:bg-surface-dark-dim">
@@ -27,7 +27,7 @@ export default function TeamPreview() {
           />
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {featured.map((doc, i) => (
             <ScrollReveal key={doc.id} delay={i * 0.1}>
               <motion.div

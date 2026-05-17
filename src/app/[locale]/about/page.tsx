@@ -122,7 +122,6 @@ export default function AboutPage() {
             badge="What We Stand For"
             title="Our Core Values"
             subtitle="The principles that guide every interaction, every decision, and every step of patient care."
-            center
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {values.map((value, i) => (
@@ -152,7 +151,6 @@ export default function AboutPage() {
             badge="Our Journey"
             title="Building a Healthcare Legacy"
             subtitle="Key milestones in the growth of the Praxen Jerumed network."
-            center
           />
           <div className="mt-16 max-w-3xl mx-auto">
             <div className="relative">

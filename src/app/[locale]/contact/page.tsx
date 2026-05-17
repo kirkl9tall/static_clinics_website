@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, AlertTriangle, CheckCircle, Building2 } from "lucide-react";
 import SectionHeader from "@/components/shared/section-header";
 import { clinics } from "@/data/clinics";
+import { useTranslations } from "next-intl";
 
 const contactCards = [
   {
@@ -34,6 +35,7 @@ const subjects = ["General Inquiry", "Appointment Request", "Medical Question", 
 const activeClinics = clinics.filter((c) => !c.isComingSoon);
 
 export default function ContactPage() {
+  const t = useTranslations("common");
   const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
@@ -48,7 +50,7 @@ export default function ContactPage() {
       <div className="bg-rose-600 text-white py-3">
         <div className="container-wide flex items-center justify-center gap-3 text-sm font-medium">
           <AlertTriangle className="w-4 h-4 flex-shrink-0" />
-          <span>For medical emergencies, call <a href="tel:144" className="font-bold underline">144</a> immediately or visit your nearest emergency room.</span>
+          <span>{t("emergencyMessage")} <a href="tel:+41442440990" className="font-bold underline">{t("emergencyPhone")}</a></span>
         </div>
       </div>
 
