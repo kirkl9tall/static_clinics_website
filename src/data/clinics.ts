@@ -263,7 +263,7 @@ export const clinics: Clinic[] = [
     country: "Switzerland",
     phone: "044 244 09 90",
     email: "urohealth@jerumed.com",
-    website: "#",
+    website: "https://swissurohealth.ch/",
     image: "/images/clinic-uro.jpg",
     logo: "",
     services: ["Urology Consultations", "Prostate Care", "Kidney Stone Treatment", "Bladder Health", "Men's Health"],
