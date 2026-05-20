@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Phone, Mail, GraduationCap, BadgeCheck, Building2, MapPin, Calendar, ArrowRight, Globe } from "lucide-react";
 import { doctors, getDoctorBySlug } from "@/data/doctors";
 import { clinics } from "@/data/clinics";
+import { JsonLd, doctorSchema } from "@/components/seo/JsonLd";
 
 export async function generateStaticParams() {
   return doctors.map((d) => ({ slug: d.slug }));
@@ -13,7 +14,17 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const doctor = getDoctorBySlug(slug);
-  return { title: doctor?.name ?? "Doctor", description: doctor?.bio };
+  if (!doctor) return { title: "Doctor" };
+  return {
+    title: doctor.name,
+    description: doctor.bio,
+    openGraph: {
+      title: `${doctor.name} | Praxen Jerumed`,
+      description: doctor.bio,
+      images: doctor.image ? [{ url: doctor.image, width: 800, height: 1000 }] : [{ url: "/praxen-jerumed.png" }],
+    },
+    alternates: { canonical: `https://praxen-jerumed.ch/de/team/${slug}` },
+  };
 }
 
 function getInitials(name: string) {
@@ -39,6 +50,7 @@ export default async function DoctorPage({ params }: { params: Promise<{ slug: s
 
   return (
     <div className="min-h-screen">
+      <JsonLd data={doctorSchema(doctor)} />
       {/* Profile hero */}
       <section className="gradient-hero py-16 lg:py-24">
         <div className="container-wide">

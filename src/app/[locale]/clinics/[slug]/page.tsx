@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { MapPin, Phone, Mail, Globe, Clock, Calendar, CheckCircle, ArrowRight } from "lucide-react";
 import { clinics, getClinicBySlug } from "@/data/clinics";
 import { getDoctorsByClinic } from "@/data/doctors";
+import { JsonLd, clinicSchema } from "@/components/seo/JsonLd";
 
 export async function generateStaticParams() {
   return clinics.map((c) => ({ slug: c.slug }));
@@ -12,9 +13,16 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const clinic = getClinicBySlug(slug);
+  if (!clinic) return { title: "Clinic" };
   return {
-    title: clinic?.name ?? "Clinic",
-    description: clinic?.description,
+    title: clinic.name,
+    description: clinic.description,
+    openGraph: {
+      title: `${clinic.name} | Praxen Jerumed`,
+      description: clinic.description,
+      images: [{ url: clinic.logo || "/praxen-jerumed.png", width: 1200, height: 630 }],
+    },
+    alternates: { canonical: `https://praxen-jerumed.ch/de/clinics/${slug}` },
   };
 }
 
@@ -32,6 +40,7 @@ export default async function ClinicPage({ params }: { params: Promise<{ slug: s
 
   return (
     <div className="min-h-screen">
+      <JsonLd data={clinicSchema(clinic)} />
       {/* Hero */}
       <section className="gradient-hero py-20 lg:py-28">
         <div className="container-wide">

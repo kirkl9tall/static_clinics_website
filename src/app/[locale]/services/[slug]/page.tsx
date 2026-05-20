@@ -5,6 +5,7 @@ import { CheckCircle, MapPin, Phone, Calendar, ArrowRight, Stethoscope, Heart, F
 import type { LucideIcon } from "lucide-react";
 import { services, getServiceBySlug } from "@/data/services";
 import { clinics } from "@/data/clinics";
+import { JsonLd, serviceSchema } from "@/components/seo/JsonLd";
 
 const iconMap: Record<string, LucideIcon> = { Stethoscope, Heart, FlaskConical, Wind, ScanLine, Sparkles, Pill, Shield, Siren, Droplets };
 
@@ -15,7 +16,17 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const service = getServiceBySlug(slug);
-  return { title: service?.name ?? "Service", description: service?.shortDescription };
+  if (!service) return { title: "Service" };
+  return {
+    title: service.name,
+    description: service.shortDescription,
+    openGraph: {
+      title: `${service.name} | Praxen Jerumed`,
+      description: service.shortDescription,
+      images: [{ url: "/praxen-jerumed.png", width: 1200, height: 630 }],
+    },
+    alternates: { canonical: `https://praxen-jerumed.ch/de/services/${slug}` },
+  };
 }
 
 export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -31,6 +42,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
   return (
     <div className="min-h-screen">
+      <JsonLd data={serviceSchema(service)} />
       {/* Hero */}
       <section className="gradient-hero py-20 lg:py-28">
         <div className="container-wide">

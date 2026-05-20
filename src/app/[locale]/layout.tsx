@@ -13,7 +13,11 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const BASE_URL = "https://praxen-jerumed.ch";
+const OG_IMAGE = `${BASE_URL}/praxen-jerumed.png`;
+
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: {
     default: "Praxen Jerumed – Ihr Gesundheitsnetzwerk in der Schweiz",
     template: "%s | Praxen Jerumed",
@@ -23,8 +27,20 @@ export const metadata: Metadata = {
   authors: [{ name: "Praxen Jerumed" }],
   openGraph: {
     type: "website",
-    url: "https://praxen-jerumed.ch",
+    url: BASE_URL,
     siteName: "Praxen Jerumed",
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Praxen Jerumed" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [OG_IMAGE],
+  },
+  alternates: {
+    canonical: BASE_URL,
+    languages: {
+      "de-CH": `${BASE_URL}/de`,
+      "en":    `${BASE_URL}/en`,
+    },
   },
 };
 
