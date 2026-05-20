@@ -110,7 +110,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <Image
-              src="/lastwebjerumed.webp"
+              src="/praxen-jerumed.png"
               alt="Praxen Jerumed"
               width={200}
               height={60}

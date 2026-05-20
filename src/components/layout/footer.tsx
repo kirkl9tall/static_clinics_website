@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-flex mb-6">
               <Image
-                src="/lastwebjerumed.webp"
+                src="/praxen-jerumed.png"
                 alt="Praxen Jerumed"
                 width={180}
                 height={54}
