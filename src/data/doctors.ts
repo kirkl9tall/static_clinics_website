@@ -45,7 +45,7 @@ export const doctors: Doctor[] = [
     languages: ["Deutsch", "Englisch"],
     experience: 0,
     bio: "Dr. Kassar wird in Kürze Teil unseres Teams. Biografie und weitere Details folgen.",
-    image: "https://via.placeholder.com/547x500?text=Dr.+Kassar",
+    image: "https://i1.rgstatic.net/ii/profile.image/11431281281441654-1727876357630_Q128/Mohammad-Kassar.jpg",
     clinicIds: [],
     availability: "available",
     education: [],
