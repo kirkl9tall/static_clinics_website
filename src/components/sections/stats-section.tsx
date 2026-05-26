@@ -9,7 +9,7 @@ export default function StatsSection() {
   const t = useTranslations("home.stats");
 
   const stats = [
-    { icon: Building2, value: 10, suffix: "+", labelKey: "clinics", color: "text-primary-300" },
+    { icon: Building2, value: 5, suffix: "", labelKey: "clinics", color: "text-primary-300" },
     { icon: Users, value: 50, suffix: "+", labelKey: "specialists", color: "text-emerald-300" },
     { icon: HeartPulse, value: 25, suffix: "K+", labelKey: "patients", color: "text-rose-300" },
     { icon: MapPin, value: 15, suffix: "+", labelKey: "years", color: "text-violet-300" },

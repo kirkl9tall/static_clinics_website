@@ -34,13 +34,13 @@ export default function ContactSection() {
                 <p className="text-white font-semibold">044 244 09 90</p>
               </div>
             </a>
-            <a href="mailto:info@jerumed.com" className="flex items-center gap-4 p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/20 transition-colors group">
+            <a href="mailto:jerumed@hin.ch" className="flex items-center gap-4 p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/20 transition-colors group">
               <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
                 <Mail className="w-6 h-6 text-white" />
               </div>
               <div>
                 <p className="text-sm text-primary-200">{t("emailUs")}</p>
-                <p className="text-white font-semibold">info@jerumed.com</p>
+                <p className="text-white font-semibold">jerumed@hin.ch</p>
               </div>
             </a>
             <div className="flex items-center gap-4 p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">

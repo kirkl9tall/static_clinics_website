@@ -6,13 +6,13 @@ import Image from "next/image";
 import ScrollReveal from "@/components/shared/scroll-reveal";
 import SectionHeader from "@/components/shared/section-header";
 import { doctors } from "@/data/doctors";
-import { Globe, Award, ArrowRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Globe, ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export default function TeamPreview() {
   const t = useTranslations("home.team");
   const tc = useTranslations("common");
+  const td = useTranslations("doctors");
   const featured = doctors.slice(0, 6);
 
   return (
@@ -34,13 +34,13 @@ export default function TeamPreview() {
                 whileHover={{ y: -4 }}
                 className="group bg-white dark:bg-surface-dark rounded-2xl border border-border-light dark:border-border-dark overflow-hidden hover:shadow-card-hover transition-all duration-300"
               >
-                <div className="relative h-52 bg-gradient-to-br from-primary-100 to-emerald-100 dark:from-primary-900/30 dark:to-emerald-900/30 overflow-hidden">
+                <div className="relative aspect-[3/4] bg-gradient-to-br from-primary-100 to-emerald-100 dark:from-primary-900/30 dark:to-emerald-900/30 overflow-hidden">
                   {doc.image ? (
                     <Image
                       src={doc.image}
                       alt={doc.name}
                       fill
-                      className="object-cover object-top"
+                      className="object-contain"
                       unoptimized
                     />
                   ) : (
@@ -48,28 +48,18 @@ export default function TeamPreview() {
                       {doc.name.charAt(0)}{doc.name.split(" ").pop()?.charAt(0)}
                     </div>
                   )}
-                  <div className={cn(
-                    "absolute top-4 right-4 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider",
-                    doc.availability === "available"
-                      ? "bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400"
-                      : "bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400"
-                  )}>
-                    {doc.availability === "available" ? tc("available") : tc("limited")}
-                  </div>
                 </div>
 
                 <div className="p-5">
                   <h3 className="font-semibold text-text-primary dark:text-text-dark-primary group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                     {doc.name}
                   </h3>
-                  <p className="text-xs text-primary-600 dark:text-primary-400 font-medium mt-0.5 mb-3">{doc.specialty}</p>
+                  <p className="text-xs text-primary-600 dark:text-primary-400 font-medium mt-0.5 mb-3">
+                    {["abuawad","rodriguez","kassar","muhamad","alsaaydeh","fiknete","bachtsetzis"].includes(doc.id) ? td(`${doc.id}.specialty` as Parameters<typeof td>[0]) : doc.specialty}
+                  </p>
 
                   <div className="space-y-2 text-xs text-text-muted dark:text-text-dark-muted mb-4">
-                    <div className="flex items-center gap-2">
-                      <Award className="w-3.5 h-3.5" />
-                      <span>{tc("yearsExperience", { years: doc.experience })}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
+<div className="flex items-center gap-2">
                       <Globe className="w-3.5 h-3.5" />
                       <span>{doc.languages.join(", ")}</span>
                     </div>

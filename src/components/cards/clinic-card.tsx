@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { MapPin, Phone, ArrowRight, ExternalLink } from "lucide-react";
 import { Clinic } from "@/types";
@@ -8,9 +9,10 @@ import { Clinic } from "@/types";
 interface ClinicCardProps {
   clinic: Clinic;
   index?: number;
+  descriptionOverride?: string;
 }
 
-export default function ClinicCard({ clinic, index = 0 }: ClinicCardProps) {
+export default function ClinicCard({ clinic, index = 0, descriptionOverride }: ClinicCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -25,9 +27,22 @@ export default function ClinicCard({ clinic, index = 0 }: ClinicCardProps) {
       <div className="p-6">
         {/* Header */}
         <div className="flex items-start justify-between gap-3 mb-3">
-          <div className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm flex-shrink-0"
-            style={{ backgroundColor: clinic.accentColor }}>
-            {clinic.shortName[0]}
+          <div className="w-12 h-12 rounded-xl flex items-center justify-center overflow-hidden flex-shrink-0 bg-gray-50 dark:bg-gray-800 border border-border-light dark:border-border-dark">
+            {clinic.logo ? (
+              <Image
+                src={clinic.logo}
+                alt={clinic.name}
+                width={48}
+                height={48}
+                className="object-contain w-full h-full p-1"
+                unoptimized
+              />
+            ) : (
+              <span className="text-white font-bold text-lg w-full h-full flex items-center justify-center rounded-xl"
+                style={{ backgroundColor: clinic.accentColor }}>
+                {clinic.shortName[0]}
+              </span>
+            )}
           </div>
           {clinic.isComingSoon && (
             <span className="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-500/30">
@@ -40,7 +55,7 @@ export default function ClinicCard({ clinic, index = 0 }: ClinicCardProps) {
           {clinic.name}
         </h3>
         <p className="text-sm text-text-secondary dark:text-text-dark-secondary leading-relaxed mb-4 line-clamp-2">
-          {clinic.description}
+          {descriptionOverride ?? clinic.description}
         </p>
 
         {/* Location & Phone */}

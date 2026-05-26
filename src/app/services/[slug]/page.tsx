@@ -6,6 +6,8 @@ import type { LucideIcon } from "lucide-react";
 import { services, getServiceBySlug } from "@/data/services";
 import { clinics } from "@/data/clinics";
 
+export const dynamic = 'force-dynamic';
+
 const iconMap: Record<string, LucideIcon> = { Stethoscope, Heart, FlaskConical, Wind, ScanLine, Sparkles, Pill, Shield, Siren, Droplets };
 
 export async function generateStaticParams() {

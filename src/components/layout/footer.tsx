@@ -30,8 +30,8 @@ export default function Footer() {
               <a href="tel:+41442440990" className="flex items-center gap-2 hover:text-primary-400 transition-colors">
                 <Phone className="w-4 h-4 text-primary-500" /> 044 244 09 90
               </a>
-              <a href="mailto:info@jerumed.com" className="flex items-center gap-2 hover:text-primary-400 transition-colors">
-                <Mail className="w-4 h-4 text-primary-500" /> info@jerumed.com
+              <a href="mailto:jerumed@hin.ch" className="flex items-center gap-2 hover:text-primary-400 transition-colors">
+                <Mail className="w-4 h-4 text-primary-500" /> jerumed@hin.ch
               </a>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-primary-500" /> Baarerstrasse 82, 6300 Zug

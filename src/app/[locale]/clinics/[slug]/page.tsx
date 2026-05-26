@@ -6,6 +6,8 @@ import { clinics, getClinicBySlug } from "@/data/clinics";
 import { getDoctorsByClinic } from "@/data/doctors";
 import { JsonLd, clinicSchema } from "@/components/seo/JsonLd";
 
+export const dynamic = 'force-dynamic';
+
 export async function generateStaticParams() {
   return clinics.map((c) => ({ slug: c.slug }));
 }

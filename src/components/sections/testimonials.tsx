@@ -38,7 +38,7 @@ export default function Testimonials() {
               >
                 <Quote className="w-10 h-10 text-primary-200 dark:text-primary-800 mx-auto mb-6" />
                 <p className="text-lg md:text-xl text-text-primary dark:text-text-dark-primary leading-relaxed mb-6 italic">
-                  &ldquo;{testimonials[current].text}&rdquo;
+                  &ldquo;{t(`items.${testimonials[current].id}` as Parameters<typeof t>[0])}&rdquo;
                 </p>
                 <div className="flex items-center justify-center gap-1 mb-4">
                   {Array.from({ length: 5 }).map((_, i) => (

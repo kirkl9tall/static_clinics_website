@@ -39,14 +39,14 @@ const timeline = [
   { year: "2015", title: "Opened Altstetten Location", description: "Extended our reach into Zürich Altstetten with an in-house pharmacy and expanded diagnostic capabilities." },
   { year: "2018", title: "Launched MedEsthec", description: "Introduced premium aesthetic medicine services to complement our clinical network." },
   { year: "2020", title: "Winterthur Clinic Opened", description: "Continued growing during challenging times, expanding quality healthcare access to Winterthur." },
-  { year: "2024", title: "10+ Clinics Across Switzerland", description: "Today our network spans over 10 clinics, serving 25,000+ patients with 50+ specialist physicians." },
+  { year: "2024", title: "5 Praxen in der Schweiz", description: "Unser Netzwerk umfasst heute 5 Praxen und betreut über 25.000 Patienten mit mehr als 50 Spezialisten." },
 ];
 
 const stats = [
-  { value: 10, suffix: "+", label: "Clinics", icon: Building2 },
+  { value: 5, suffix: "", label: "Praxen", icon: Building2 },
   { value: 50, suffix: "+", label: "Specialists", icon: Users },
   { value: 25, suffix: "K+", label: "Patients", icon: Heart },
-  { value: 6, suffix: "", label: "Cities", icon: MapPin },
+  { value: 5, suffix: "", label: "Städte", icon: MapPin },
 ];
 
 export default function AboutPage() {

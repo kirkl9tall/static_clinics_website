@@ -4,8 +4,10 @@ import { useState, useMemo } from "react";
 import { Building2, MapPin, Users } from "lucide-react";
 import { clinics, clinicCategories, cities } from "@/data/clinics";
 import ClinicCard from "@/components/cards/clinic-card";
+import { useTranslations } from "next-intl";
 
 export default function ClinicsPage() {
+  const td = useTranslations("clinics.descriptions");
   const [selectedCity, setSelectedCity] = useState("all");
   const [selectedCategory, setSelectedCategory] = useState("all");
 
@@ -35,8 +37,8 @@ export default function ClinicsPage() {
             </p>
             <div className="flex flex-wrap gap-3">
               {[
-                { icon: Building2, label: "10+ Clinics" },
-                { icon: MapPin, label: "6 Cities" },
+                { icon: Building2, label: "5 Praxen" },
+                { icon: MapPin, label: "5 Städte" },
                 { icon: Users, label: "50+ Specialists" },
               ].map(({ icon: Icon, label }) => (
                 <div key={label} className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-surface-dark-dim rounded-full border border-border-light dark:border-border-dark text-sm font-medium text-text-secondary dark:text-text-dark-secondary shadow-card">
@@ -92,7 +94,7 @@ export default function ClinicsPage() {
           {filtered.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
               {filtered.map((clinic, i) => (
-                <ClinicCard key={clinic.id} clinic={clinic} index={i} />
+                <ClinicCard key={clinic.id} clinic={clinic} index={i} descriptionOverride={td(clinic.id as Parameters<typeof td>[0])} />
               ))}
             </div>
           ) : (

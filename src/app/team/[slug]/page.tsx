@@ -5,6 +5,8 @@ import { Phone, Mail, GraduationCap, BadgeCheck, Building2, MapPin, Calendar, Ar
 import { doctors, getDoctorBySlug } from "@/data/doctors";
 import { clinics } from "@/data/clinics";
 
+export const dynamic = 'force-dynamic';
+
 export async function generateStaticParams() {
   return doctors.map((d) => ({ slug: d.slug }));
 }
@@ -63,11 +65,7 @@ export default async function DoctorPage({ params }: { params: Promise<{ slug: s
                 {doctor.specialty}
               </div>
 
-              <div className="grid sm:grid-cols-3 gap-4 mb-6">
-                <div className="p-4 rounded-xl bg-white dark:bg-surface-dark-dim border border-border-light dark:border-border-dark text-center">
-                  <p className="text-2xl font-bold gradient-text">{doctor.experience}</p>
-                  <p className="text-xs text-text-muted dark:text-text-dark-muted">Years Experience</p>
-                </div>
+              <div className="grid sm:grid-cols-2 gap-4 mb-6">
                 <div className="p-4 rounded-xl bg-white dark:bg-surface-dark-dim border border-border-light dark:border-border-dark text-center">
                   <p className="text-2xl font-bold gradient-text">{doctor.languages.length}</p>
                   <p className="text-xs text-text-muted dark:text-text-dark-muted">Languages</p>

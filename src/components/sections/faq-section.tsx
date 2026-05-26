@@ -38,7 +38,7 @@ export default function FAQSection() {
                   : "bg-gray-100 dark:bg-gray-800 text-text-secondary dark:text-text-dark-secondary hover:bg-gray-200 dark:hover:bg-gray-700"
               )}
             >
-              All
+              {t("all")}
             </button>
             {faqCategories.map((cat) => (
               <button
@@ -51,7 +51,7 @@ export default function FAQSection() {
                     : "bg-gray-100 dark:bg-gray-800 text-text-secondary dark:text-text-dark-secondary hover:bg-gray-200 dark:hover:bg-gray-700"
                 )}
               >
-                {cat}
+                {t(`categories.${cat}` as Parameters<typeof t>[0])}
               </button>
             ))}
           </div>
@@ -65,7 +65,7 @@ export default function FAQSection() {
                   onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
                   className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
                 >
-                  <span className="font-medium text-text-primary dark:text-text-dark-primary pr-4">{faq.question}</span>
+                  <span className="font-medium text-text-primary dark:text-text-dark-primary pr-4">{t(`items.${faq.id}.question` as Parameters<typeof t>[0])}</span>
                   <ChevronDown className={cn("w-5 h-5 text-text-muted flex-shrink-0 transition-transform duration-200", openId === faq.id && "rotate-180")} />
                 </button>
                 <AnimatePresence>
@@ -77,7 +77,7 @@ export default function FAQSection() {
                       transition={{ duration: 0.2 }}
                     >
                       <div className="px-5 pb-5 text-sm text-text-secondary dark:text-text-dark-secondary leading-relaxed">
-                        {faq.answer}
+                        {t(`items.${faq.id}.answer` as Parameters<typeof t>[0])}
                       </div>
                     </motion.div>
                   )}

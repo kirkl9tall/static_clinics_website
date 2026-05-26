@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@source "../../src/app/**/*.{ts,tsx}";
+@source "../../src/components/**/*.{ts,tsx}";
 
 /* Enable class-based dark mode so the ThemeToggle (.dark on <html>) works */
 @custom-variant dark (&:where(.dark, .dark *));

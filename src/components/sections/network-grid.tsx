@@ -13,6 +13,7 @@ import { useTranslations } from "next-intl";
 export default function NetworkGrid() {
   const t = useTranslations("home.network");
   const tc = useTranslations("common");
+  const td = useTranslations("clinics.descriptions");
 
   return (
     <section className="py-24 lg:py-32 bg-surface-dim dark:bg-surface-dark-dim">
@@ -73,7 +74,7 @@ export default function NetworkGrid() {
                   </div>
 
                   <p className="text-sm text-text-secondary dark:text-text-dark-secondary leading-relaxed mb-4 line-clamp-2">
-                    {clinic.description}
+                    {td(clinic.id as Parameters<typeof td>[0])}
                   </p>
 
                   <div className="flex flex-wrap gap-1.5 mb-6">

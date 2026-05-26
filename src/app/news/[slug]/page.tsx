@@ -5,6 +5,8 @@ import { ArrowLeft, Calendar, User, Tag } from "lucide-react";
 import { format } from "date-fns";
 import { articles, getArticleBySlug } from "@/data/articles";
 
+export const dynamic = 'force-dynamic';
+
 const categoryConfig: Record<string, { label: string; badgeCls: string; heroCls: string }> = {
   news: { label: "News", badgeCls: "bg-blue-500/20 text-blue-100", heroCls: "from-blue-900 via-primary-900 to-slate-900" },
   "health-tips": { label: "Health Tips", badgeCls: "bg-emerald-500/20 text-emerald-100", heroCls: "from-emerald-900 via-teal-900 to-slate-900" },

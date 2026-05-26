@@ -183,7 +183,7 @@ export default function Hero() {
             </div>
 
             <div className="flex items-center gap-6 flex-wrap">
-              {["FMH Certified", "Swiss Quality", "6 Locations"].map((badge) => (
+              {["FMH Certified", "Swiss Quality", "5 Locations"].map((badge) => (
                 <div key={badge} className="flex items-center gap-2 text-sm text-text-secondary dark:text-text-dark-secondary">
                   <div className="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-500/20 flex items-center justify-center">
                     <div className="w-2 h-2 rounded-full bg-emerald-500" />

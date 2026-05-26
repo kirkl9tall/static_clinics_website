@@ -466,7 +466,7 @@ function BookAppointmentInner() {
               Need help? Call{" "}
               <a href="tel:0442240990" className="text-primary-500 hover:underline font-medium">044 244 09 90</a>
               {" "}or email{" "}
-              <a href="mailto:info@jerumed.com" className="text-primary-500 hover:underline font-medium">info@jerumed.com</a>
+              <a href="mailto:jerumed@hin.ch" className="text-primary-500 hover:underline font-medium">jerumed@hin.ch</a>
             </p>
           )}
         </div>

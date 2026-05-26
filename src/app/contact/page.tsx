@@ -17,8 +17,8 @@ const contactCards = [
   {
     icon: Mail,
     title: "Email",
-    value: "info@jerumed.com",
-    href: "mailto:info@jerumed.com",
+    value: "jerumed@hin.ch",
+    href: "mailto:jerumed@hin.ch",
     color: "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
   },
   {

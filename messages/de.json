@@ -75,7 +75,15 @@
     "testimonials": {
       "badge": "Patientenstimmen",
       "title": "Was unsere Patienten",
-      "titleHighlight": "sagen"
+      "titleHighlight": "sagen",
+      "items": {
+        "1": "Außergewöhnliche Betreuung in der Praxis Seefeld. Dr. Guicciardini nahm sich die Zeit, alles aufmerksam anzuhören und gründlich zu erklären. Ich fühle mich als Patient wirklich wertgeschätzt.",
+        "2": "Das Team in Dübendorf ist hervorragend. Moderne Einrichtungen, kurze Wartezeiten und professionelles Personal. Sehr empfehlenswert für Familien.",
+        "3": "MedEsthec hat meine Haut verwandelt! Dr. Webers Expertise in der ästhetischen Medizin ist bemerkenswert. Natürliche Ergebnisse, die mich selbstbewusst machen.",
+        "4": "Sehr beeindruckt vom integrierten Ansatz. Meine Unterlagen sind praxisübergreifend zugänglich, was Folgetermine reibungslos macht. So sollte moderne Medizin funktionieren.",
+        "5": "Die Eiseninfusionstherapie hat mein Leben verändert. Nach monatelanger Erschöpfung habe ich endlich meine Energie zurück. Vielen Dank an das gesamte Team!",
+        "6": "Zentrale Lage, professioneller Service und die hauseigene Apotheke spart enorm viel Zeit. Alles, was man braucht, unter einem Dach."
+      }
     },
     "news": {
       "badge": "Neuigkeiten",
@@ -87,7 +95,29 @@
     "faq": {
       "badge": "Häufige Fragen",
       "title": "Ihre Fragen,",
-      "titleHighlight": "unsere Antworten"
+      "titleHighlight": "unsere Antworten",
+      "all": "Alle",
+      "categories": {
+        "appointments": "Termine",
+        "insurance": "Versicherung",
+        "locations": "Standorte",
+        "services": "Leistungen",
+        "emergency": "Notfall"
+      },
+      "items": {
+        "1": { "question": "Wie kann ich einen Termin buchen?", "answer": "Sie können einen Termin über unsere Website, telefonisch direkt in der jeweiligen Praxis oder über unser Online-Buchungssystem vereinbaren. Für dringende Fälle sind auch Walk-in-Termine möglich." },
+        "2": { "question": "Welche Versicherungen akzeptieren Sie?", "answer": "Wir akzeptieren alle grossen Schweizer Krankenkassen. Sowohl Grundversicherungen (KVG) als auch Zusatzversicherungen sind willkommen. Bitte bringen Sie Ihre Versicherungskarte zum ersten Besuch mit." },
+        "3": { "question": "Was sind die Öffnungszeiten?", "answer": "Unsere Praxen sind in der Regel Montag bis Freitag von 8:00 bis 18:00 Uhr geöffnet. Einige Standorte bieten auch Samstagmorgen-Termine an. Bitte prüfen Sie die jeweiligen Praxisseiten für genaue Zeiten." },
+        "4": { "question": "Benötige ich eine Überweisung?", "answer": "Für allgemeinmedizinische Konsultationen ist keine Überweisung erforderlich. Für Facharztleistungen kann je nach Versicherungsmodell eine Überweisung Ihres Hausarztes notwendig sein." },
+        "5": { "question": "Was soll ich zum ersten Termin mitbringen?", "answer": "Bitte bringen Sie Ihre Krankenkassenkarte, einen gültigen Ausweis, relevante medizinische Unterlagen, eine Liste aktueller Medikamente und ggf. Überweisungsschreiben mit." },
+        "6": { "question": "Bieten Sie Notfalldienste an?", "answer": "Ja, mehrere unserer Praxen bieten Walk-in-Notfalldienste während der Öffnungszeiten an. Bei lebensbedrohlichen Notfällen wählen Sie bitte 144 (Schweizer Notrufnummer)." },
+        "7": { "question": "Kann ich meine Laborbefunde online einsehen?", "answer": "Laborbefunde werden in der Regel im Rahmen einer Nachsorgekonsultation mit Ihrem Arzt besprochen. Wir implementieren ein Patientenportal für den digitalen Zugriff auf Befunde." },
+        "8": { "question": "Sind Ihre Praxen rollstuhlgerecht?", "answer": "Ja, alle unsere Praxen sind vollständig barrierefrei gestaltet, einschliesslich Rollstuhlzugang, barrierefreien Parkplätzen und angepassten Einrichtungen." },
+        "9": { "question": "Wie kann ich einen Termin absagen?", "answer": "Bitte sagen Sie mindestens 24 Stunden im Voraus direkt in der Praxis ab. Späte Absagen oder Nichterscheinen können eine Gebühr verursachen." },
+        "10": { "question": "Bieten Sie Telemedizin an?", "answer": "Ja, wir bieten Videokonsultationen über unsere Telemedizin-Plattform an. Buchen Sie online oder rufen Sie eine Praxis an, um einen virtuellen Termin zu vereinbaren." },
+        "11": { "question": "Welche Sprachen sprechen Ihre Ärzte?", "answer": "Unser mehrsprachiges Team spricht je nach Arzt Deutsch, Englisch, Französisch, Italienisch, Spanisch, Arabisch, Portugiesisch und Mandarin." },
+        "12": { "question": "Behandeln Sie auch Kinder?", "answer": "Ja, unsere Allgemeinpraxen bieten pädiatrische Versorgung für Kinder aller Altersgruppen an. Bei spezialisierter Kinderheilkunde können wir entsprechende Überweisungen ausstellen." }
+      }
     },
     "contact": {
       "badge": "Kontakt",
@@ -97,7 +127,7 @@
       "callUs": "Rufen Sie uns an",
       "emailUs": "Schreiben Sie uns",
       "visitUs": "Besuchen Sie uns",
-      "locations": "10 Standorte",
+      "locations": "5 Standorte",
       "bookCta": "Termin vereinbaren",
       "contactCta": "Kontaktieren Sie uns"
     }
@@ -225,6 +255,31 @@
       "title": "Erfahrene Ärzte,",
       "titleHighlight": "persönliche Betreuung",
       "subtitle": "Unser engagiertes Team aus qualifizierten Ärzten und Fachkräften steht Ihnen mit Kompetenz und Herzlichkeit zur Seite."
+    },
+    "filter": {
+      "allSpecialties": "Alle Fachgebiete",
+      "noResults": "Keine Ärzte für dieses Fachgebiet gefunden."
+    },
+    "specialties": {
+      "allgemeinmedizin": "Allgemeinmedizin",
+      "urologie": "Urologie",
+      "aestheticMedicine": "Ästhetische Medizin"
+    },
+    "cta": {
+      "title": "Sind Sie im Gesundheitswesen tätig?",
+      "subtitle": "Werden Sie Teil unseres wachsenden Netzwerks aus Ärzten und Spezialisten. Arbeiten Sie in modernen, gut ausgestatteten Praxen mit einem unterstützenden Team.",
+      "button": "Kontakt aufnehmen"
+    },
+    "profile": {
+      "languages": "Sprachen",
+      "clinics": "Praxen",
+      "education": "Ausbildung",
+      "certifications": "Zertifizierungen",
+      "practicesAt": "Tätig in",
+      "otherSpecialists": "Weitere Spezialisten",
+      "available": "Verfügbar",
+      "limited": "Begrenzte Slots",
+      "unavailable": "Nicht verfügbar"
     }
   },
   "clinics": {
@@ -239,7 +294,19 @@
     "email": "E-Mail",
     "hours": "Öffnungszeiten",
     "bookHere": "Hier Termin buchen",
-    "directions": "Route anzeigen"
+    "directions": "Route anzeigen",
+    "descriptions": {
+      "seefeld": "Ihre vertrauenswürdige Hausarztpraxis im Herzen von Zürich Seefeld mit umfassender Grundversorgung und persönlichem Service.",
+      "duebendorf": "Eine moderne Hausarztpraxis in Dübendorf mit Schwerpunkt auf Allgemeinmedizin, Notfallbehandlung und Prävention.",
+      "altstetten": "Umfassende Grundversorgung in Zürich Altstetten mit erweiterten Dienstleistungen wie Röntgen und hauseigener Apotheke.",
+      "winterthur": "Qualitätsvolle Allgemeinmedizin im Herzen von Winterthur mit individualisierter Betreuung und moderner Diagnostik.",
+      "wald": "Gemeinschaftsorientierte Hausarztpraxis in Wald, die zugängliche und einfühlsame Gesundheitsversorgung bietet.",
+      "medesthec": "Premium-Ästhetikmedizin und Schönheitsbehandlungen in Zürich, die Wissenschaft mit Kunst für natürliche Ergebnisse verbindet.",
+      "beauty-altstetten": "Ästhetik- und Beauty-Center in Zürich Altstetten mit umfassendem Angebot an kosmetischen und Verjüngungsbehandlungen.",
+      "naturheilmedizin": "Ganzheitliches Naturheilzentrum mit komplementären Therapien und integrativen Gesundheitsansätzen.",
+      "urohealth": "Spezialisiertes Urologiezentrum mit umfassender urologischer Versorgung und modernster Technologie.",
+      "jerumed-shop": "Online-Shop für Medizinprodukte mit Arzneimitteln, Gesundheitsartikel und Wellness-Produkten."
+    }
   },
   "gallery": {
     "hero": {
@@ -321,18 +388,41 @@
     "privacy": "Datenschutz",
     "imprint": "Impressum"
   },
-  "clinics": {
-    "descriptions": {
-      "seefeld": "Ihre vertrauenswürdige Hausarztpraxis im Herzen von Zürich Seefeld mit umfassender Grundversorgung und persönlichem Service.",
-      "duebendorf": "Eine moderne Hausarztpraxis in Dübendorf mit Schwerpunkt auf Allgemeinmedizin, Notfallbehandlung und Prävention.",
-      "altstetten": "Umfassende Grundversorgung in Zürich Altstetten mit erweiterten Dienstleistungen wie Röntgen und hauseigener Apotheke.",
-      "winterthur": "Qualitätsvolle Allgemeinmedizin im Herzen von Winterthur mit individualisierter Betreuung und moderner Diagnostik.",
-      "wald": "Gemeinschaftsorientierte Hausarztpraxis in Wald, die zugängliche und einfühlsame Gesundheitsversorgung bietet.",
-      "medesthec": "Premium-Ästhetikmedizin und Schönheitsbehandlungen in Zürich, die Wissenschaft mit Kunst für natürliche Ergebnisse verbindet.",
-      "beauty-altstetten": "Ästhetik- und Beauty-Center in Zürich Altstetten mit umfassendem Angebot an kosmetischen und Verjüngungsbehandlungen.",
-      "naturheilmedizin": "Ganzheitliches Naturheilzentrum mit komplementären Therapien und integrativen Gesundheitsansätzen.",
-      "urohealth": "Spezialisiertes Urologiezentrum mit umfassender urologischer Versorgung und modernster Technologie.",
-      "jerumed-shop": "Online-Shop für Medizinprodukte mit Arzneimitteln, Gesundheitsartikel und Wellness-Produkten."
+  "doctors": {
+    "abuawad": {
+      "title": "Dipl. Arzt – Jerumed Praxenleiter",
+      "specialty": "Allgemeinmedizin",
+      "bio": "Als Praxenleiter von Jerumed vereint A. Abuawad hervorragende klinische Fähigkeiten mit strategischem Gesundheitsmanagement. Er steht für Qualität und patientenorientierte Betreuung."
+    },
+    "rodriguez": {
+      "title": "Dipl. Ärztin – Jerumed Praxenleiterin",
+      "specialty": "Allgemeinmedizin",
+      "bio": "Dr. Rodriguez bringt eine herzliche, patientenorientierte Herangehensweise in die Allgemeinmedizin mit besonderem Fokus auf Frauengesundheit und Prävention."
+    },
+    "kassar": {
+      "title": "Allgemeinmedizin",
+      "specialty": "Allgemeinmedizin",
+      "bio": "Dr. Kassar wird in Kürze Teil unseres Teams. Biografie und weitere Details folgen."
+    },
+    "muhamad": {
+      "title": "Dipl. Arzt Allgemeinmedizin",
+      "specialty": "Allgemeinmedizin",
+      "bio": "Dr. Muhamad ist ein engagierter Allgemeinmediziner mit Interesse an Sportmedizin und innerer Medizin. Er betreut Patienten mit Sorgfalt und Einfühlungsvermögen."
+    },
+    "alsaaydeh": {
+      "title": "Facharzt Urologie & Kinderurologie",
+      "specialty": "Urologie",
+      "bio": "Med. Jamil Alsaaydeh ist Facharzt für Urologie und Kinderurologie. Als Belegarzt bietet er umfassende urologische Versorgung für Erwachsene und Kinder."
+    },
+    "fiknete": {
+      "title": "Fachärztin Ästhetische Medizin",
+      "specialty": "Ästhetische Medizin",
+      "bio": "Dr. med. Demaili Fiknete ist eine Fachärztin für Ästhetische Medizin mit über 10 Jahren klinischer Erfahrung in Radiologie, Strahlentherapie, Neurologie und Notfallmedizin. Seit 2019 konzentriert sie sich ausschließlich auf nicht-invasive ästhetische Behandlungen."
+    },
+    "bachtsetzis": {
+      "title": "Facharzt Allgemeinmedizin – Gesundheitsoptimierung",
+      "specialty": "Allgemeinmedizin",
+      "bio": "Chris Bachtsetzis ist ein international tätiger Mediziner mit Schwerpunkt auf Allgemeinmedizin, Prävention und modernen Ansätzen der Gesundheitsoptimierung."
     }
   },
   "common": {
@@ -347,6 +437,7 @@
     "comingSoon": "Bald verfügbar",
     "available": "Verfügbar",
     "limited": "Begrenzt",
+    "unavailable": "Nicht verfügbar",
     "bookNow": "Buchen",
     "profile": "Profil",
     "yearsExperience": "{years} Jahre Erfahrung",

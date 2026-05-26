@@ -35,8 +35,8 @@ export default function ClinicsPage() {
             </p>
             <div className="flex flex-wrap gap-3">
               {[
-                { icon: Building2, label: "10+ Clinics" },
-                { icon: MapPin, label: "6 Cities" },
+                { icon: Building2, label: "5 Praxen" },
+                { icon: MapPin, label: "5 Städte" },
                 { icon: Users, label: "50+ Specialists" },
               ].map(({ icon: Icon, label }) => (
                 <div key={label} className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-surface-dark-dim rounded-full border border-border-light dark:border-border-dark text-sm font-medium text-text-secondary dark:text-text-dark-secondary shadow-card">

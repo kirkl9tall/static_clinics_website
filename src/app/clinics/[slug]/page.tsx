@@ -5,6 +5,8 @@ import { MapPin, Phone, Mail, Globe, Clock, Calendar, CheckCircle, ArrowRight } 
 import { clinics, getClinicBySlug } from "@/data/clinics";
 import { getDoctorsByClinic } from "@/data/doctors";
 
+export const dynamic = 'force-dynamic';
+
 export async function generateStaticParams() {
   return clinics.map((c) => ({ slug: c.slug }));
 }

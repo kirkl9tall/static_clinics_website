@@ -73,9 +73,9 @@ export default function Navbar() {
               <Phone className="w-3.5 h-3.5" />
               044 244 09 90
             </a>
-            <a href="mailto:info@jerumed.com" className="flex items-center gap-2 hover:text-primary-200 transition-colors">
+            <a href="mailto:jerumed@hin.ch" className="flex items-center gap-2 hover:text-primary-200 transition-colors">
               <Mail className="w-3.5 h-3.5" />
-              info@jerumed.com
+              jerumed@hin.ch
             </a>
           </div>
           <div className="flex items-center gap-4">
