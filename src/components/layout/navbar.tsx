@@ -21,7 +21,7 @@ const navRoutes = [
       { href: "/clinics/hausarztpraxis-duebendorf", labelKey: "Hausarztpraxis Dübendorf", desc: "Leepuntstrasse 5, Dübendorf" },
       { href: "/clinics/hausarztpraxis-altstetten", labelKey: "Hausarztpraxis Altstetten", desc: "Badenerstrasse 621, Zürich" },
       { href: "/clinics/hausarztpraxis-winterthur", labelKey: "Hausarztpraxis Winterthur", desc: "Eichgutstrasse 1, Winterthur" },
-      { href: "/clinics/medesthec", labelKey: "Medesthec", desc: "Ästhetische Medizin" },
+      { href: "/clinics/hausarztpraxis-wald", labelKey: "Hausarztpraxis Felsenau", desc: "Wald" },
     ],
   },
   {

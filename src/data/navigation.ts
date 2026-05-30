@@ -11,7 +11,7 @@ export const navigation: NavItem[] = [
       { label: "Hausarztpraxis Seefeld", href: "/clinics/hausarztpraxis-seefeld", description: "Zürich" },
       { label: "Hausarztpraxis Dübendorf", href: "/clinics/hausarztpraxis-duebendorf", description: "Dübendorf" },
       { label: "Hausarztpraxis Altstetten", href: "/clinics/hausarztpraxis-altstetten", description: "Zürich" },
-      { label: "MedEsthec", href: "/clinics/medesthec", description: "Aesthetic Medicine" },
+      { label: "Hausarztpraxis Felsenau", href: "/clinics/hausarztpraxis-wald", description: "Wald" },
     ],
   },
   {
