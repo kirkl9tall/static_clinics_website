@@ -1,6 +1,6 @@
 // Renders a <script type="application/ld+json"> tag for structured data.
 // Pass any valid schema.org object as `data`.
-export function JsonLd({ data }: { data: Record<string, unknown> }) {
+export function JsonLd({ data }: { readonly data: Record<string, unknown> }) {
   return (
     <script
       type="application/ld+json"
