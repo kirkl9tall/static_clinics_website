@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Doctor } from "@/types";
-import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 
 
@@ -18,8 +17,8 @@ function getInitials(name: string) {
 }
 
 interface DoctorCardProps {
-  doctor: Doctor;
-  index?: number;
+  readonly doctor: Doctor;
+  readonly index?: number;
 }
 
 export default function DoctorCard({ doctor, index = 0 }: DoctorCardProps) {
