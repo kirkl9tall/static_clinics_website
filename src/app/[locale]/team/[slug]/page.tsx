@@ -97,10 +97,11 @@ export default async function DoctorPage({ params }: { readonly params: Promise<
                 {doctor.image ? (
                   <Image
                     src={doctor.image}
-                    alt={doctor.name}
+                    alt={`Profilfoto – ${doctor.name}, ${doctorTitle}`}
                     fill
                     className="object-cover object-top"
-                    unoptimized
+                    sizes="(max-width: 768px) 192px, 280px"
+                    priority
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-5xl font-bold text-primary-600">
@@ -235,7 +236,7 @@ export default async function DoctorPage({ params }: { readonly params: Promise<
                 <Link key={d.id} href={`/team/${d.slug}`} className="group flex items-center gap-4 p-5 rounded-2xl border border-border-light dark:border-border-dark bg-surface-dim dark:bg-surface-dark-dim hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-card transition-all">
                   <div className="relative w-12 h-12 rounded-2xl overflow-hidden bg-gradient-to-br from-primary-100 to-emerald-100 dark:from-primary-900/30 dark:to-emerald-900/30 flex-shrink-0">
                     {d.image ? (
-                      <Image src={d.image} alt={d.name} fill className="object-cover object-top" unoptimized />
+                      <Image src={d.image} alt={`Profilfoto – ${d.name}`} fill className="object-cover object-top" sizes="48px" />
                     ) : (
                       <span className="w-full h-full flex items-center justify-center text-sm font-bold text-primary-600">{getInitials(d.name)}</span>
                     )}

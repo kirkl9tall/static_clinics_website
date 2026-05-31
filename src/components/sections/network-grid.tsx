@@ -46,11 +46,10 @@ export default function NetworkGrid() {
                         {clinic.logo ? (
                           <Image
                             src={clinic.logo}
-                            alt={clinic.name}
+                            alt={`Logo – ${clinic.name}`}
                             width={48}
                             height={48}
                             className="object-contain w-full h-full p-1"
-                            unoptimized
                           />
                         ) : (
                           <Building2 className="w-6 h-6 text-text-muted" />

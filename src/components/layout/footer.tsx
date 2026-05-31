@@ -19,7 +19,7 @@ export default function Footer() {
             <Link href="/" className="inline-flex mb-6">
               <Image
                 src="/praxen-jerumed.png"
-                alt="Praxen Jerumed"
+                alt="Praxen Jerumed – Ihr Gesundheitsnetzwerk in der Schweiz"
                 width={180}
                 height={54}
                 className="h-10 w-auto object-contain"

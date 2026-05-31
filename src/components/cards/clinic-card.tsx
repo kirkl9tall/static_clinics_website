@@ -31,11 +31,10 @@ export default function ClinicCard({ clinic, index = 0, descriptionOverride }: C
             {clinic.logo ? (
               <Image
                 src={clinic.logo}
-                alt={clinic.name}
+                alt={`Logo – ${clinic.name}`}
                 width={48}
                 height={48}
                 className="object-contain w-full h-full p-1"
-                unoptimized
               />
             ) : (
               <span className="text-white font-bold text-lg w-full h-full flex items-center justify-center rounded-xl"

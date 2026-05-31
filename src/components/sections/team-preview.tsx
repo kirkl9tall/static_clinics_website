@@ -47,7 +47,7 @@ export default function TeamPreview() {
                   {doc.image ? (
                     <Image
                       src={doc.image}
-                      alt={doc.name}
+                      alt={`Profilfoto – ${doc.name}, ${doc.specialty}`}
                       fill
                       className="object-contain"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

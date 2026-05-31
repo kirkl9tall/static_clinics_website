@@ -255,7 +255,7 @@ export default function Hero() {
                   />
                   <Image
                     src="/praxen-jerumed.png"
-                    alt="Praxen Jerumed"
+                    alt="Praxen Jerumed – Ihr Gesundheitsnetzwerk in der Schweiz"
                     width={140}
                     height={140}
                     className="w-full h-full object-contain relative z-10"
