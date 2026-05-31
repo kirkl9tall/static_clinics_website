@@ -17,7 +17,7 @@ export const clinics: Clinic[] = [
     email: "praxis-seefeld@hin.ch",
     website: "https://www.praxis-seefeld.ch/",
     image: "/images/clinic-seefeld.jpg",
-    logo: "/jeru5.jpeg",
+    logo: "/jeru5.webp",
     services: ["Allgemeinmedizin", "Vorsorgeuntersuchungen", "Impfungen", "Labor", "Kleinchirurgie", "Röntgen"],
     openingHours: [
       { day: "Monday", open: "09:00", close: "18:00" },
