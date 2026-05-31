@@ -14,6 +14,15 @@ export default function TeamPreview() {
   const tc = useTranslations("common");
   const td = useTranslations("doctors");
   const featured = doctors.slice(0, 6);
+  const specialtyMap: Record<string, string> = {
+    abuawad: td("abuawad.specialty"),
+    rodriguez: td("rodriguez.specialty"),
+    kassar: td("kassar.specialty"),
+    muhamad: td("muhamad.specialty"),
+    alsaaydeh: td("alsaaydeh.specialty"),
+    fiknete: td("fiknete.specialty"),
+    bachtsetzis: td("bachtsetzis.specialty"),
+  };
 
   return (
     <section className="py-24 lg:py-32 bg-surface-dim dark:bg-surface-dark-dim">
@@ -55,7 +64,7 @@ export default function TeamPreview() {
                     {doc.name}
                   </h3>
                   <p className="text-xs text-primary-600 dark:text-primary-400 font-medium mt-0.5 mb-3">
-                    {["abuawad","rodriguez","kassar","muhamad","alsaaydeh","fiknete","bachtsetzis"].includes(doc.id) ? td(`${doc.id}.specialty` as Parameters<typeof td>[0]) : doc.specialty}
+                    {specialtyMap[doc.id] ?? doc.specialty}
                   </p>
 
                   <div className="space-y-2 text-xs text-text-muted dark:text-text-dark-muted mb-4">

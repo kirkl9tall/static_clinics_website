@@ -25,8 +25,16 @@ interface DoctorCardProps {
 export default function DoctorCard({ doctor, index = 0 }: DoctorCardProps) {
   const td = useTranslations("doctors");
   const tc = useTranslations("common");
-  const knownIds = ["abuawad","rodriguez","kassar","muhamad","alsaaydeh","fiknete","bachtsetzis"];
-  const title = knownIds.includes(doctor.id) ? td(`${doctor.id}.title` as Parameters<typeof td>[0]) : doctor.title;
+  const titleMap: Record<string, string> = {
+    abuawad: td("abuawad.title"),
+    rodriguez: td("rodriguez.title"),
+    kassar: td("kassar.title"),
+    muhamad: td("muhamad.title"),
+    alsaaydeh: td("alsaaydeh.title"),
+    fiknete: td("fiknete.title"),
+    bachtsetzis: td("bachtsetzis.title"),
+  };
+  const title = titleMap[doctor.id] ?? doctor.title;
 
   return (
     <motion.div
