@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Praxen Jerumed",
   },
   description: "Praxen Jerumed ist ein Netzwerk von Fachpraxen in der Schweiz – Hausarztmedizin, ästhetische Medizin, Labor und mehr.",
-  keywords: ["Hausarzt", "Praxis", "Zürich", "Schweiz", "Jerumed", "Medesthec", "Winterthur", "Altstetten"],
+  keywords: ["Hausarzt Zürich", "Hausarzt Dübendorf", "Hausarzt Winterthur", "Hausarzt Wald", "Praxen Jerumed", "Arztpraxis Schweiz", "Urologie Zug", "Ästhetische Medizin Zürich", "Allgemeinmedizin", "Felsenau Wald"],
   authors: [{ name: "Praxen Jerumed" }],
   openGraph: {
     type: "website",

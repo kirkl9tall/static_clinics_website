@@ -41,7 +41,7 @@ export default function TeamPreview() {
                       alt={doc.name}
                       fill
                       className="object-contain"
-                      unoptimized
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center text-3xl font-bold text-primary-600 dark:text-primary-400">
