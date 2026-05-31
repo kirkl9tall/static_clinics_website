@@ -1,6 +1,20 @@
 import type { Metadata } from "next";
 
 export const BASE_URL = "https://praxen-jerumed.ch";
+
+type LocaleMeta = Record<string, { title: string; description: string }>;
+
+export function createLayoutMetadata(path: string, translations: LocaleMeta) {
+  return async function generateMetadata({
+    params,
+  }: {
+    params: Promise<{ locale: string }>;
+  }): Promise<Metadata> {
+    const { locale } = await params;
+    const m = translations[locale] ?? translations.de;
+    return createMetadata(m.title, m.description, path, locale);
+  };
+}
 const SITE_NAME = "Praxen Jerumed";
 const OG_IMAGE = `${BASE_URL}/praxen-jerumed.png`;
 
