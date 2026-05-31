@@ -1,10 +1,10 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { MapPin, Phone, Mail, Globe, Clock, Calendar, CheckCircle, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, Globe, Clock, CheckCircle, ArrowRight } from "lucide-react";
 import { clinics, getClinicBySlug } from "@/data/clinics";
 import { getDoctorsByClinic } from "@/data/doctors";
-import { JsonLd, clinicSchema } from "@/components/seo/JsonLd";
+import { JsonLd, clinicSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
 
 export const dynamic = 'force-dynamic';
 
@@ -32,8 +32,8 @@ function getInitials(name: string) {
   return name.split(" ").filter((w) => /[A-Za-z]/.test(w[0])).slice(0, 2).map((w) => w[0].toUpperCase()).join("");
 }
 
-export default async function ClinicPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default async function ClinicPage({ params }: { readonly params: Promise<{ locale: string; slug: string }> }) {
+  const { slug, locale } = await params;
   const clinic = getClinicBySlug(slug);
   if (!clinic) notFound();
 
@@ -43,6 +43,11 @@ export default async function ClinicPage({ params }: { params: Promise<{ slug: s
   return (
     <div className="min-h-screen">
       <JsonLd data={clinicSchema(clinic)} />
+      <JsonLd data={breadcrumbSchema(locale, [
+        { name: "Home", path: "" },
+        { name: "Praxen", path: "/clinics" },
+        { name: clinic.name, path: `/clinics/${clinic.slug}` },
+      ])} />
       {/* Hero */}
       <section className="gradient-hero py-20 lg:py-28">
         <div className="container-wide">
@@ -167,9 +172,16 @@ export default async function ClinicPage({ params }: { params: Promise<{ slug: s
                   </div>
                   <p className="font-semibold text-text-primary dark:text-text-dark-primary group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors text-sm leading-tight">{doctor.name}</p>
                   <p className="text-xs text-text-muted dark:text-text-dark-muted mt-1">{doctor.specialty}</p>
-                  <span className={`inline-block mt-2 px-2 py-0.5 text-[10px] font-semibold rounded-full ${doctor.availability === "available" ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-400" : doctor.availability === "limited" ? "bg-amber-100 text-amber-700" : "bg-gray-100 text-gray-500"}`}>
-                    {doctor.availability === "available" ? "Available" : doctor.availability === "limited" ? "Limited" : "Unavailable"}
-                  </span>
+                  {(() => {
+                    const avail = doctor.availability;
+                    let cls = "bg-gray-100 text-gray-500";
+                    if (avail === "available") cls = "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-400";
+                    else if (avail === "limited") cls = "bg-amber-100 text-amber-700";
+                    let label = "Unavailable";
+                    if (avail === "available") label = "Available";
+                    else if (avail === "limited") label = "Limited";
+                    return <span className={`inline-block mt-2 px-2 py-0.5 text-[10px] font-semibold rounded-full ${cls}`}>{label}</span>;
+                  })()}
                 </Link>
               ))}
             </div>

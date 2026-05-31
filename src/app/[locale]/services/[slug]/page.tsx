@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { CheckCircle, MapPin, Phone, Calendar, ArrowRight, Stethoscope, Heart, FlaskConical, Wind, ScanLine, Sparkles, Pill, Shield, Siren, Droplets } from "lucide-react";
+import { CheckCircle, MapPin, Phone, ArrowRight, Stethoscope, Heart, FlaskConical, Wind, ScanLine, Sparkles, Pill, Shield, Siren, Droplets } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { services, getServiceBySlug } from "@/data/services";
 import { clinics } from "@/data/clinics";
-import { JsonLd, serviceSchema } from "@/components/seo/JsonLd";
+import { JsonLd, serviceSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
 
 export const dynamic = 'force-dynamic';
 
@@ -31,8 +31,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default async function ServicePage({ params }: { readonly params: Promise<{ slug: string; locale: string }> }) {
+  const { slug, locale } = await params;
   const service = getServiceBySlug(slug);
   if (!service) notFound();
 
@@ -45,6 +45,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   return (
     <div className="min-h-screen">
       <JsonLd data={serviceSchema(service)} />
+      <JsonLd data={breadcrumbSchema(locale, [
+        { name: "Home", path: "" },
+        { name: "Leistungen", path: "/services" },
+        { name: service.name, path: `/services/${service.slug}` },
+      ])} />
       {/* Hero */}
       <section className="gradient-hero py-20 lg:py-28">
         <div className="container-wide">

@@ -122,3 +122,20 @@ export function doctorSchema(doctor: {
     worksFor: { "@type": "MedicalOrganization", name: "Praxen Jerumed" },
   };
 }
+
+/** BreadcrumbList schema for inner pages. */
+export function breadcrumbSchema(
+  locale: string,
+  crumbs: { name: string; path: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: crumbs.map((crumb, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: crumb.name,
+      item: `${BASE_URL}/${locale}${crumb.path}`,
+    })),
+  };
+}

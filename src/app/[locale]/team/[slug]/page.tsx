@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import { Phone, Mail, GraduationCap, BadgeCheck, Building2, MapPin, ArrowRight, Globe } from "lucide-react";
 import { doctors, getDoctorBySlug } from "@/data/doctors";
 import { clinics } from "@/data/clinics";
-import { JsonLd, doctorSchema } from "@/components/seo/JsonLd";
+import { JsonLd, doctorSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
 import { getTranslations } from "next-intl/server";
 
 export const dynamic = 'force-dynamic';
@@ -40,23 +40,41 @@ const availabilityCls = {
   unavailable: "bg-gray-100 text-gray-500 dark:bg-gray-700 dark:text-gray-400",
 };
 
-const knownDoctorIds = ["abuawad","rodriguez","kassar","muhamad","alsaaydeh","fiknete","bachtsetzis"];
+const knownDoctorIds = new Set(["abuawad","rodriguez","kassar","muhamad","alsaaydeh","fiknete","bachtsetzis"]);
 
-export default async function DoctorPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
-  const { slug } = await params;
+export default async function DoctorPage({ params }: { readonly params: Promise<{ slug: string; locale: string }> }) {
+  const { slug, locale } = await params;
   const doctor = getDoctorBySlug(slug);
   if (!doctor) notFound();
 
   const t = await getTranslations("team.profile");
   const td = await getTranslations("doctors");
 
+  const titleMap: Record<string, string> = {
+    abuawad: td("abuawad.title"), rodriguez: td("rodriguez.title"), kassar: td("kassar.title"),
+    muhamad: td("muhamad.title"), alsaaydeh: td("alsaaydeh.title"), fiknete: td("fiknete.title"),
+    bachtsetzis: td("bachtsetzis.title"),
+  };
+  const bioMap: Record<string, string> = {
+    abuawad: td("abuawad.bio"), rodriguez: td("rodriguez.bio"), kassar: td("kassar.bio"),
+    muhamad: td("muhamad.bio"), alsaaydeh: td("alsaaydeh.bio"), fiknete: td("fiknete.bio"),
+    bachtsetzis: td("bachtsetzis.bio"),
+  };
+  const specialtyMap: Record<string, string> = {
+    abuawad: td("abuawad.specialty"), rodriguez: td("rodriguez.specialty"), kassar: td("kassar.specialty"),
+    muhamad: td("muhamad.specialty"), alsaaydeh: td("alsaaydeh.specialty"), fiknete: td("fiknete.specialty"),
+    bachtsetzis: td("bachtsetzis.specialty"),
+  };
+
   const availLabel = t(doctor.availability as "available" | "limited" | "unavailable");
   const availCls = availabilityCls[doctor.availability] ?? availabilityCls.available;
-  const doctorTitle = knownDoctorIds.includes(doctor.id) ? td(`${doctor.id}.title` as Parameters<typeof td>[0]) : doctor.title;
-  const doctorBio = knownDoctorIds.includes(doctor.id) ? td(`${doctor.id}.bio` as Parameters<typeof td>[0]) : doctor.bio;
-  const doctorSpecialty = knownDoctorIds.includes(doctor.id) ? td(`${doctor.id}.specialty` as Parameters<typeof td>[0]) : doctor.specialty;
+  const doctorTitle = titleMap[doctor.id] ?? doctor.title;
+  const doctorBio = bioMap[doctor.id] ?? doctor.bio;
+  const doctorSpecialty = specialtyMap[doctor.id] ?? doctor.specialty;
 
-  const practicesClinics = doctor.clinicIds.map((id) => clinics.find((c) => c.id === id)).filter(Boolean) as typeof clinics;
+  const practicesClinics = doctor.clinicIds
+    .map((id) => clinics.find((c) => c.id === id))
+    .filter((c): c is (typeof clinics)[number] => c !== undefined);
   const otherDoctors = doctors.filter((d) => d.id !== doctor.id && d.specialty === doctor.specialty).slice(0, 3);
   const fallbackDoctors = doctors.filter((d) => d.id !== doctor.id).slice(0, 3);
   const relatedDoctors = otherDoctors.length > 0 ? otherDoctors : fallbackDoctors;
@@ -64,6 +82,11 @@ export default async function DoctorPage({ params }: { params: Promise<{ slug: s
   return (
     <div className="min-h-screen">
       <JsonLd data={doctorSchema(doctor)} />
+      <JsonLd data={breadcrumbSchema(locale, [
+        { name: "Home", path: "" },
+        { name: "Team", path: "/team" },
+        { name: doctor.name, path: `/team/${doctor.slug}` },
+      ])} />
       {/* Profile hero */}
       <section className="gradient-hero py-16 lg:py-24">
         <div className="container-wide">
@@ -149,8 +172,8 @@ export default async function DoctorPage({ params }: { params: Promise<{ slug: s
                     {t("education")}
                   </h3>
                   <div className="space-y-3">
-                    {doctor.education.map((item, i) => (
-                      <div key={i} className="flex items-start gap-2 text-sm text-text-secondary dark:text-text-dark-secondary">
+                    {doctor.education.map((item) => (
+                      <div key={item} className="flex items-start gap-2 text-sm text-text-secondary dark:text-text-dark-secondary">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary-400 mt-2 flex-shrink-0" />
                         {item}
                       </div>
@@ -163,8 +186,8 @@ export default async function DoctorPage({ params }: { params: Promise<{ slug: s
                     {t("certifications")}
                   </h3>
                   <div className="space-y-3">
-                    {doctor.certifications.map((cert, i) => (
-                      <div key={i} className="flex items-start gap-2 text-sm text-text-secondary dark:text-text-dark-secondary">
+                    {doctor.certifications.map((cert) => (
+                      <div key={cert} className="flex items-start gap-2 text-sm text-text-secondary dark:text-text-dark-secondary">
                         <BadgeCheck className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
                         {cert}
                       </div>
@@ -220,7 +243,7 @@ export default async function DoctorPage({ params }: { params: Promise<{ slug: s
                   <div className="flex-1 min-w-0">
                     <p className="font-semibold text-text-primary dark:text-text-dark-primary group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors text-sm leading-tight">{d.name}</p>
                     <p className="text-xs text-text-muted dark:text-text-dark-muted mt-0.5">
-                      {knownDoctorIds.includes(d.id) ? td(`${d.id}.specialty` as Parameters<typeof td>[0]) : d.specialty}
+                      {specialtyMap[d.id] ?? d.specialty}
                     </p>
                   </div>
                   <ArrowRight className="w-4 h-4 text-text-muted group-hover:text-primary-500 transition-colors flex-shrink-0" />
