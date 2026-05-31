@@ -7,8 +7,22 @@ function schedule(hours: Partial<Record<typeof DAYS[number], { open: string; clo
   return DAYS.map((day) => ({ day, ...(hours[day] ?? CLOSED) }));
 }
 
+function weekdays(open: string, close: string): OpeningHours[] {
+  const h = { open, close };
+  return schedule({ Monday: h, Tuesday: h, Wednesday: h, Thursday: h, Friday: h });
+}
+
+function allDay(): OpeningHours[] {
+  const h = { open: "00:00", close: "23:59" };
+  return schedule({ Monday: h, Tuesday: h, Wednesday: h, Thursday: h, Friday: h, Saturday: h, Sunday: h });
+}
+
+function defineClinic(data: Omit<Clinic, "country" | "isComingSoon"> & { isComingSoon?: boolean }): Clinic {
+  return { country: "Switzerland", isComingSoon: false, ...data };
+}
+
 export const clinics: Clinic[] = [
-  {
+  defineClinic({
     id: "seefeld",
     slug: "hausarztpraxis-seefeld",
     name: "Hausarztpraxis Seefeld",
@@ -19,25 +33,17 @@ export const clinics: Clinic[] = [
     address: "Seefeldstrasse 187",
     city: "Zürich",
     zip: "8008",
-    country: "Switzerland",
     phone: "044 422 24 13",
     email: "praxis-seefeld@hin.ch",
     website: "https://www.praxis-seefeld.ch/",
     image: "/images/clinic-seefeld.jpg",
     logo: "/jeru5.webp",
     services: ["Allgemeinmedizin", "Vorsorgeuntersuchungen", "Impfungen", "Labor", "Kleinchirurgie", "Röntgen"],
-    openingHours: schedule({
-      Monday: { open: "09:00", close: "18:00" },
-      Tuesday: { open: "09:00", close: "18:00" },
-      Wednesday: { open: "09:00", close: "18:00" },
-      Thursday: { open: "09:00", close: "18:00" },
-      Friday: { open: "09:00", close: "18:00" },
-    }),
+    openingHours: weekdays("09:00", "18:00"),
     coordinates: { lat: 47.3565, lng: 8.5568 },
-    isComingSoon: false,
     accentColor: "#0ea5e9",
-  },
-  {
+  }),
+  defineClinic({
     id: "duebendorf",
     slug: "hausarztpraxis-duebendorf",
     name: "Hausarztpraxis Dübendorf",
@@ -48,7 +54,6 @@ export const clinics: Clinic[] = [
     address: "Leepuntstrasse 5",
     city: "Dübendorf",
     zip: "8600",
-    country: "Switzerland",
     phone: "044 820 10 20",
     email: "praxis-duebendorf@hin.ch",
     website: "https://www.hausarztpraxis-duebendorf.ch/",
@@ -63,10 +68,9 @@ export const clinics: Clinic[] = [
       Friday: { open: "09:00", close: "12:30" },
     }),
     coordinates: { lat: 47.3972, lng: 8.6186 },
-    isComingSoon: false,
     accentColor: "#10b981",
-  },
-  {
+  }),
+  defineClinic({
     id: "altstetten",
     slug: "hausarztpraxis-altstetten",
     name: "Hausarztpraxis Altstetten",
@@ -77,7 +81,6 @@ export const clinics: Clinic[] = [
     address: "Badenerstrasse 621",
     city: "Zürich",
     zip: "8048",
-    country: "Switzerland",
     phone: "044 244 09 99",
     email: "praxis-altstetten@hin.ch",
     website: "https://praxis-altstetten.ch/",
@@ -93,10 +96,9 @@ export const clinics: Clinic[] = [
       Saturday: { open: "09:30", close: "18:00" },
     }),
     coordinates: { lat: 47.3886, lng: 8.4882 },
-    isComingSoon: false,
     accentColor: "#0ea5e9",
-  },
-  {
+  }),
+  defineClinic({
     id: "winterthur",
     slug: "hausarztpraxis-winterthur",
     name: "Hausarztpraxis Winterthur",
@@ -107,7 +109,6 @@ export const clinics: Clinic[] = [
     address: "Eichgutstrasse 1",
     city: "Winterthur",
     zip: "8400",
-    country: "Switzerland",
     phone: "052 212 35 36",
     email: "praxis-winterthur@hin.ch",
     website: "https://www.hausarztpraxis-winterthur.ch/",
@@ -120,10 +121,9 @@ export const clinics: Clinic[] = [
       Thursday: { open: "09:00", close: "18:00" },
     }),
     coordinates: { lat: 47.4997, lng: 8.7278 },
-    isComingSoon: false,
     accentColor: "#10b981",
-  },
-  {
+  }),
+  defineClinic({
     id: "wald",
     slug: "hausarztpraxis-wald",
     name: "Hausarztpraxis Felsenau",
@@ -134,7 +134,6 @@ export const clinics: Clinic[] = [
     address: "Rosenthalstrasse 7A",
     city: "Wald",
     zip: "8636",
-    country: "Switzerland",
     phone: "055 246 18 55",
     email: "praxis-felsenau@hin.ch",
     website: "https://praxis-felsenau.ch",
@@ -148,10 +147,9 @@ export const clinics: Clinic[] = [
       Friday: { open: "09:00", close: "17:30" },
     }),
     coordinates: { lat: 47.2776, lng: 8.9134 },
-    isComingSoon: false,
     accentColor: "#059669",
-  },
-  {
+  }),
+  defineClinic({
     id: "medesthec",
     slug: "medesthec",
     name: "MedEsthec",
@@ -162,7 +160,6 @@ export const clinics: Clinic[] = [
     address: "Seefeldstrasse 187",
     city: "Zürich",
     zip: "8008",
-    country: "Switzerland",
     phone: "044 244 09 90",
     email: "info@medesthec.ch",
     website: "https://med-esthec.ch/",
@@ -175,10 +172,9 @@ export const clinics: Clinic[] = [
       Saturday: { open: "10:00", close: "18:00" },
     }),
     coordinates: { lat: 47.3565, lng: 8.5568 },
-    isComingSoon: false,
     accentColor: "#d946ef",
-  },
-  {
+  }),
+  defineClinic({
     id: "beauty-altstetten",
     slug: "schoenheitspraxis-altstetten",
     name: "Schönheitspraxis Altstetten",
@@ -189,7 +185,6 @@ export const clinics: Clinic[] = [
     address: "Badenerstrasse 621",
     city: "Zürich",
     zip: "8048",
-    country: "Switzerland",
     phone: "044 244 09 90",
     email: "beauty-altstetten@jerumed.com",
     website: "#",
@@ -206,8 +201,8 @@ export const clinics: Clinic[] = [
     coordinates: { lat: 47.3886, lng: 8.4882 },
     isComingSoon: true,
     accentColor: "#ec4899",
-  },
-  {
+  }),
+  defineClinic({
     id: "naturheilmedizin",
     slug: "naturheilmedizin-altstetten",
     name: "Naturheilmedizin Altstetten",
@@ -218,25 +213,18 @@ export const clinics: Clinic[] = [
     address: "Badenerstrasse 621",
     city: "Zürich",
     zip: "8048",
-    country: "Switzerland",
     phone: "044 244 09 90",
     email: "naturheil@jerumed.com",
     website: "#",
     image: "/images/clinic-natural.jpg",
     logo: "",
     services: ["Akupunktur", "Phytotherapie", "Naturheilkunde", "Homöopathie", "Ernährungsberatung"],
-    openingHours: schedule({
-      Monday: { open: "09:00", close: "18:00" },
-      Tuesday: { open: "09:00", close: "18:00" },
-      Wednesday: { open: "09:00", close: "18:00" },
-      Thursday: { open: "09:00", close: "18:00" },
-      Friday: { open: "09:00", close: "17:00" },
-    }),
+    openingHours: weekdays("09:00", "17:00"),
     coordinates: { lat: 47.3886, lng: 8.4882 },
     isComingSoon: true,
     accentColor: "#22c55e",
-  },
-  {
+  }),
+  defineClinic({
     id: "urohealth",
     slug: "urohealth",
     name: "UroHealth Center",
@@ -247,7 +235,6 @@ export const clinics: Clinic[] = [
     address: "Baarerstrasse 82",
     city: "Zug",
     zip: "6300",
-    country: "Switzerland",
     phone: "044 244 09 90",
     email: "urohealth@jerumed.com",
     website: "https://swissurohealth.ch/",
@@ -262,10 +249,9 @@ export const clinics: Clinic[] = [
       Friday: { open: "08:00", close: "16:00" },
     }),
     coordinates: { lat: 47.166, lng: 8.5159 },
-    isComingSoon: false,
     accentColor: "#6366f1",
-  },
-  {
+  }),
+  defineClinic({
     id: "jerumed-shop",
     slug: "jerumed-shop",
     name: "Jerumed Medical Shop",
@@ -276,26 +262,16 @@ export const clinics: Clinic[] = [
     address: "Baarerstrasse 82",
     city: "Zug",
     zip: "6300",
-    country: "Switzerland",
     phone: "044 244 09 90",
     email: "shop@jerumed.com",
     website: "https://www.jerumed.com/",
     image: "/images/clinic-shop.jpg",
     logo: "/jerumed_shop.png",
     services: ["Pharmazeutika", "Medizinbedarf", "Wellnessprodukte", "Nahrungsergänzung", "Körperpflege"],
-    openingHours: schedule({
-      Monday: { open: "00:00", close: "23:59" },
-      Tuesday: { open: "00:00", close: "23:59" },
-      Wednesday: { open: "00:00", close: "23:59" },
-      Thursday: { open: "00:00", close: "23:59" },
-      Friday: { open: "00:00", close: "23:59" },
-      Saturday: { open: "00:00", close: "23:59" },
-      Sunday: { open: "00:00", close: "23:59" },
-    }),
+    openingHours: allDay(),
     coordinates: { lat: 47.166, lng: 8.5159 },
-    isComingSoon: false,
     accentColor: "#f59e0b",
-  },
+  }),
 ];
 
 export function getClinicBySlug(slug: string): Clinic | undefined {
