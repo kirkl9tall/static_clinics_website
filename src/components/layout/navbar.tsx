@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { usePathname, useRouter } from "@/navigation";
-import { Link } from "@/navigation";
+import { usePathname, useRouter, Link } from "@/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, Phone, Mail } from "lucide-react";
 import Image from "next/image";
@@ -47,6 +46,10 @@ export default function Navbar() {
   const locale = useLocale();
   const router = useRouter();
   const t = useTranslations("nav");
+  const navMap: Record<string, string> = {
+    home: t("home"), about: t("about"), clinics: t("clinics"),
+    services: t("services"), team: t("team"), contact: t("contact"),
+  };
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 20);
@@ -125,6 +128,7 @@ export default function Navbar() {
               <div
                 key={item.href}
                 className="relative"
+                role="none"
                 onMouseEnter={() => item.children && setActiveDropdown(item.key)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
@@ -137,7 +141,7 @@ export default function Navbar() {
                       : "text-text-primary dark:text-text-dark-secondary hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-white/5"
                   )}
                 >
-                  {t(item.key as Parameters<typeof t>[0])}
+                  {navMap[item.key] ?? item.key}
                   {item.children && <ChevronDown className="w-3.5 h-3.5" />}
                 </Link>
 
@@ -212,7 +216,7 @@ export default function Navbar() {
                         : "text-text-primary dark:text-text-dark-primary hover:bg-gray-50 dark:hover:bg-white/5"
                     )}
                   >
-                    {t(item.key as Parameters<typeof t>[0])}
+                    {navMap[item.key] ?? item.key}
                   </Link>
                   {item.children && (
                     <div className="ml-4 mt-1 space-y-1">

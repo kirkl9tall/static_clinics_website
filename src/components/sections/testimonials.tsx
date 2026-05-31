@@ -11,6 +11,10 @@ import { useTranslations } from "next-intl";
 export default function Testimonials() {
   const t = useTranslations("home.testimonials");
   const [current, setCurrent] = useState(0);
+  const textMap: Record<string, string> = {
+    "1": t("items.1"), "2": t("items.2"), "3": t("items.3"),
+    "4": t("items.4"), "5": t("items.5"), "6": t("items.6"),
+  };
   const prev = () => setCurrent((c) => (c === 0 ? testimonials.length - 1 : c - 1));
   const next = () => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1));
 
@@ -38,13 +42,13 @@ export default function Testimonials() {
               >
                 <Quote className="w-10 h-10 text-primary-200 dark:text-primary-800 mx-auto mb-6" />
                 <p className="text-lg md:text-xl text-text-primary dark:text-text-dark-primary leading-relaxed mb-6 italic">
-                  &ldquo;{t(`items.${testimonials[current].id}` as Parameters<typeof t>[0])}&rdquo;
+                  &ldquo;{textMap[testimonials[current].id]}&rdquo;
                 </p>
                 <div className="flex items-center justify-center gap-1 mb-4">
-                  {Array.from({ length: 5 }).map((_, i) => (
+                  {[1, 2, 3, 4, 5].map((n) => (
                     <Star
-                      key={i}
-                      className={`w-4 h-4 ${i < testimonials[current].rating ? "text-amber-400 fill-amber-400" : "text-gray-300"}`}
+                      key={n}
+                      className={`w-4 h-4 ${n <= testimonials[current].rating ? "text-amber-400 fill-amber-400" : "text-gray-300"}`}
                     />
                   ))}
                 </div>
@@ -58,9 +62,9 @@ export default function Testimonials() {
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <div className="flex gap-2">
-                {testimonials.map((_, i) => (
+                {testimonials.map((testimonial, i) => (
                   <button
-                    key={i}
+                    key={testimonial.id}
                     onClick={() => setCurrent(i)}
                     className={`w-2 h-2 rounded-full transition-all ${i === current ? "bg-primary-500 w-6" : "bg-gray-300 dark:bg-gray-600"}`}
                     aria-label={`Go to testimonial ${i + 1}`}

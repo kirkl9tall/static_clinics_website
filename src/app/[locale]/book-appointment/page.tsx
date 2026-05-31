@@ -59,13 +59,19 @@ function Stepper({ current }: { current: number }) {
           const done = current > step.id;
           const active = current === step.id;
           const Icon = step.icon;
+          let stepIconCls = "border-border-light dark:border-border-dark bg-surface dark:bg-surface-dark-dim text-text-muted dark:text-text-dark-muted";
+          if (done) stepIconCls = "border-emerald-500 bg-emerald-500 text-white";
+          else if (active) stepIconCls = "border-primary-500 bg-primary-500 text-white shadow-[0_0_0_4px_rgba(14,165,233,0.15)]";
+          let stepLabelCls = "text-text-muted dark:text-text-dark-muted";
+          if (active) stepLabelCls = "text-primary-600 dark:text-primary-300";
+          else if (done) stepLabelCls = "text-emerald-600 dark:text-emerald-400";
           return (
             <div key={step.id} className="flex items-center">
               <div className="flex flex-col items-center gap-1.5">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 transition-all duration-300 ${done ? "border-emerald-500 bg-emerald-500 text-white" : active ? "border-primary-500 bg-primary-500 text-white shadow-[0_0_0_4px_rgba(14,165,233,0.15)]" : "border-border-light dark:border-border-dark bg-surface dark:bg-surface-dark-dim text-text-muted dark:text-text-dark-muted"}`}>
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 transition-all duration-300 ${stepIconCls}`}>
                   {done ? <Check className="w-4 h-4" /> : <Icon className="w-4 h-4" />}
                 </div>
-                <span className={`text-xs font-medium whitespace-nowrap ${active ? "text-primary-600 dark:text-primary-300" : done ? "text-emerald-600 dark:text-emerald-400" : "text-text-muted dark:text-text-dark-muted"}`}>
+                <span className={`text-xs font-medium whitespace-nowrap ${stepLabelCls}`}>
                   {step.label}
                 </span>
               </div>
@@ -158,13 +164,17 @@ function StepDoctor({ selected, clinicFilter, onSelect }: { selected: Doctor | n
         {clinicFilter ? `Practitioners at ${clinicFilter.shortName}.` : "Our medical team across all locations."}
       </p>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        {filtered.map((doctor) => (
+        {filtered.map((doctor) => {
+          let doctorBtnCls = "border-border-light dark:border-border-dark bg-surface dark:bg-surface-dark-dim hover:border-primary-300 hover:shadow-card-hover";
+          if (doctor.availability === "unavailable") doctorBtnCls = "opacity-50 cursor-not-allowed border-border-light dark:border-border-dark";
+          else if (selected?.id === doctor.id) doctorBtnCls = "border-primary-500 bg-primary-50 dark:bg-primary-500/10 shadow-card-hover";
+          return (
           <button
             key={doctor.id}
             type="button"
             disabled={doctor.availability === "unavailable"}
             onClick={() => onSelect(selected?.id === doctor.id ? null : doctor)}
-            className={`text-left p-4 rounded-2xl border-2 transition-all duration-200 ${doctor.availability === "unavailable" ? "opacity-50 cursor-not-allowed border-border-light dark:border-border-dark" : selected?.id === doctor.id ? "border-primary-500 bg-primary-50 dark:bg-primary-500/10 shadow-card-hover" : "border-border-light dark:border-border-dark bg-surface dark:bg-surface-dark-dim hover:border-primary-300 hover:shadow-card-hover"}`}
+            className={`text-left p-4 rounded-2xl border-2 transition-all duration-200 ${doctorBtnCls}`}
           >
             <div className="flex items-start gap-3">
               <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
@@ -184,7 +194,8 @@ function StepDoctor({ selected, clinicFilter, onSelect }: { selected: Doctor | n
               </div>
             </div>
           </button>
-        ))}
+          );
+        })}
       </div>
       {filtered.length === 0 && <p className="text-center py-8 text-text-muted dark:text-text-dark-muted">No doctors available for this clinic.</p>}
     </div>
@@ -246,23 +257,23 @@ function StepPatientInfo({ form, onChange, errors }: {
           { key: "phone" as const, label: "Phone", type: "tel", placeholder: "+41 79 123 45 67", required: true },
         ].map(({ key, label, type, placeholder, required }) => (
           <div key={key}>
-            <label className="block text-sm font-medium text-text-secondary dark:text-text-dark-secondary mb-1.5">
+            <label htmlFor={`field-${key}`} className="block text-sm font-medium text-text-secondary dark:text-text-dark-secondary mb-1.5">
               {label} {required && <span className="text-red-500">*</span>}
             </label>
-            <input type={type} placeholder={placeholder} value={form[key] as string}
+            <input id={`field-${key}`} type={type} placeholder={placeholder} value={form[key] as string}
               onChange={(e) => onChange(key, e.target.value)} className={inputCls(key)} />
             {errors[key] && <p className="text-red-500 text-xs mt-1">{errors[key]}</p>}
           </div>
         ))}
         <div className="sm:col-span-2">
-          <label className="block text-sm font-medium text-text-secondary dark:text-text-dark-secondary mb-1.5">Email <span className="text-red-500">*</span></label>
-          <input type="email" placeholder="your@email.com" value={form.email}
+          <label htmlFor="booking-email" className="block text-sm font-medium text-text-secondary dark:text-text-dark-secondary mb-1.5">Email <span className="text-red-500">*</span></label>
+          <input id="booking-email" type="email" placeholder="your@email.com" value={form.email}
             onChange={(e) => onChange("email", e.target.value)} className={inputCls("email")} />
           {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
         </div>
         <div className="sm:col-span-2">
-          <label className="block text-sm font-medium text-text-secondary dark:text-text-dark-secondary mb-1.5">Notes / Reason for Visit</label>
-          <textarea rows={3} placeholder="Brief description of your concern..."
+          <label htmlFor="booking-notes" className="block text-sm font-medium text-text-secondary dark:text-text-dark-secondary mb-1.5">Notes / Reason for Visit</label>
+          <textarea id="booking-notes" rows={3} placeholder="Brief description of your concern..."
             value={form.notes} onChange={(e) => onChange("notes", e.target.value)}
             className={`${inputCls("notes")} resize-none`} />
         </div>

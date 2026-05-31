@@ -7,19 +7,41 @@ function schedule(hours: Partial<Record<typeof DAYS[number], { open: string; clo
   return DAYS.map((day) => ({ day, ...(hours[day] ?? CLOSED) }));
 }
 
+const h = (open: string, close: string) => ({ open, close });
+
 function weekdays(open: string, close: string): OpeningHours[] {
-  const h = { open, close };
-  return schedule({ Monday: h, Tuesday: h, Wednesday: h, Thursday: h, Friday: h });
+  const hh = h(open, close);
+  return schedule({ Monday: hh, Tuesday: hh, Wednesday: hh, Thursday: hh, Friday: hh });
+}
+
+function weekdaysSat(open: string, close: string): OpeningHours[] {
+  const hh = h(open, close);
+  return schedule({ Monday: hh, Tuesday: hh, Wednesday: hh, Thursday: hh, Friday: hh, Saturday: hh });
 }
 
 function allDay(): OpeningHours[] {
-  const h = { open: "00:00", close: "23:59" };
-  return schedule({ Monday: h, Tuesday: h, Wednesday: h, Thursday: h, Friday: h, Saturday: h, Sunday: h });
+  const hh = h("00:00", "23:59");
+  return schedule({ Monday: hh, Tuesday: hh, Wednesday: hh, Thursday: hh, Friday: hh, Saturday: hh, Sunday: hh });
 }
 
 function defineClinic(data: Omit<Clinic, "country" | "isComingSoon"> & { isComingSoon?: boolean }): Clinic {
   return { country: "Switzerland", isComingSoon: false, ...data };
 }
+
+const LOC_BADENERSTR = {
+  address: "Badenerstrasse 621",
+  city: "Zürich",
+  zip: "8048",
+  coordinates: { lat: 47.3886, lng: 8.4882 },
+};
+
+const LOC_BAARERSTR = {
+  address: "Baarerstrasse 82",
+  city: "Zug",
+  zip: "6300",
+  phone: "044 244 09 90",
+  coordinates: { lat: 47.166, lng: 8.5159 },
+};
 
 export const clinics: Clinic[] = [
   defineClinic({
@@ -61,11 +83,11 @@ export const clinics: Clinic[] = [
     logo: "/jeru2.jpeg",
     services: ["Allgemeinmedizin", "Notfallversorgung", "Präventivmedizin", "Labor", "EKG", "Spirometrie"],
     openingHours: schedule({
-      Monday: { open: "09:00", close: "17:00" },
-      Tuesday: { open: "09:00", close: "17:00" },
-      Wednesday: { open: "09:00", close: "12:30" },
-      Thursday: { open: "09:00", close: "17:00" },
-      Friday: { open: "09:00", close: "12:30" },
+      Monday: h("09:00", "17:00"),
+      Tuesday: h("09:00", "17:00"),
+      Wednesday: h("09:00", "12:30"),
+      Thursday: h("09:00", "17:00"),
+      Friday: h("09:00", "12:30"),
     }),
     coordinates: { lat: 47.3972, lng: 8.6186 },
     accentColor: "#10b981",
@@ -78,24 +100,14 @@ export const clinics: Clinic[] = [
     description: "Umfassende Grundversorgung in Zürich Altstetten – mit erweitertem Angebot inkl. Röntgen und Apotheke vor Ort.",
     longDescription: "Im dynamischen Quartier Altstetten bieten wir umfassende Grundversorgung mit erweiterten diagnostischen Möglichkeiten. Unsere Apotheke und Röntgenanlage vor Ort ermöglichen eine schnelle und effiziente Patientenversorgung.",
     category: "general-practice",
-    address: "Badenerstrasse 621",
-    city: "Zürich",
-    zip: "8048",
+    ...LOC_BADENERSTR,
     phone: "044 244 09 99",
     email: "praxis-altstetten@hin.ch",
     website: "https://praxis-altstetten.ch/",
     image: "/images/clinic-altstetten.jpg",
     logo: "/jeru1.jpeg",
     services: ["Allgemeinmedizin", "Röntgen", "Apotheke", "Labor", "Impfungen", "Reisemedizin"],
-    openingHours: schedule({
-      Monday: { open: "09:30", close: "18:00" },
-      Tuesday: { open: "09:30", close: "18:00" },
-      Wednesday: { open: "09:30", close: "18:00" },
-      Thursday: { open: "09:30", close: "18:00" },
-      Friday: { open: "09:30", close: "18:00" },
-      Saturday: { open: "09:30", close: "18:00" },
-    }),
-    coordinates: { lat: 47.3886, lng: 8.4882 },
+    openingHours: weekdaysSat("09:30", "18:00"),
     accentColor: "#0ea5e9",
   }),
   defineClinic({
@@ -116,9 +128,9 @@ export const clinics: Clinic[] = [
     logo: "/jeru2.jpeg",
     services: ["Allgemeinmedizin", "Vorsorgeuntersuchungen", "Chronische Erkrankungen", "Labor", "EKG"],
     openingHours: schedule({
-      Monday: { open: "09:00", close: "18:00" },
-      Tuesday: { open: "09:00", close: "18:00" },
-      Thursday: { open: "09:00", close: "18:00" },
+      Monday: h("09:00", "18:00"),
+      Tuesday: h("09:00", "18:00"),
+      Thursday: h("09:00", "18:00"),
     }),
     coordinates: { lat: 47.4997, lng: 8.7278 },
     accentColor: "#10b981",
@@ -141,10 +153,10 @@ export const clinics: Clinic[] = [
     logo: "/jeru3.jpeg",
     services: ["Allgemeinmedizin", "Prävention", "Impfungen", "Labor", "Gesundheitsberatung"],
     openingHours: schedule({
-      Monday: { open: "09:00", close: "17:30" },
-      Wednesday: { open: "09:00", close: "18:00" },
-      Thursday: { open: "09:00", close: "17:30" },
-      Friday: { open: "09:00", close: "17:30" },
+      Monday: h("09:00", "17:30"),
+      Wednesday: h("09:00", "18:00"),
+      Thursday: h("09:00", "17:30"),
+      Friday: h("09:00", "17:30"),
     }),
     coordinates: { lat: 47.2776, lng: 8.9134 },
     accentColor: "#059669",
@@ -167,9 +179,9 @@ export const clinics: Clinic[] = [
     logo: "/jeru4.jpeg",
     services: ["Botox", "Filler", "Hautverjüngung", "Lasertherapie", "Körperformung", "PRP-Therapie"],
     openingHours: schedule({
-      Wednesday: { open: "14:00", close: "18:00" },
-      Friday: { open: "14:00", close: "18:00" },
-      Saturday: { open: "10:00", close: "18:00" },
+      Wednesday: h("14:00", "18:00"),
+      Friday: h("14:00", "18:00"),
+      Saturday: h("10:00", "18:00"),
     }),
     coordinates: { lat: 47.3565, lng: 8.5568 },
     accentColor: "#d946ef",
@@ -182,9 +194,7 @@ export const clinics: Clinic[] = [
     description: "Ästhetik- und Schönheitszentrum in Zürich Altstetten – breites Angebot an kosmetischen und Verjüngungsbehandlungen.",
     longDescription: "Unsere Schönheitspraxis in Altstetten bietet ein umfangreiches Portfolio ästhetischer Behandlungen in luxuriöser, entspannter Atmosphäre – von nicht-invasiven Hautbehandlungen bis zu fortgeschrittenen kosmetischen Verfahren.",
     category: "beauty-aesthetic",
-    address: "Badenerstrasse 621",
-    city: "Zürich",
-    zip: "8048",
+    ...LOC_BADENERSTR,
     phone: "044 244 09 90",
     email: "beauty-altstetten@jerumed.com",
     website: "#",
@@ -192,13 +202,12 @@ export const clinics: Clinic[] = [
     logo: "",
     services: ["Gesichtsbehandlungen", "Hautpflege", "Anti-Aging", "Wellnessmassage", "Schönheitsberatung"],
     openingHours: schedule({
-      Monday: { open: "09:00", close: "18:00" },
-      Tuesday: { open: "09:00", close: "18:00" },
-      Wednesday: { open: "09:00", close: "18:00" },
-      Thursday: { open: "09:00", close: "19:00" },
-      Friday: { open: "09:00", close: "17:00" },
+      Monday: h("09:00", "18:00"),
+      Tuesday: h("09:00", "18:00"),
+      Wednesday: h("09:00", "18:00"),
+      Thursday: h("09:00", "19:00"),
+      Friday: h("09:00", "17:00"),
     }),
-    coordinates: { lat: 47.3886, lng: 8.4882 },
     isComingSoon: true,
     accentColor: "#ec4899",
   }),
@@ -210,9 +219,7 @@ export const clinics: Clinic[] = [
     description: "Ganzheitliches Naturheilzentrum mit komplementären Therapien und integrativem Gesundheitsansatz.",
     longDescription: "Unser Naturheilzentrum verbindet traditionelle Heilmethoden mit modernem medizinischem Wissen. Wir bieten ein umfassendes Angebot komplementärer Therapien zur Unterstützung der natürlichen Selbstheilungskräfte und ganzheitlichen Gesundheitsförderung.",
     category: "natural-medicine",
-    address: "Badenerstrasse 621",
-    city: "Zürich",
-    zip: "8048",
+    ...LOC_BADENERSTR,
     phone: "044 244 09 90",
     email: "naturheil@jerumed.com",
     website: "#",
@@ -220,7 +227,6 @@ export const clinics: Clinic[] = [
     logo: "",
     services: ["Akupunktur", "Phytotherapie", "Naturheilkunde", "Homöopathie", "Ernährungsberatung"],
     openingHours: weekdays("09:00", "17:00"),
-    coordinates: { lat: 47.3886, lng: 8.4882 },
     isComingSoon: true,
     accentColor: "#22c55e",
   }),
@@ -232,23 +238,19 @@ export const clinics: Clinic[] = [
     description: "Spezialisiertes Urologiezentrum mit umfassender urologischer Versorgung und modernster Technologie.",
     longDescription: "UroHealth ist unser spezialisiertes Urologiezentrum mit einem vollständigen Leistungsangebot in der Urologie. Unsere erfahrenen Urologen setzen modernste Technologie für Diagnose und Behandlung ein.",
     category: "urology",
-    address: "Baarerstrasse 82",
-    city: "Zug",
-    zip: "6300",
-    phone: "044 244 09 90",
+    ...LOC_BAARERSTR,
     email: "urohealth@jerumed.com",
     website: "https://swissurohealth.ch/",
     image: "/images/clinic-uro.jpg",
     logo: "/swisurohealth.png",
     services: ["Urologische Beratung", "Prostatabehandlung", "Nierensteinbehandlung", "Blasengesundheit", "Männergesundheit"],
     openingHours: schedule({
-      Monday: { open: "08:00", close: "17:00" },
-      Tuesday: { open: "08:00", close: "17:00" },
-      Wednesday: { open: "08:00", close: "17:00" },
-      Thursday: { open: "08:00", close: "17:00" },
-      Friday: { open: "08:00", close: "16:00" },
+      Monday: h("08:00", "17:00"),
+      Tuesday: h("08:00", "17:00"),
+      Wednesday: h("08:00", "17:00"),
+      Thursday: h("08:00", "17:00"),
+      Friday: h("08:00", "16:00"),
     }),
-    coordinates: { lat: 47.166, lng: 8.5159 },
     accentColor: "#6366f1",
   }),
   defineClinic({
@@ -259,17 +261,13 @@ export const clinics: Clinic[] = [
     description: "Online-Medizinshop mit Pharmaprodukten, Gesundheitsbedarf und Wellnessartikeln für die ganze Schweiz.",
     longDescription: "Der Jerumed Shop ist Ihre vertrauenswürdige Online-Adresse für Pharmaprodukte, Medizinbedarf und Wellnessartikel. Wir bieten eine kuratierte Auswahl hochwertiger Gesundheitsprodukte mit bequemer Lieferung in der ganzen Schweiz.",
     category: "medical-shop",
-    address: "Baarerstrasse 82",
-    city: "Zug",
-    zip: "6300",
-    phone: "044 244 09 90",
+    ...LOC_BAARERSTR,
     email: "shop@jerumed.com",
     website: "https://www.jerumed.com/",
     image: "/images/clinic-shop.jpg",
     logo: "/jerumed_shop.png",
     services: ["Pharmazeutika", "Medizinbedarf", "Wellnessprodukte", "Nahrungsergänzung", "Körperpflege"],
     openingHours: allDay(),
-    coordinates: { lat: 47.166, lng: 8.5159 },
     accentColor: "#f59e0b",
   }),
 ];

@@ -56,8 +56,9 @@ export default function ClinicsPage() {
         <div className="container-wide py-4">
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-2">
-              <label className="text-sm font-medium text-text-muted dark:text-text-dark-muted">City:</label>
+              <label htmlFor="city-filter" className="text-sm font-medium text-text-muted dark:text-text-dark-muted">City:</label>
               <select
+                id="city-filter"
                 value={selectedCity}
                 onChange={(e) => setSelectedCity(e.target.value)}
                 className="px-3 py-1.5 text-sm rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-text-primary dark:text-text-dark-primary focus:outline-none focus:border-primary-400"
@@ -69,8 +70,9 @@ export default function ClinicsPage() {
               </select>
             </div>
             <div className="flex items-center gap-2">
-              <label className="text-sm font-medium text-text-muted dark:text-text-dark-muted">Type:</label>
+              <label htmlFor="category-filter" className="text-sm font-medium text-text-muted dark:text-text-dark-muted">Type:</label>
               <select
+                id="category-filter"
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
                 className="px-3 py-1.5 text-sm rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-text-primary dark:text-text-dark-primary focus:outline-none focus:border-primary-400"

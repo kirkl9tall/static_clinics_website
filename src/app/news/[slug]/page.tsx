@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function ArticlePage({ params }: { readonly params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
   if (!article) notFound();
@@ -109,8 +109,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             {/* Article body */}
             <article className="lg:col-span-2">
               <div className="space-y-5">
-                {paragraphs.map((para, i) => (
-                  <p key={i} className="text-lg leading-relaxed text-text-secondary dark:text-text-dark-secondary">
+                {paragraphs.map((para) => (
+                  <p key={para} className="text-lg leading-relaxed text-text-secondary dark:text-text-dark-secondary">
                     {para}
                   </p>
                 ))}

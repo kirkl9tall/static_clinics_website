@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, AlertTriangle, CheckCircle, Building2 } from "lucide-react";
-import SectionHeader from "@/components/shared/section-header";
 import { clinics } from "@/data/clinics";
 import { useTranslations } from "next-intl";
 
@@ -39,7 +38,7 @@ export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
-  function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
     setSubmitted(true);
   }
@@ -129,8 +128,9 @@ export default function ContactPage() {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-sm font-medium text-text-primary dark:text-text-dark-primary mb-2">Full Name *</label>
+                      <label htmlFor="contact-name" className="block text-sm font-medium text-text-primary dark:text-text-dark-primary mb-2">Full Name *</label>
                       <input
+                        id="contact-name"
                         type="text"
                         required
                         value={form.name}
@@ -140,8 +140,9 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-text-primary dark:text-text-dark-primary mb-2">Email *</label>
+                      <label htmlFor="contact-email" className="block text-sm font-medium text-text-primary dark:text-text-dark-primary mb-2">Email *</label>
                       <input
+                        id="contact-email"
                         type="email"
                         required
                         value={form.email}
@@ -154,8 +155,9 @@ export default function ContactPage() {
 
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-sm font-medium text-text-primary dark:text-text-dark-primary mb-2">Phone</label>
+                      <label htmlFor="contact-phone" className="block text-sm font-medium text-text-primary dark:text-text-dark-primary mb-2">Phone</label>
                       <input
+                        id="contact-phone"
                         type="tel"
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
@@ -164,8 +166,9 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-text-primary dark:text-text-dark-primary mb-2">Subject *</label>
+                      <label htmlFor="contact-subject" className="block text-sm font-medium text-text-primary dark:text-text-dark-primary mb-2">Subject *</label>
                       <select
+                        id="contact-subject"
                         required
                         value={form.subject}
                         onChange={(e) => setForm({ ...form, subject: e.target.value })}
@@ -180,8 +183,9 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-text-primary dark:text-text-dark-primary mb-2">Message *</label>
+                    <label htmlFor="contact-message" className="block text-sm font-medium text-text-primary dark:text-text-dark-primary mb-2">Message *</label>
                     <textarea
+                      id="contact-message"
                       required
                       rows={5}
                       value={form.message}
