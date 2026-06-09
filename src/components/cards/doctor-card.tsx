@@ -50,7 +50,7 @@ export default function DoctorCard({ doctor, index = 0 }: DoctorCardProps) {
             src={doctor.image}
             alt={`Profilfoto – ${doctor.name}, ${doctor.specialty}`}
             fill
-            className="object-contain"
+            className="object-cover"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         ) : (
