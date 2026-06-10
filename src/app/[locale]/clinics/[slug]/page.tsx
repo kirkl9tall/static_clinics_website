@@ -5,6 +5,7 @@ import { MapPin, Phone, Mail, Globe, Clock, CheckCircle, ArrowRight } from "luci
 import { clinics, getClinicBySlug } from "@/data/clinics";
 import { getDoctorsByClinic } from "@/data/doctors";
 import { JsonLd, clinicSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
+import { getTranslations } from "next-intl/server";
 
 export const dynamic = 'force-dynamic';
 
@@ -12,16 +13,18 @@ export async function generateStaticParams() {
   return clinics.map((c) => ({ slug: c.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }): Promise<Metadata> {
+  const { slug, locale } = await params;
   const clinic = getClinicBySlug(slug);
   if (!clinic) return { title: "Clinic" };
+  const t = await getTranslations({ locale, namespace: "clinics" });
+  const description = t(`descriptions.${clinic.id}` as Parameters<typeof t>[0]);
   return {
     title: clinic.name,
-    description: clinic.description,
+    description,
     openGraph: {
       title: `${clinic.name} | Praxen Jerumed`,
-      description: clinic.description,
+      description,
       images: [{ url: clinic.logo || "/praxen-jerumed.png", width: 1200, height: 630 }],
     },
     alternates: { canonical: `https://praxen-jerumed.ch/de/clinics/${slug}` },
@@ -37,6 +40,12 @@ export default async function ClinicPage({ params }: { readonly params: Promise<
   const clinic = getClinicBySlug(slug);
   if (!clinic) notFound();
 
+  const t = await getTranslations("clinics");
+  const tc = await getTranslations("common");
+
+  const description = t(`descriptions.${clinic.id}` as Parameters<typeof t>[0]);
+  const longDescription = t(`longDescriptions.${clinic.id}` as Parameters<typeof t>[0]);
+
   const clinicDoctors = getDoctorsByClinic(clinic.id);
   const otherClinics = clinics.filter((c) => c.id !== clinic.id).slice(0, 3);
 
@@ -45,7 +54,7 @@ export default async function ClinicPage({ params }: { readonly params: Promise<
       <JsonLd data={clinicSchema(clinic)} />
       <JsonLd data={breadcrumbSchema(locale, [
         { name: "Home", path: "" },
-        { name: "Praxen", path: "/clinics" },
+        { name: t("hero.badge"), path: "/clinics" },
         { name: clinic.name, path: `/clinics/${clinic.slug}` },
       ])} />
       {/* Hero */}
@@ -57,14 +66,14 @@ export default async function ClinicPage({ params }: { readonly params: Promise<
             </span>
             {clinic.isComingSoon && (
               <span className="px-3 py-1 text-sm font-semibold rounded-full bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400">
-                Coming Soon
+                {t("detail.comingSoon")}
               </span>
             )}
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-text-primary dark:text-text-dark-primary mb-4">
             {clinic.name}
           </h1>
-          <p className="text-xl text-text-secondary dark:text-text-dark-secondary max-w-2xl mb-6">{clinic.description}</p>
+          <p className="text-xl text-text-secondary dark:text-text-dark-secondary max-w-2xl mb-6">{description}</p>
           <div className="flex flex-wrap gap-4 text-sm text-text-muted dark:text-text-dark-muted">
             <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4 text-primary-500" />{clinic.address}, {clinic.zip} {clinic.city}</span>
             <a href={`tel:${clinic.phone}`} className="flex items-center gap-1.5 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
@@ -81,12 +90,12 @@ export default async function ClinicPage({ params }: { readonly params: Promise<
             {/* Left: description + services */}
             <div className="lg:col-span-2 space-y-8">
               <div className="p-6 rounded-2xl bg-surface-dim dark:bg-surface-dark-dim border border-border-light dark:border-border-dark">
-                <h2 className="text-xl font-bold text-text-primary dark:text-text-dark-primary mb-4">About This Practice</h2>
-                <p className="text-text-secondary dark:text-text-dark-secondary leading-relaxed">{clinic.longDescription}</p>
+                <h2 className="text-xl font-bold text-text-primary dark:text-text-dark-primary mb-4">{t("detail.about")}</h2>
+                <p className="text-text-secondary dark:text-text-dark-secondary leading-relaxed">{longDescription}</p>
               </div>
 
               <div>
-                <h2 className="text-xl font-bold text-text-primary dark:text-text-dark-primary mb-4">Services Offered</h2>
+                <h2 className="text-xl font-bold text-text-primary dark:text-text-dark-primary mb-4">{t("detail.services")}</h2>
                 <div className="flex flex-wrap gap-2">
                   {clinic.services.map((service) => (
                     <span
@@ -105,16 +114,16 @@ export default async function ClinicPage({ params }: { readonly params: Promise<
               <div>
                 <h2 className="text-xl font-bold text-text-primary dark:text-text-dark-primary mb-4 flex items-center gap-2">
                   <Clock className="w-5 h-5 text-primary-500" />
-                  Opening Hours
+                  {t("detail.openingHours")}
                 </h2>
                 <div className="rounded-2xl border border-border-light dark:border-border-dark overflow-hidden">
                   {clinic.openingHours.map((hours) => (
                     <div key={hours.day} className="flex justify-between items-center px-5 py-3 border-b border-border-light dark:border-border-dark last:border-0 odd:bg-surface-dim dark:odd:bg-surface-dark-dim">
                       <span className="text-sm font-medium text-text-secondary dark:text-text-dark-secondary w-28">{hours.day}</span>
                       {hours.isClosed ? (
-                        <span className="text-sm text-rose-500 font-medium">Closed</span>
+                        <span className="text-sm text-rose-500 font-medium">{t("detail.closed")}</span>
                       ) : (
-                        <span className="text-sm font-medium text-text-primary dark:text-text-dark-primary">{hours.open} – {hours.close}</span>
+                        <span className="text-sm font-medium text-text-primary dark:text-text-dark-primary">{hours.close ? `${hours.open} – ${hours.close}` : hours.open}</span>
                       )}
                     </div>
                   ))}
@@ -125,7 +134,7 @@ export default async function ClinicPage({ params }: { readonly params: Promise<
             {/* Sidebar */}
             <div className="space-y-6">
               <div className="p-6 rounded-2xl bg-white dark:bg-surface-dark-dim border border-border-light dark:border-border-dark shadow-card">
-                <h3 className="font-bold text-text-primary dark:text-text-dark-primary mb-4">Contact Information</h3>
+                <h3 className="font-bold text-text-primary dark:text-text-dark-primary mb-4">{t("detail.contactInfo")}</h3>
                 <div className="space-y-3 text-sm">
                   <a href={`tel:${clinic.phone}`} className="flex items-center gap-3 text-text-secondary dark:text-text-dark-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                     <Phone className="w-4 h-4 text-primary-500 flex-shrink-0" />
@@ -138,7 +147,7 @@ export default async function ClinicPage({ params }: { readonly params: Promise<
                   {clinic.website !== "#" && (
                     <a href={clinic.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-text-secondary dark:text-text-dark-secondary hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                       <Globe className="w-4 h-4 text-primary-500 flex-shrink-0" />
-                      Visit Website
+                      {t("detail.visitWebsite")}
                     </a>
                   )}
                   <div className="flex items-start gap-3 text-text-secondary dark:text-text-dark-secondary">
@@ -149,7 +158,7 @@ export default async function ClinicPage({ params }: { readonly params: Promise<
                 <div className="mt-4 pt-4 border-t border-border-light dark:border-border-dark">
                   <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-full ${clinic.isComingSoon ? "bg-amber-50 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400" : "bg-emerald-50 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400"}`}>
                     <span className={`w-2 h-2 rounded-full ${clinic.isComingSoon ? "bg-amber-500" : "bg-emerald-500"}`} />
-                    {clinic.isComingSoon ? "Opening Soon" : "Currently Active"}
+                    {clinic.isComingSoon ? t("detail.openingSoon") : t("detail.currentlyActive")}
                   </span>
                 </div>
               </div>
@@ -163,7 +172,7 @@ export default async function ClinicPage({ params }: { readonly params: Promise<
       {clinicDoctors.length > 0 && (
         <section className="py-16 bg-surface-dim dark:bg-surface-dark-dim">
           <div className="container-wide">
-            <h2 className="text-2xl font-bold text-text-primary dark:text-text-dark-primary mb-8">Doctors at This Practice</h2>
+            <h2 className="text-2xl font-bold text-text-primary dark:text-text-dark-primary mb-8">{t("detail.doctorsHere")}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {clinicDoctors.map((doctor) => (
                 <Link key={doctor.id} href={`/team/${doctor.slug}`} className="block p-5 rounded-2xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-card hover:shadow-card-hover transition-all hover:-translate-y-1 group text-center">
@@ -177,10 +186,7 @@ export default async function ClinicPage({ params }: { readonly params: Promise<
                     let cls = "bg-gray-100 text-gray-500";
                     if (avail === "available") cls = "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-400";
                     else if (avail === "limited") cls = "bg-amber-100 text-amber-700";
-                    let label = "Unavailable";
-                    if (avail === "available") label = "Available";
-                    else if (avail === "limited") label = "Limited";
-                    return <span className={`inline-block mt-2 px-2 py-0.5 text-[10px] font-semibold rounded-full ${cls}`}>{label}</span>;
+                    return <span className={`inline-block mt-2 px-2 py-0.5 text-[10px] font-semibold rounded-full ${cls}`}>{tc(avail)}</span>;
                   })()}
                 </Link>
               ))}
@@ -192,7 +198,7 @@ export default async function ClinicPage({ params }: { readonly params: Promise<
       {/* Other clinics */}
       <section className="py-16 bg-white dark:bg-surface-dark">
         <div className="container-wide">
-          <h2 className="text-2xl font-bold text-text-primary dark:text-text-dark-primary mb-6">Other Locations</h2>
+          <h2 className="text-2xl font-bold text-text-primary dark:text-text-dark-primary mb-6">{t("detail.otherLocations")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {otherClinics.map((other) => (
               <Link key={other.id} href={`/clinics/${other.slug}`} className="group flex items-center gap-4 p-5 rounded-2xl border border-border-light dark:border-border-dark bg-surface-dim dark:bg-surface-dark-dim hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-card transition-all">

@@ -105,18 +105,54 @@
         "emergency": "Emergency"
       },
       "items": {
-        "1": { "question": "How do I book an appointment?", "answer": "You can book an appointment through our website, by calling the respective clinic directly, or using our online booking system. Walk-in appointments are also available for urgent cases." },
-        "2": { "question": "What insurance do you accept?", "answer": "We accept all major Swiss health insurance providers. Both basic (KVG) and supplementary insurance plans are welcome. Please bring your insurance card to your first visit." },
-        "3": { "question": "What are the opening hours?", "answer": "Our clinics are generally open Monday to Friday from 8:00 to 18:00. Some locations offer Saturday morning hours. Please check individual clinic pages for specific times." },
-        "4": { "question": "Do I need a referral?", "answer": "For general practice consultations, no referral is needed. For specialist services, a referral from your general practitioner may be required depending on your insurance model." },
-        "5": { "question": "What should I bring to my first appointment?", "answer": "Please bring your health insurance card, a valid ID, any relevant medical records, a list of current medications, and any referral letters if applicable." },
-        "6": { "question": "Do you offer emergency services?", "answer": "Yes, several of our clinics offer walk-in emergency services during opening hours. For life-threatening emergencies, please call 144 (Swiss emergency number)." },
-        "7": { "question": "Can I get my lab results online?", "answer": "Lab results are typically discussed with your doctor during a follow-up consultation. We are implementing a patient portal for digital access to results." },
-        "8": { "question": "Are your clinics wheelchair accessible?", "answer": "Yes, all our clinics are designed to be fully accessible, including wheelchair access, accessible parking, and adapted facilities." },
-        "9": { "question": "How can I cancel an appointment?", "answer": "Please cancel at least 24 hours in advance by calling the clinic directly. Late cancellations or no-shows may incur a fee." },
-        "10": { "question": "Do you offer telemedicine?", "answer": "Yes, we offer video consultations through our telemedicine platform. Book online or call any clinic to schedule a virtual appointment." },
-        "11": { "question": "What languages do your doctors speak?", "answer": "Our multilingual team speaks German, English, French, Italian, Spanish, Arabic, Portuguese, and Mandarin, depending on the doctor." },
-        "12": { "question": "Do you treat children?", "answer": "Yes, our general practices provide pediatric care for children of all ages. For specialized pediatric care, we can provide appropriate referrals." }
+        "1": {
+          "question": "How do I book an appointment?",
+          "answer": "You can book an appointment through our website, by calling the respective clinic directly, or using our online booking system. Walk-in appointments are also available for urgent cases."
+        },
+        "2": {
+          "question": "What insurance do you accept?",
+          "answer": "We accept all major Swiss health insurance providers. Both basic (KVG) and supplementary insurance plans are welcome. Please bring your insurance card to your first visit."
+        },
+        "3": {
+          "question": "What are the opening hours?",
+          "answer": "Our clinics are generally open Monday to Friday from 8:00 to 18:00. Some locations offer Saturday morning hours. Please check individual clinic pages for specific times."
+        },
+        "4": {
+          "question": "Do I need a referral?",
+          "answer": "For general practice consultations, no referral is needed. For specialist services, a referral from your general practitioner may be required depending on your insurance model."
+        },
+        "5": {
+          "question": "What should I bring to my first appointment?",
+          "answer": "Please bring your health insurance card, a valid ID, any relevant medical records, a list of current medications, and any referral letters if applicable."
+        },
+        "6": {
+          "question": "Do you offer emergency services?",
+          "answer": "Yes, several of our clinics offer walk-in emergency services during opening hours. For life-threatening emergencies, please call 144 (Swiss emergency number)."
+        },
+        "7": {
+          "question": "Can I get my lab results online?",
+          "answer": "Lab results are typically discussed with your doctor during a follow-up consultation. We are implementing a patient portal for digital access to results."
+        },
+        "8": {
+          "question": "Are your clinics wheelchair accessible?",
+          "answer": "Yes, all our clinics are designed to be fully accessible, including wheelchair access, accessible parking, and adapted facilities."
+        },
+        "9": {
+          "question": "How can I cancel an appointment?",
+          "answer": "Please cancel at least 24 hours in advance by calling the clinic directly. Late cancellations or no-shows may incur a fee."
+        },
+        "10": {
+          "question": "Do you offer telemedicine?",
+          "answer": "Yes, we offer video consultations through our telemedicine platform. Book online or call any clinic to schedule a virtual appointment."
+        },
+        "11": {
+          "question": "What languages do your doctors speak?",
+          "answer": "Our multilingual team speaks German, English, French, Italian, Spanish, Arabic, Portuguese, and Mandarin, depending on the doctor."
+        },
+        "12": {
+          "question": "Do you treat children?",
+          "answer": "Yes, our general practices provide pediatric care for children of all ages. For specialized pediatric care, we can provide appropriate referrals."
+        }
       }
     },
     "contact": {
@@ -134,52 +170,91 @@
   },
   "about": {
     "hero": {
-      "badge": "About Us",
-      "title": "Our Commitment to",
-      "titleHighlight": "Your Health",
-      "subtitle": "Praxen Jerumed – a network of specialized practices with the highest quality standards and patient-centered care."
+      "badge": "Our Story",
+      "title": "About",
+      "titleHighlight": "Praxen Jerumed",
+      "subtitle": "For over 15 years, we have been building a healthcare ecosystem that puts patients at its centre — growing from a single practice into Switzerland's most integrated medical network."
     },
     "mission": {
       "title": "Our Mission",
-      "description": "We are a network of specialized practices distinguished by high quality, trust, and patient-centered care. Our goal is to provide you with excellent medical care tailored to your individual needs.",
-      "description2": "With state-of-the-art technology and a dedicated team of experienced physicians and specialists, we are here for you in all matters relating to your health."
+      "description": "To deliver accessible, high-quality, and integrated healthcare to communities across Switzerland — through a network of expert physicians, modern facilities, and a genuine commitment to patient well-being."
     },
-    "founder": {
-      "name": "A. Abuawad",
-      "title": "CEO & Founder",
-      "quote": "Our network offers a variety of specialties to provide you with comprehensive medical care under one roof."
+    "vision": {
+      "title": "Our Vision",
+      "description": "To become Switzerland's most trusted and comprehensive healthcare network — setting new standards for patient experience, clinical quality, and integrated care delivery across every region we serve."
     },
     "values": {
-      "title": "Our Values",
-      "trust": {
-        "title": "Trust",
-        "description": "Your health is our priority. We rely on trustful cooperation and transparent communication."
+      "badge": "What We Stand For",
+      "title": "Our Core Values",
+      "subtitle": "The principles that guide every interaction, every decision, and every step of patient care.",
+      "patientFirst": {
+        "title": "Patient-First",
+        "description": "Every decision we make centers on the well-being, dignity, and experience of our patients."
       },
-      "competence": {
-        "title": "Competence",
-        "description": "Our physicians and specialists are highly qualified and always up to date with the latest medical research."
+      "excellence": {
+        "title": "Excellence",
+        "description": "We maintain the highest standards of clinical practice, continuously improving through education and innovation."
       },
-      "access": {
-        "title": "Access",
-        "description": "We provide you with fast access to high-quality medical services in a pleasant and modern atmosphere."
+      "innovation": {
+        "title": "Innovation",
+        "description": "Embracing modern technology and evidence-based medicine to deliver better outcomes for every patient."
+      },
+      "integration": {
+        "title": "Integration",
+        "description": "Our network model ensures seamless coordination between specialists, clinics, and services across Switzerland."
       }
+    },
+    "timeline": {
+      "badge": "Our Journey",
+      "title": "Building a Healthcare Legacy",
+      "subtitle": "Key milestones in the growth of the Praxen Jerumed network.",
+      "2008": {
+        "title": "Founded Hausarztpraxis Seefeld",
+        "description": "Opened our first clinic in the heart of Zürich Seefeld, establishing the foundation of the Jerumed healthcare philosophy."
+      },
+      "2012": {
+        "title": "Expanded to Dübendorf",
+        "description": "Bringing comprehensive primary care to the growing community of Dübendorf with modern facilities."
+      },
+      "2015": {
+        "title": "Opened Altstetten Location",
+        "description": "Extended our reach into Zürich Altstetten with an in-house pharmacy and expanded diagnostic capabilities."
+      },
+      "2018": {
+        "title": "Launched MedEsthec",
+        "description": "Introduced premium aesthetic medicine services to complement our clinical network."
+      },
+      "2020": {
+        "title": "Winterthur Clinic Opened",
+        "description": "Continued growing during challenging times, expanding quality healthcare access to Winterthur."
+      },
+      "2024": {
+        "title": "5 Practices in Switzerland",
+        "description": "Our network now spans 5 practices, serving over 25,000 patients with more than 50 specialists."
+      }
+    },
+    "teamCta": {
+      "title": "The People Behind Our Care",
+      "subtitle": "Our network is only as strong as the dedicated physicians and staff who bring it to life every day.",
+      "button": "Meet Our Team"
     }
   },
   "contact": {
     "hero": {
       "badge": "Contact",
-      "title": "We Are Here",
-      "titleHighlight": "for You",
-      "subtitle": "Contact us by phone, email, or visit us directly at one of our clinics."
+      "title": "Get in",
+      "titleHighlight": "Touch",
+      "subtitle": "Our team is here to help. Reach out with any questions, appointment requests, or feedback."
     },
     "info": {
       "phone": "Phone",
       "email": "Email",
       "address": "Address",
-      "hours": "Opening Hours"
+      "hours": "Opening Hours",
+      "headOffice": "Head Office"
     },
     "form": {
-      "title": "Send a Message",
+      "title": "Send Us a Message",
       "name": "Full Name",
       "email": "Email Address",
       "phone": "Phone Number",
@@ -188,65 +263,214 @@
       "message": "Your Message",
       "submit": "Send Message",
       "success": "Thank you! We will get back to you soon.",
-      "selectClinic": "Please select a clinic"
-    }
+      "selectClinic": "Please select a clinic",
+      "selectSubject": "Select subject",
+      "messagePlaceholder": "Tell us how we can help...",
+      "messageSent": "Message Sent!",
+      "messageSentDesc": "Thank you for reaching out. Our team will get back to you within 1 business day.",
+      "sendAnother": "Send Another"
+    },
+    "subjects": {
+      "general": "General Inquiry",
+      "appointment": "Appointment Request",
+      "medical": "Medical Question",
+      "feedback": "Feedback",
+      "careers": "Careers",
+      "other": "Other"
+    },
+    "hours": {
+      "title": "General Hours",
+      "monThu": "Monday – Thursday",
+      "fri": "Friday",
+      "sat": "Saturday",
+      "sun": "Sunday"
+    },
+    "locations": "Our Locations"
   },
   "services": {
     "hero": {
-      "badge": "Services",
+      "badge": "What We Offer",
       "title": "Our Medical",
-      "titleHighlight": "Offerings",
-      "subtitle": "Comprehensive medical care for the whole family – from prevention to treatment."
+      "titleHighlight": "Services",
+      "subtitle": "Comprehensive healthcare services delivered by experienced specialists across our network of clinics."
+    },
+    "filterAll": "All Services",
+    "categories": {
+      "general": "General",
+      "diagnostics": "Diagnostics",
+      "cardiology": "Cardiology",
+      "pulmonology": "Pulmonology",
+      "radiology": "Radiology",
+      "laboratory": "Laboratory",
+      "beauty": "Beauty",
+      "pharmacy": "Pharmacy",
+      "preventive": "Preventive",
+      "emergency": "Emergency",
+      "longevity": "Longevity"
+    },
+    "cta": {
+      "title": "Can't find what you need?",
+      "subtitle": "Our team is happy to discuss your specific healthcare needs and find the right service for you.",
+      "button": "Contact Us"
     },
     "items": {
-      "generalMedicine": {
-        "name": "General Practice Medicine",
-        "description": "Comprehensive primary care for the whole family – from prevention to treatment of acute illnesses."
-      },
-      "xray": {
+      "radiology": {
         "name": "X-Ray Examination",
-        "description": "Modern digital X-ray diagnostics for precise and fast findings directly at the practice."
+        "shortDescription": "Modern digital X-ray diagnostics for precise and fast findings directly at the practice.",
+        "longDescription": "Our modern X-ray equipment provides comprehensive imaging diagnostics – fast and precise, without external referral.",
+        "features": [
+          "Digital X-Ray",
+          "Fast Results",
+          "In-House Processing",
+          "Specialist Standard"
+        ]
       },
-      "heart": {
+      "cardiology": {
         "name": "Heart Examination (ECG)",
-        "description": "Comprehensive cardiological diagnostics – ECG, stress tests, and heart health checks."
+        "shortDescription": "Comprehensive cardiological diagnostics – ECG, stress tests, and heart health checks.",
+        "longDescription": "Our cardiological services include ECG, stress tests, and preventive heart health checks for optimal cardiac health.",
+        "features": [
+          "ECG",
+          "Stress ECG",
+          "Heart Monitoring",
+          "Risk Assessment",
+          "Prevention"
+        ]
       },
-      "lung": {
+      "pulmonology": {
         "name": "Lung Examinations",
-        "description": "Spirometry and pulmonary function tests for complete respiratory assessment."
+        "shortDescription": "Spirometry and pulmonary function tests for complete respiratory assessment.",
+        "longDescription": "Our pulmonary diagnostics include spirometry and additional lung function tests for conditions such as asthma, COPD, and other respiratory diseases.",
+        "features": [
+          "Spirometry",
+          "Lung Function Tests",
+          "Asthma Treatment",
+          "COPD Care"
+        ]
       },
-      "lab": {
+      "laboratory": {
         "name": "Laboratory & Diagnostics",
-        "description": "In-house laboratory with fast results for blood tests and comprehensive diagnostics."
+        "shortDescription": "In-house laboratory with fast results for blood tests and comprehensive diagnostics.",
+        "longDescription": "Our modern in-house laboratory offers comprehensive blood tests, urine analyses, and other diagnostic services with minimal waiting times.",
+        "features": [
+          "Blood Tests",
+          "Urine Diagnostics",
+          "Fast Results",
+          "Allergy Tests",
+          "Hormone Levels"
+        ]
       },
-      "aesthetics": {
+      "beautyTreatments": {
         "name": "Aesthetic Medicine",
-        "description": "Premium aesthetic treatments – Botox, fillers, and skin rejuvenation at Medesthec."
+        "shortDescription": "Non-invasive and minimally invasive aesthetic treatments at MedEsthec – Botox & fillers, laser, body contouring, and vaginal rejuvenation.",
+        "longDescription": "MedEsthec offers a comprehensive range of aesthetic medical treatments under the medical supervision of Dr. med. Demaili Fiknete. Services include: Hyaluronic acid fillers (lips, cheeks, jawline, tear troughs), Botulinum Toxin / Botox, RF Microneedling & CO₂ Laser (SecretPro), Biorevitalization & Skinboosters, Mesotherapy, Hyaluronidase correction, Endolifting, Sculptra & Biostimulators, Radiofrequency SECTUM, Polynucleotides, permanent laser hair removal, Vaginal Rejuvenation, personalised DR. FIDEM DRIPs (nutrient infusions), and medical skincare with ZO® Skin Health.",
+        "features": [
+          "Hyaluronic Acid Fillers",
+          "Botox / Botulinum Toxin",
+          "RF Microneedling & CO₂ Laser",
+          "Endolifting",
+          "Sculptra Biostimulators",
+          "Laser Hair Removal",
+          "DR. FIDEM DRIPs",
+          "Radiofrequency SECTUM",
+          "Mesotherapy",
+          "Vaginal Rejuvenation"
+        ]
       },
       "pharmacy": {
         "name": "In-House Pharmacy",
-        "description": "Direct medication dispensing at the practice – convenient after your consultation."
+        "shortDescription": "Direct medication dispensing at the practice – convenient after your consultation.",
+        "longDescription": "Our in-house pharmacy allows immediate medication dispensing after consultation – for maximum convenience and fast care.",
+        "features": [
+          "Prescriptions",
+          "OTC Medications",
+          "Supplements",
+          "Medication Advice"
+        ]
       },
-      "preventive": {
+      "preventiveCare": {
         "name": "Prevention & Wellness",
-        "description": "Proactive health prevention and screening programs for your long-term health."
+        "shortDescription": "Proactive health prevention and screening programs for your long-term health.",
+        "longDescription": "Prevention is better than cure. Our prevention programs include comprehensive health screenings, vaccination programs, and personalised wellness plans.",
+        "features": [
+          "Health Screening",
+          "Vaccination Programs",
+          "Travel Medicine",
+          "Wellness Advice"
+        ]
       },
       "emergency": {
         "name": "Emergency Care",
-        "description": "Walk-in emergency care for acute illnesses without long waiting times."
+        "shortDescription": "Walk-in emergency care for acute illnesses without long waiting times.",
+        "longDescription": "Our practices offer emergency care for acute illnesses. Our experienced team handles a wide range of emergencies with professionalism and care.",
+        "features": [
+          "Walk-in Emergency",
+          "Wound Care",
+          "Acute Illnesses",
+          "Minor Injuries"
+        ]
       },
       "ironTherapy": {
         "name": "Iron Deficiency Therapy",
-        "description": "Specialized iron infusions for fatigue and iron deficiency – quick and effective."
+        "shortDescription": "Specialized iron infusions for fatigue and iron deficiency – quick and effective.",
+        "longDescription": "Our iron infusion therapy treats fatigue and exhaustion caused by iron deficiency. Under medical supervision, you receive an effective intravenous iron treatment.",
+        "features": [
+          "Iron Infusions",
+          "Blood Test",
+          "Fatigue Treatment",
+          "Follow-up Care"
+        ]
       },
       "earCleaning": {
         "name": "Ear Irrigation",
-        "description": "Professional ear cleaning by experienced specialists."
+        "shortDescription": "Professional ear cleaning by experienced specialists.",
+        "longDescription": "Our professional ear irrigation removes cerumen plugs and restores optimal hearing function – quickly, safely, and painlessly.",
+        "features": [
+          "Cerumen Removal",
+          "Painless",
+          "Short Treatment Time",
+          "Follow-up Check"
+        ]
       },
       "drivingFitness": {
         "name": "Driving Fitness Assessment",
-        "description": "Medical assessment of driving fitness according to Swiss legal requirements."
+        "shortDescription": "Medical assessment of driving fitness according to Swiss legal requirements.",
+        "longDescription": "We conduct medical driving fitness assessments according to the requirements of the Road Traffic Office – reliably and on time.",
+        "features": [
+          "Vision Test",
+          "Reaction Test",
+          "Medical Certificate",
+          "Road Traffic Office Compliant"
+        ]
+      },
+      "naturalMedicineLongevity": {
+        "name": "Natural Medicine & Longevity",
+        "shortDescription": "Preventive vitality therapies for longevity – IV infusions, NAD+, ozone therapy, peptides, red light, PEMF and hormone optimisation.",
+        "longDescription": "Our Longevity and Natural Medicine programme combines evidence-based preventive medicine with modern vitality therapies. We offer: high-dose Vitamin C infusions, NAD+ infusions, Glutathione, amino acids, vitamin shots (B12, D3, B-complex), Ozone Autohemotherapy, PRP Autologous Blood Therapy, Peptide Therapy, Red Light Therapy, PEMF Therapy, and micronutrient therapy. We also offer specialised programmes for stress & burnout, Long-Covid, hormone optimisation, and individual nutritional and lifestyle coaching.",
+        "features": [
+          "NAD+ Infusions",
+          "Ozone Autohemotherapy",
+          "High-Dose Vitamin C",
+          "PRP Autologous Blood Therapy",
+          "Peptide Therapy",
+          "Red Light Therapy",
+          "PEMF Therapy",
+          "Hormone Optimisation",
+          "Burnout & Stress Medicine",
+          "Long-Covid Therapy"
+        ]
       }
+    },
+    "detail": {
+      "about": "About This Service",
+      "included": "What's Included",
+      "offeredAt": "This service is offered at the following locations.",
+      "whereToFind": "Where to Find This Service",
+      "viewClinic": "View Clinic",
+      "related": "Related Services",
+      "learnMore": "Learn More",
+      "clinic": "clinic",
+      "clinics": "clinics"
     }
   },
   "team": {
@@ -295,6 +519,25 @@
     "hours": "Opening Hours",
     "bookHere": "Book Here",
     "directions": "Get Directions",
+    "network": {
+      "subtitle": "Discover our network of medical practices across Switzerland — each one committed to delivering excellent, personal healthcare.",
+      "stats": {
+        "praxen": "5 Clinics",
+        "staedte": "5 Cities",
+        "specialists": "50+ Specialists"
+      }
+    },
+    "filter": {
+      "city": "City",
+      "type": "Type",
+      "allCities": "All Cities",
+      "allCategories": "All Categories",
+      "found": "{count} clinics found",
+      "foundSingle": "1 clinic found",
+      "noMatch": "No clinics match your filters",
+      "noMatchHint": "Try adjusting your city or category selection.",
+      "clearFilters": "Clear Filters"
+    },
     "descriptions": {
       "seefeld": "Your trusted family practice in the heart of Zürich Seefeld, offering comprehensive primary care with a personal touch.",
       "duebendorf": "A modern general practice in Dübendorf providing family medicine, emergency treatments, and preventive care.",
@@ -306,6 +549,31 @@
       "naturheilmedizin": "Holistic natural medicine center offering complementary therapies and integrative healthcare approaches.",
       "urohealth": "Specialized urology center providing comprehensive urological care with cutting-edge technology.",
       "jerumed-shop": "Online medical shop offering pharmaceutical products, health supplies, and wellness items."
+    },
+    "longDescriptions": {
+      "seefeld": "Hausarztpraxis Seefeld has been serving the Seefeld community for over 15 years. Our team of experienced general practitioners provides comprehensive medical services in a modern, welcoming environment – from routine check-ups to urgent care.",
+      "duebendorf": "Our clinic in Dübendorf combines years of medical experience with modern technology. We specialize in family medicine and offer a broad range of services – from routine examinations to emergency care.",
+      "altstetten": "In the vibrant Altstetten neighbourhood, we offer comprehensive primary care with extended diagnostic capabilities. Our on-site pharmacy and X-ray equipment enable fast and efficient patient care.",
+      "winterthur": "Our clinic in Winterthur provides high-quality family medicine in a warm, professional environment. We place great emphasis on long-term patient relationships and individually tailored care.",
+      "wald": "Praxis Felsenau in Wald takes a personal approach to healthcare in a relaxed, community-oriented atmosphere. Our team focuses on prevention and the well-being of every individual patient.",
+      "medesthec": "MedEsthec is our premium centre for aesthetic medicine, offering cutting-edge treatments for beauty and rejuvenation. Our specialist team combines medical expertise with an artistic eye for natural, refined results.",
+      "beauty-altstetten": "Our beauty clinic in Altstetten offers an extensive portfolio of aesthetic treatments in a luxurious, relaxed atmosphere – from non-invasive skin treatments to advanced cosmetic procedures.",
+      "naturheilmedizin": "Our natural medicine centre combines traditional healing methods with modern medical knowledge. We offer a comprehensive range of complementary therapies to support natural self-healing and holistic health promotion.",
+      "urohealth": "UroHealth is our specialised urology centre with a full range of urological services. Our experienced urologists use state-of-the-art technology for diagnosis and treatment.",
+      "jerumed-shop": "Jerumed Shop is your trusted online destination for pharmaceutical products, medical supplies and wellness items. We offer a curated selection of high-quality health products with convenient delivery throughout Switzerland."
+    },
+    "detail": {
+      "about": "About This Practice",
+      "services": "Services Offered",
+      "openingHours": "Opening Hours",
+      "closed": "Closed",
+      "contactInfo": "Contact Information",
+      "visitWebsite": "Visit Website",
+      "openingSoon": "Opening Soon",
+      "currentlyActive": "Currently Active",
+      "comingSoon": "Coming Soon",
+      "doctorsHere": "Doctors at This Practice",
+      "otherLocations": "Other Locations"
     }
   },
   "gallery": {

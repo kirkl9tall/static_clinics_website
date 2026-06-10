@@ -8,6 +8,7 @@ function schedule(hours: Partial<Record<typeof DAYS[number], { open: string; clo
 }
 
 const h = (open: string, close: string) => ({ open, close });
+const hb = () => ({ open: "09:00 – 13:00 / 14:00 – 18:00", close: "" });
 
 function weekdays(open: string, close: string): OpeningHours[] {
   const hh = h(open, close);
@@ -61,7 +62,9 @@ export const clinics: Clinic[] = [
     image: "/images/clinic-seefeld.jpg",
     logo: "/jeru5.webp",
     services: ["Allgemeinmedizin", "Vorsorgeuntersuchungen", "Impfungen", "Labor", "Kleinchirurgie", "Röntgen"],
-    openingHours: weekdays("09:00", "18:00"),
+    openingHours: schedule({
+      Monday: hb(), Tuesday: hb(), Thursday: hb(), Friday: hb(),
+    }),
     coordinates: { lat: 47.3565, lng: 8.5568 },
     accentColor: "#0ea5e9",
   }),
@@ -83,11 +86,7 @@ export const clinics: Clinic[] = [
     logo: "/jeru2.jpeg",
     services: ["Allgemeinmedizin", "Notfallversorgung", "Präventivmedizin", "Labor", "EKG", "Spirometrie"],
     openingHours: schedule({
-      Monday: h("09:00", "17:00"),
-      Tuesday: h("09:00", "17:00"),
-      Wednesday: h("09:00", "12:30"),
-      Thursday: h("09:00", "17:00"),
-      Friday: h("09:00", "12:30"),
+      Monday: hb(), Tuesday: hb(), Thursday: hb(), Saturday: hb(),
     }),
     coordinates: { lat: 47.3972, lng: 8.6186 },
     accentColor: "#10b981",
@@ -107,7 +106,9 @@ export const clinics: Clinic[] = [
     image: "/images/clinic-altstetten.jpg",
     logo: "/jeru1.jpeg",
     services: ["Allgemeinmedizin", "Röntgen", "Apotheke", "Labor", "Impfungen", "Reisemedizin"],
-    openingHours: weekdaysSat("09:30", "18:00"),
+    openingHours: schedule({
+      Tuesday: hb(), Wednesday: hb(), Thursday: hb(), Friday: hb(), Saturday: hb(),
+    }),
     accentColor: "#0ea5e9",
   }),
   defineClinic({
@@ -128,9 +129,7 @@ export const clinics: Clinic[] = [
     logo: "/jeru2.jpeg",
     services: ["Allgemeinmedizin", "Vorsorgeuntersuchungen", "Chronische Erkrankungen", "Labor", "EKG"],
     openingHours: schedule({
-      Monday: h("09:00", "18:00"),
-      Tuesday: h("09:00", "18:00"),
-      Thursday: h("09:00", "18:00"),
+      Tuesday: hb(), Wednesday: hb(), Thursday: hb(), Friday: hb(), Saturday: hb(),
     }),
     coordinates: { lat: 47.4997, lng: 8.7278 },
     accentColor: "#10b981",
@@ -153,10 +152,7 @@ export const clinics: Clinic[] = [
     logo: "/jeru3.jpeg",
     services: ["Allgemeinmedizin", "Prävention", "Impfungen", "Labor", "Gesundheitsberatung"],
     openingHours: schedule({
-      Monday: h("09:00", "17:30"),
-      Wednesday: h("09:00", "18:00"),
-      Thursday: h("09:00", "17:30"),
-      Friday: h("09:00", "17:30"),
+      Monday: hb(), Wednesday: hb(), Thursday: hb(), Saturday: hb(),
     }),
     coordinates: { lat: 47.2776, lng: 8.9134 },
     accentColor: "#059669",

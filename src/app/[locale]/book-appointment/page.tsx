@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, Suspense } from "react";
+import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -150,13 +151,18 @@ function StepService({ selected, clinicFilter, onSelect }: { selected: Service |
 }
 
 function StepDoctor({ selected, clinicFilter, onSelect }: { selected: Doctor | null; clinicFilter: Clinic | null; onSelect: (d: Doctor | null) => void }) {
+  const tc = useTranslations("common");
   const filtered = clinicFilter ? doctors.filter((d) => d.clinicIds.includes(clinicFilter.id)) : doctors;
   const availColor: Record<Doctor["availability"], string> = {
     available: "text-emerald-600 dark:text-emerald-400",
     limited: "text-amber-600 dark:text-amber-400",
     unavailable: "text-red-500",
   };
-  const availLabel: Record<Doctor["availability"], string> = { available: "Available", limited: "Limited slots", unavailable: "Unavailable" };
+  const availLabel: Record<Doctor["availability"], string> = {
+    available: tc("available"),
+    limited: tc("limited"),
+    unavailable: tc("unavailable"),
+  };
   return (
     <div>
       <h2 className="text-2xl font-bold text-text-primary dark:text-text-dark-primary mb-2">Choose a Doctor</h2>

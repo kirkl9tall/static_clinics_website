@@ -5,51 +5,29 @@ import { motion } from "framer-motion";
 import { Heart, Star, Zap, Network, MapPin, Users, Building2, Award } from "lucide-react";
 import SectionHeader from "@/components/shared/section-header";
 import AnimatedCounter from "@/components/shared/animated-counter";
+import { useTranslations } from "next-intl";
 
-const values = [
-  {
-    icon: Heart,
-    title: "Patient-First",
-    description: "Every decision we make centers on the well-being, dignity, and experience of our patients.",
-    color: "bg-rose-50 dark:bg-rose-500/10 text-rose-600 dark:text-rose-400",
-  },
-  {
-    icon: Star,
-    title: "Excellence",
-    description: "We maintain the highest standards of clinical practice, continuously improving through education and innovation.",
-    color: "bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400",
-  },
-  {
-    icon: Zap,
-    title: "Innovation",
-    description: "Embracing modern technology and evidence-based medicine to deliver better outcomes for every patient.",
-    color: "bg-primary-50 dark:bg-primary-500/10 text-primary-600 dark:text-primary-400",
-  },
-  {
-    icon: Network,
-    title: "Integration",
-    description: "Our network model ensures seamless coordination between specialists, clinics, and services across Switzerland.",
-    color: "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
-  },
+const valueIcons = [Heart, Star, Zap, Network];
+const valueColors = [
+  "bg-rose-50 dark:bg-rose-500/10 text-rose-600 dark:text-rose-400",
+  "bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400",
+  "bg-primary-50 dark:bg-primary-500/10 text-primary-600 dark:text-primary-400",
+  "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
 ];
+const valueKeys = ["patientFirst", "excellence", "innovation", "integration"] as const;
 
-const timeline = [
-  { year: "2008", title: "Founded Hausarztpraxis Seefeld", description: "Opened our first clinic in the heart of Zürich Seefeld, establishing the foundation of the Jerumed healthcare philosophy." },
-  { year: "2012", title: "Expanded to Dübendorf", description: "Bringing comprehensive primary care to the growing community of Dübendorf with modern facilities." },
-  { year: "2015", title: "Opened Altstetten Location", description: "Extended our reach into Zürich Altstetten with an in-house pharmacy and expanded diagnostic capabilities." },
-  { year: "2018", title: "Launched MedEsthec", description: "Introduced premium aesthetic medicine services to complement our clinical network." },
-  { year: "2020", title: "Winterthur Clinic Opened", description: "Continued growing during challenging times, expanding quality healthcare access to Winterthur." },
-  { year: "2024", title: "5 Praxen in der Schweiz", description: "Unser Netzwerk umfasst heute 5 Praxen und betreut über 25.000 Patienten mit mehr als 50 Spezialisten." },
-];
-
-const stats = [
-  { value: 5, suffix: "", label: "Praxen", icon: Building2 },
-  { value: 50, suffix: "+", label: "Specialists", icon: Users },
-  { value: 25, suffix: "K+", label: "Patients", icon: Heart },
-  { value: 5, suffix: "", label: "Städte", icon: MapPin },
-];
+const timelineYears = ["2008", "2012", "2015", "2018", "2020", "2024"] as const;
 
 export default function AboutPage() {
+  const t = useTranslations("about");
+
+  const stats = [
+    { value: 5, suffix: "", label: t("timeline.2024.title").split(" ")[0] + " Praxen", icon: Building2 },
+    { value: 50, suffix: "+", label: "Spezialisten", icon: Users },
+    { value: 25, suffix: "K+", label: "Patienten", icon: Heart },
+    { value: 5, suffix: "", label: "Städte", icon: MapPin },
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero */}
@@ -63,14 +41,14 @@ export default function AboutPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 dark:bg-primary-500/10 rounded-full mb-6">
               <Award className="w-4 h-4 text-primary-600 dark:text-primary-400" />
-              <span className="text-sm font-medium text-primary-700 dark:text-primary-300">Our Story</span>
+              <span className="text-sm font-medium text-primary-700 dark:text-primary-300">{t("hero.badge")}</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-text-primary dark:text-text-dark-primary leading-tight mb-6">
-              About{" "}
-              <span className="gradient-text">Praxen Jerumed</span>
+              {t("hero.title")}{" "}
+              <span className="gradient-text">{t("hero.titleHighlight")}</span>
             </h1>
             <p className="text-xl text-text-secondary dark:text-text-dark-secondary leading-relaxed">
-              For over 15 years, we have been building a healthcare ecosystem that puts patients at its centre — growing from a single practice into Switzerland's most integrated medical network.
+              {t("hero.subtitle")}
             </p>
           </motion.div>
         </div>
@@ -90,9 +68,9 @@ export default function AboutPage() {
               <div className="w-12 h-12 rounded-2xl gradient-primary flex items-center justify-center text-white mb-6">
                 <Heart className="w-6 h-6" />
               </div>
-              <h2 className="text-2xl font-bold text-text-primary dark:text-text-dark-primary mb-4">Our Mission</h2>
+              <h2 className="text-2xl font-bold text-text-primary dark:text-text-dark-primary mb-4">{t("mission.title")}</h2>
               <p className="text-text-secondary dark:text-text-dark-secondary leading-relaxed text-lg">
-                To deliver accessible, high-quality, and integrated healthcare to communities across Switzerland — through a network of expert physicians, modern facilities, and a genuine commitment to patient well-being.
+                {t("mission.description")}
               </p>
             </motion.div>
 
@@ -106,9 +84,9 @@ export default function AboutPage() {
               <div className="w-12 h-12 rounded-2xl gradient-emerald flex items-center justify-center text-white mb-6">
                 <Star className="w-6 h-6" />
               </div>
-              <h2 className="text-2xl font-bold text-text-primary dark:text-text-dark-primary mb-4">Our Vision</h2>
+              <h2 className="text-2xl font-bold text-text-primary dark:text-text-dark-primary mb-4">{t("vision.title")}</h2>
               <p className="text-text-secondary dark:text-text-dark-secondary leading-relaxed text-lg">
-                To become Switzerland's most trusted and comprehensive healthcare network — setting new standards for patient experience, clinical quality, and integrated care delivery across every region we serve.
+                {t("vision.description")}
               </p>
             </motion.div>
           </div>
@@ -119,27 +97,30 @@ export default function AboutPage() {
       <section className="py-20 bg-surface-dim dark:bg-surface-dark-dim">
         <div className="container-wide">
           <SectionHeader
-            badge="What We Stand For"
-            title="Our Core Values"
-            subtitle="The principles that guide every interaction, every decision, and every step of patient care."
+            badge={t("values.badge")}
+            title={t("values.title")}
+            subtitle={t("values.subtitle")}
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            {values.map((value, i) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="p-6 rounded-2xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-card hover:shadow-card-hover transition-all hover:-translate-y-1"
-              >
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${value.color}`}>
-                  <value.icon className="w-6 h-6" />
-                </div>
-                <h3 className="font-bold text-lg text-text-primary dark:text-text-dark-primary mb-2">{value.title}</h3>
-                <p className="text-sm text-text-secondary dark:text-text-dark-secondary leading-relaxed">{value.description}</p>
-              </motion.div>
-            ))}
+            {valueKeys.map((key, i) => {
+              const Icon = valueIcons[i];
+              return (
+                <motion.div
+                  key={key}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="p-6 rounded-2xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-card hover:shadow-card-hover transition-all hover:-translate-y-1"
+                >
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${valueColors[i]}`}>
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-bold text-lg text-text-primary dark:text-text-dark-primary mb-2">{t(`values.${key}.title`)}</h3>
+                  <p className="text-sm text-text-secondary dark:text-text-dark-secondary leading-relaxed">{t(`values.${key}.description`)}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -148,32 +129,28 @@ export default function AboutPage() {
       <section className="py-20 bg-white dark:bg-surface-dark">
         <div className="container-wide">
           <SectionHeader
-            badge="Our Journey"
-            title="Building a Healthcare Legacy"
-            subtitle="Key milestones in the growth of the Praxen Jerumed network."
+            badge={t("timeline.badge")}
+            title={t("timeline.title")}
+            subtitle={t("timeline.subtitle")}
           />
           <div className="mt-16 max-w-3xl mx-auto">
             <div className="relative">
-              {/* Vertical line */}
               <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-400 to-emerald-400 opacity-30" />
-
-              {timeline.map((item, i) => (
+              {timelineYears.map((year, i) => (
                 <motion.div
-                  key={item.year}
+                  key={year}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                   className="relative flex gap-6 pb-10 last:pb-0"
                 >
-                  {/* Year circle */}
                   <div className="relative z-10 flex-shrink-0 w-16 h-16 rounded-full gradient-primary flex items-center justify-center text-white font-bold text-sm shadow-md">
-                    {item.year}
+                    {year}
                   </div>
-                  {/* Content */}
                   <div className="flex-1 pt-3">
-                    <h3 className="font-bold text-text-primary dark:text-text-dark-primary mb-1">{item.title}</h3>
-                    <p className="text-sm text-text-secondary dark:text-text-dark-secondary leading-relaxed">{item.description}</p>
+                    <h3 className="font-bold text-text-primary dark:text-text-dark-primary mb-1">{t(`timeline.${year}.title`)}</h3>
+                    <p className="text-sm text-text-secondary dark:text-text-dark-secondary leading-relaxed">{t(`timeline.${year}.description`)}</p>
                   </div>
                 </motion.div>
               ))}
@@ -215,17 +192,17 @@ export default function AboutPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-dark-primary mb-4">
-              The People Behind Our Care
+              {t("teamCta.title")}
             </h2>
             <p className="text-lg text-text-secondary dark:text-text-dark-secondary max-w-xl mx-auto mb-8">
-              Our network is only as strong as the dedicated physicians and staff who bring it to life every day.
+              {t("teamCta.subtitle")}
             </p>
             <Link
               href="/team"
               className="inline-flex items-center gap-2 px-8 py-4 text-white gradient-primary rounded-2xl font-semibold hover:shadow-xl hover:shadow-primary-500/25 transition-all hover:-translate-y-0.5"
             >
               <Users className="w-5 h-5" />
-              Meet Our Team
+              {t("teamCta.button")}
             </Link>
           </motion.div>
         </div>

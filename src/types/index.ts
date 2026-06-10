@@ -85,7 +85,8 @@ export type ServiceCategory =
   | "beauty"
   | "pharmacy"
   | "preventive"
-  | "emergency";
+  | "emergency"
+  | "longevity";
 
 // ─── Article ───────────────────────────────────────────────
 export interface Article {

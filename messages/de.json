@@ -105,18 +105,54 @@
         "emergency": "Notfall"
       },
       "items": {
-        "1": { "question": "Wie kann ich einen Termin buchen?", "answer": "Sie können einen Termin über unsere Website, telefonisch direkt in der jeweiligen Praxis oder über unser Online-Buchungssystem vereinbaren. Für dringende Fälle sind auch Walk-in-Termine möglich." },
-        "2": { "question": "Welche Versicherungen akzeptieren Sie?", "answer": "Wir akzeptieren alle grossen Schweizer Krankenkassen. Sowohl Grundversicherungen (KVG) als auch Zusatzversicherungen sind willkommen. Bitte bringen Sie Ihre Versicherungskarte zum ersten Besuch mit." },
-        "3": { "question": "Was sind die Öffnungszeiten?", "answer": "Unsere Praxen sind in der Regel Montag bis Freitag von 8:00 bis 18:00 Uhr geöffnet. Einige Standorte bieten auch Samstagmorgen-Termine an. Bitte prüfen Sie die jeweiligen Praxisseiten für genaue Zeiten." },
-        "4": { "question": "Benötige ich eine Überweisung?", "answer": "Für allgemeinmedizinische Konsultationen ist keine Überweisung erforderlich. Für Facharztleistungen kann je nach Versicherungsmodell eine Überweisung Ihres Hausarztes notwendig sein." },
-        "5": { "question": "Was soll ich zum ersten Termin mitbringen?", "answer": "Bitte bringen Sie Ihre Krankenkassenkarte, einen gültigen Ausweis, relevante medizinische Unterlagen, eine Liste aktueller Medikamente und ggf. Überweisungsschreiben mit." },
-        "6": { "question": "Bieten Sie Notfalldienste an?", "answer": "Ja, mehrere unserer Praxen bieten Walk-in-Notfalldienste während der Öffnungszeiten an. Bei lebensbedrohlichen Notfällen wählen Sie bitte 144 (Schweizer Notrufnummer)." },
-        "7": { "question": "Kann ich meine Laborbefunde online einsehen?", "answer": "Laborbefunde werden in der Regel im Rahmen einer Nachsorgekonsultation mit Ihrem Arzt besprochen. Wir implementieren ein Patientenportal für den digitalen Zugriff auf Befunde." },
-        "8": { "question": "Sind Ihre Praxen rollstuhlgerecht?", "answer": "Ja, alle unsere Praxen sind vollständig barrierefrei gestaltet, einschliesslich Rollstuhlzugang, barrierefreien Parkplätzen und angepassten Einrichtungen." },
-        "9": { "question": "Wie kann ich einen Termin absagen?", "answer": "Bitte sagen Sie mindestens 24 Stunden im Voraus direkt in der Praxis ab. Späte Absagen oder Nichterscheinen können eine Gebühr verursachen." },
-        "10": { "question": "Bieten Sie Telemedizin an?", "answer": "Ja, wir bieten Videokonsultationen über unsere Telemedizin-Plattform an. Buchen Sie online oder rufen Sie eine Praxis an, um einen virtuellen Termin zu vereinbaren." },
-        "11": { "question": "Welche Sprachen sprechen Ihre Ärzte?", "answer": "Unser mehrsprachiges Team spricht je nach Arzt Deutsch, Englisch, Französisch, Italienisch, Spanisch, Arabisch, Portugiesisch und Mandarin." },
-        "12": { "question": "Behandeln Sie auch Kinder?", "answer": "Ja, unsere Allgemeinpraxen bieten pädiatrische Versorgung für Kinder aller Altersgruppen an. Bei spezialisierter Kinderheilkunde können wir entsprechende Überweisungen ausstellen." }
+        "1": {
+          "question": "Wie kann ich einen Termin buchen?",
+          "answer": "Sie können einen Termin über unsere Website, telefonisch direkt in der jeweiligen Praxis oder über unser Online-Buchungssystem vereinbaren. Für dringende Fälle sind auch Walk-in-Termine möglich."
+        },
+        "2": {
+          "question": "Welche Versicherungen akzeptieren Sie?",
+          "answer": "Wir akzeptieren alle grossen Schweizer Krankenkassen. Sowohl Grundversicherungen (KVG) als auch Zusatzversicherungen sind willkommen. Bitte bringen Sie Ihre Versicherungskarte zum ersten Besuch mit."
+        },
+        "3": {
+          "question": "Was sind die Öffnungszeiten?",
+          "answer": "Unsere Praxen sind in der Regel Montag bis Freitag von 8:00 bis 18:00 Uhr geöffnet. Einige Standorte bieten auch Samstagmorgen-Termine an. Bitte prüfen Sie die jeweiligen Praxisseiten für genaue Zeiten."
+        },
+        "4": {
+          "question": "Benötige ich eine Überweisung?",
+          "answer": "Für allgemeinmedizinische Konsultationen ist keine Überweisung erforderlich. Für Facharztleistungen kann je nach Versicherungsmodell eine Überweisung Ihres Hausarztes notwendig sein."
+        },
+        "5": {
+          "question": "Was soll ich zum ersten Termin mitbringen?",
+          "answer": "Bitte bringen Sie Ihre Krankenkassenkarte, einen gültigen Ausweis, relevante medizinische Unterlagen, eine Liste aktueller Medikamente und ggf. Überweisungsschreiben mit."
+        },
+        "6": {
+          "question": "Bieten Sie Notfalldienste an?",
+          "answer": "Ja, mehrere unserer Praxen bieten Walk-in-Notfalldienste während der Öffnungszeiten an. Bei lebensbedrohlichen Notfällen wählen Sie bitte 144 (Schweizer Notrufnummer)."
+        },
+        "7": {
+          "question": "Kann ich meine Laborbefunde online einsehen?",
+          "answer": "Laborbefunde werden in der Regel im Rahmen einer Nachsorgekonsultation mit Ihrem Arzt besprochen. Wir implementieren ein Patientenportal für den digitalen Zugriff auf Befunde."
+        },
+        "8": {
+          "question": "Sind Ihre Praxen rollstuhlgerecht?",
+          "answer": "Ja, alle unsere Praxen sind vollständig barrierefrei gestaltet, einschliesslich Rollstuhlzugang, barrierefreien Parkplätzen und angepassten Einrichtungen."
+        },
+        "9": {
+          "question": "Wie kann ich einen Termin absagen?",
+          "answer": "Bitte sagen Sie mindestens 24 Stunden im Voraus direkt in der Praxis ab. Späte Absagen oder Nichterscheinen können eine Gebühr verursachen."
+        },
+        "10": {
+          "question": "Bieten Sie Telemedizin an?",
+          "answer": "Ja, wir bieten Videokonsultationen über unsere Telemedizin-Plattform an. Buchen Sie online oder rufen Sie eine Praxis an, um einen virtuellen Termin zu vereinbaren."
+        },
+        "11": {
+          "question": "Welche Sprachen sprechen Ihre Ärzte?",
+          "answer": "Unser mehrsprachiges Team spricht je nach Arzt Deutsch, Englisch, Französisch, Italienisch, Spanisch, Arabisch, Portugiesisch und Mandarin."
+        },
+        "12": {
+          "question": "Behandeln Sie auch Kinder?",
+          "answer": "Ja, unsere Allgemeinpraxen bieten pädiatrische Versorgung für Kinder aller Altersgruppen an. Bei spezialisierter Kinderheilkunde können wir entsprechende Überweisungen ausstellen."
+        }
       }
     },
     "contact": {
@@ -134,52 +170,91 @@
   },
   "about": {
     "hero": {
-      "badge": "Über uns",
-      "title": "Unser Engagement für",
-      "titleHighlight": "Ihre Gesundheit",
-      "subtitle": "Praxen Jerumed – ein Netzwerk von Fachpraxen mit höchsten Qualitätsstandards und patientenorientierter Betreuung."
+      "badge": "Unsere Geschichte",
+      "title": "Über",
+      "titleHighlight": "Praxen Jerumed",
+      "subtitle": "Seit über 15 Jahren bauen wir ein Gesundheitsökosystem auf, das den Patienten in den Mittelpunkt stellt – gewachsen von einer einzigen Praxis zum integriertesten Medizinnetzwerk der Schweiz."
     },
     "mission": {
       "title": "Unsere Mission",
-      "description": "Wir sind ein Netzwerk von Fachpraxen, das sich durch hohe Qualität, Vertrauen und eine patientenorientierte Betreuung auszeichnet. Unser Ziel ist es, Ihnen eine exzellente medizinische Versorgung zu bieten, die sich an Ihren individuellen Bedürfnissen orientiert.",
-      "description2": "Mit modernster Technik und einem engagierten Team aus erfahrenen Ärzten und Fachkräften stehen wir Ihnen in allen Fragen rund um Ihre Gesundheit zur Seite."
+      "description": "Zugängliche, hochwertige und integrierte Gesundheitsversorgung für Menschen in der ganzen Schweiz – durch ein Netzwerk aus erfahrenen Ärzten, modernen Einrichtungen und echtem Engagement für das Wohlbefinden der Patienten."
     },
-    "founder": {
-      "name": "A. Abuawad",
-      "title": "CEO & Gründer",
-      "quote": "Unser Netzwerk bietet eine Vielzahl von Fachrichtungen, um Ihnen umfassende medizinische Betreuung unter einem Dach zu ermöglichen."
+    "vision": {
+      "title": "Unsere Vision",
+      "description": "Das vertrauenswürdigste und umfassendste Gesundheitsnetzwerk der Schweiz zu werden – neue Massstäbe für Patientenerlebnisse, klinische Qualität und integrierte Versorgung in jeder Region zu setzen."
     },
     "values": {
-      "title": "Unsere Werte",
-      "trust": {
-        "title": "Vertrauen",
-        "description": "Ihre Gesundheit liegt uns am Herzen. Wir setzen auf eine vertrauensvolle Zusammenarbeit und transparente Kommunikation."
+      "badge": "Wofür wir stehen",
+      "title": "Unsere Grundwerte",
+      "subtitle": "Die Grundsätze, die jede Interaktion, jede Entscheidung und jeden Schritt in der Patientenversorgung leiten.",
+      "patientFirst": {
+        "title": "Patient zuerst",
+        "description": "Jede Entscheidung dreht sich um das Wohlbefinden, die Würde und das Erleben unserer Patienten."
       },
-      "competence": {
-        "title": "Kompetenz",
-        "description": "Unsere Ärzte und Fachkräfte sind hochqualifiziert und immer auf dem neuesten Stand der medizinischen Forschung."
+      "excellence": {
+        "title": "Exzellenz",
+        "description": "Wir halten die höchsten Standards der klinischen Praxis aufrecht und verbessern uns kontinuierlich durch Aus- und Weiterbildung."
       },
-      "access": {
-        "title": "Zugang",
-        "description": "Wir bieten Ihnen einen schnellen Zugang zu hochwertigen medizinischen Leistungen in einer angenehmen und modernen Atmosphäre."
+      "innovation": {
+        "title": "Innovation",
+        "description": "Moderne Technologie und evidenzbasierte Medizin einsetzen, um für jeden Patienten bessere Ergebnisse zu erzielen."
+      },
+      "integration": {
+        "title": "Integration",
+        "description": "Unser Netzwerkmodell gewährleistet nahtlose Koordination zwischen Spezialisten, Kliniken und Dienstleistungen in der ganzen Schweiz."
       }
+    },
+    "timeline": {
+      "badge": "Unsere Reise",
+      "title": "Eine Gesundheitsgeschichte schreiben",
+      "subtitle": "Wichtige Meilensteine im Wachstum des Praxen Jerumed-Netzwerks.",
+      "2008": {
+        "title": "Gründung der Hausarztpraxis Seefeld",
+        "description": "Eröffnung unserer ersten Praxis im Herzen von Zürich Seefeld – der Grundstein der Jerumed-Philosophie."
+      },
+      "2012": {
+        "title": "Erweiterung nach Dübendorf",
+        "description": "Umfassende Grundversorgung für die wachsende Gemeinde Dübendorf in modernen Räumlichkeiten."
+      },
+      "2015": {
+        "title": "Eröffnung Altstetten",
+        "description": "Ausweitung nach Zürich Altstetten mit eigener Apotheke und erweiterter Diagnostik."
+      },
+      "2018": {
+        "title": "Start von MedEsthec",
+        "description": "Einführung erstklassiger ästhetischer Medizindienstleistungen zur Ergänzung unseres klinischen Netzwerks."
+      },
+      "2020": {
+        "title": "Eröffnung der Winterthurer Praxis",
+        "description": "Kontinuierliches Wachstum – Erweiterung des Zugangs zu Qualitätsmedizin in Winterthur."
+      },
+      "2024": {
+        "title": "5 Praxen in der Schweiz",
+        "description": "Unser Netzwerk umfasst heute 5 Praxen und betreut über 25.000 Patienten mit mehr als 50 Spezialisten."
+      }
+    },
+    "teamCta": {
+      "title": "Die Menschen hinter unserer Medizin",
+      "subtitle": "Unser Netzwerk ist nur so stark wie die engagierten Ärzte und Mitarbeitenden, die es jeden Tag zum Leben erwecken.",
+      "button": "Unser Team kennenlernen"
     }
   },
   "contact": {
     "hero": {
       "badge": "Kontakt",
-      "title": "Wir sind für",
-      "titleHighlight": "Sie da",
-      "subtitle": "Kontaktieren Sie uns per Telefon, E-Mail oder besuchen Sie uns direkt in einer unserer Praxen."
+      "title": "Nehmen Sie",
+      "titleHighlight": "Kontakt auf",
+      "subtitle": "Unser Team ist für Sie da. Schreiben Sie uns bei Fragen, Terminwünschen oder Feedback."
     },
     "info": {
       "phone": "Telefon",
       "email": "E-Mail",
       "address": "Adresse",
-      "hours": "Öffnungszeiten"
+      "hours": "Öffnungszeiten",
+      "headOffice": "Hauptsitz"
     },
     "form": {
-      "title": "Nachricht senden",
+      "title": "Schreiben Sie uns",
       "name": "Vollständiger Name",
       "email": "E-Mail-Adresse",
       "phone": "Telefonnummer",
@@ -188,65 +263,214 @@
       "message": "Ihre Nachricht",
       "submit": "Nachricht senden",
       "success": "Vielen Dank! Wir melden uns bald bei Ihnen.",
-      "selectClinic": "Bitte wählen Sie eine Praxis"
-    }
+      "selectClinic": "Bitte wählen Sie eine Praxis",
+      "selectSubject": "Betreff auswählen",
+      "messagePlaceholder": "Wie können wir Ihnen helfen?",
+      "messageSent": "Nachricht gesendet!",
+      "messageSentDesc": "Vielen Dank für Ihre Nachricht. Unser Team meldet sich innerhalb von 1 Werktag.",
+      "sendAnother": "Weitere Nachricht senden"
+    },
+    "subjects": {
+      "general": "Allgemeine Anfrage",
+      "appointment": "Terminanfrage",
+      "medical": "Medizinische Frage",
+      "feedback": "Feedback",
+      "careers": "Karriere",
+      "other": "Sonstiges"
+    },
+    "hours": {
+      "title": "Allgemeine Öffnungszeiten",
+      "monThu": "Montag – Donnerstag",
+      "fri": "Freitag",
+      "sat": "Samstag",
+      "sun": "Sonntag"
+    },
+    "locations": "Unsere Standorte"
   },
   "services": {
     "hero": {
-      "badge": "Leistungen",
+      "badge": "Unser Angebot",
       "title": "Unsere medizinischen",
-      "titleHighlight": "Angebote",
-      "subtitle": "Umfassende medizinische Versorgung für die ganze Familie – von der Vorsorge bis zur Behandlung."
+      "titleHighlight": "Leistungen",
+      "subtitle": "Umfassende Gesundheitsleistungen von erfahrenen Spezialisten in unserem Praxennetzwerk."
+    },
+    "filterAll": "Alle Leistungen",
+    "categories": {
+      "general": "Allgemein",
+      "diagnostics": "Diagnostik",
+      "cardiology": "Kardiologie",
+      "pulmonology": "Pulmologie",
+      "radiology": "Radiologie",
+      "laboratory": "Labor",
+      "beauty": "Beauty",
+      "pharmacy": "Apotheke",
+      "preventive": "Prävention",
+      "emergency": "Notfall",
+      "longevity": "Longevity"
+    },
+    "cta": {
+      "title": "Nicht gefunden, was Sie suchen?",
+      "subtitle": "Unser Team bespricht gerne Ihre spezifischen Gesundheitsbedürfnisse und findet die richtige Leistung für Sie.",
+      "button": "Kontakt aufnehmen"
     },
     "items": {
-      "generalMedicine": {
-        "name": "Hausarztmedizin",
-        "description": "Umfassende Grundversorgung für die ganze Familie – von der Vorsorge bis zur Behandlung akuter Erkrankungen."
-      },
-      "xray": {
+      "radiology": {
         "name": "Röntgenuntersuchung",
-        "description": "Moderne digitale Röntgendiagnostik für präzise und schnelle Befunde direkt in der Praxis."
+        "shortDescription": "Moderne digitale Röntgendiagnostik für präzise und schnelle Befunde direkt in der Praxis.",
+        "longDescription": "Unsere modernen Röntgenanlagen bieten eine umfassende Bildgebungsdiagnostik – schnell und präzise, ohne externe Überweisung.",
+        "features": [
+          "Digitales Röntgen",
+          "Schnelle Befunde",
+          "Interne Bearbeitung",
+          "Facharztstandard"
+        ]
       },
-      "heart": {
+      "cardiology": {
         "name": "Herzuntersuchung (EKG)",
-        "description": "Umfassende kardiologische Diagnostik – EKG, Belastungstest und Herzgesundheits-Check."
+        "shortDescription": "Umfassende kardiologische Diagnostik – EKG, Belastungstest und Herzgesundheits-Check.",
+        "longDescription": "Unsere kardiologischen Leistungen umfassen EKG, Belastungsuntersuchungen und präventive Herzgesundheitschecks für eine optimale Herzgesundheit.",
+        "features": [
+          "EKG",
+          "Belastungs-EKG",
+          "Herzmonitoring",
+          "Risikoabschätzung",
+          "Prävention"
+        ]
       },
-      "lung": {
+      "pulmonology": {
         "name": "Lungenuntersuchungen",
-        "description": "Spirometrie und Lungenfunktionstests für eine vollständige Beurteilung der Atemwege."
+        "shortDescription": "Spirometrie und Lungenfunktionstests für eine vollständige Beurteilung der Atemwege.",
+        "longDescription": "Unsere Lungendiagnostik umfasst Spirometrie und weitere Lungenfunktionstests für Erkrankungen wie Asthma, COPD und andere Atemwegserkrankungen.",
+        "features": [
+          "Spirometrie",
+          "Lungenfunktionstests",
+          "Asthmabehandlung",
+          "COPD-Betreuung"
+        ]
       },
-      "lab": {
+      "laboratory": {
         "name": "Labor & Diagnostik",
-        "description": "Hauseigenes Labor mit schnellen Ergebnissen für Blutanalysen und umfassende Diagnostik."
+        "shortDescription": "Hauseigenes Labor mit schnellen Ergebnissen für Blutanalysen und umfassende Diagnostik.",
+        "longDescription": "Unser modernes Praxislabor bietet umfassende Blutuntersuchungen, Urinanalysen und weitere diagnostische Leistungen mit kurzen Wartezeiten.",
+        "features": [
+          "Blutanalysen",
+          "Urindiagnostik",
+          "Schnelle Resultate",
+          "Allergietests",
+          "Hormonwerte"
+        ]
       },
-      "aesthetics": {
+      "beautyTreatments": {
         "name": "Ästhetische Medizin",
-        "description": "Premium-Ästhetikbehandlungen – Botox, Filler und Hautrejuvenation bei Medesthec."
+        "shortDescription": "Nicht-invasive und minimal-invasive Schönheitsbehandlungen bei MedEsthec – von Botox & Filler über Laser bis zu Körperformung und Vaginaler Verjüngung.",
+        "longDescription": "MedEsthec bietet ein umfassendes Spektrum ästhetisch-medizinischer Behandlungen unter ärztlicher Aufsicht von Dr. med. Demaili Fiknete. Zu den Leistungen zählen: Hyaluronsäure-Filler (Lippen, Wangen, Jawline, Tränenrinne), Botulinum-Toxin / Botox, RF-Microneedling & CO₂-Laser (SecretPro), Biorevitalisation & Skinbooster, Mesotherapie, Hylase-Korrektur, Endolifting, Sculptra & Biostimulatoren, Radiofrequenz SECTUM, Polynukleotide, permanente Laser-Haarentfernung, Vaginale Verjüngung sowie personalisierte DR. FIDEM DRIPs (Nährstoffinfusionen) und medizinische Hautpflege mit ZO® Skin Health.",
+        "features": [
+          "Hyaluronsäure-Filler",
+          "Botox / Botulinum-Toxin",
+          "RF-Microneedling & CO₂-Laser",
+          "Endolifting",
+          "Sculptra-Biostimulatoren",
+          "Laser-Haarentfernung",
+          "DR. FIDEM DRIPs",
+          "Radiofrequenz SECTUM",
+          "Mesotherapie",
+          "Vaginale Verjüngung"
+        ]
       },
       "pharmacy": {
         "name": "Hauseigene Apotheke",
-        "description": "Direkte Medikamentenabgabe in der Praxis – bequem nach der Konsultation."
+        "shortDescription": "Direkte Medikamentenabgabe in der Praxis – bequem nach der Konsultation.",
+        "longDescription": "Unsere hauseigene Apotheke ermöglicht die sofortige Medikamentenabgabe nach der Konsultation – für maximale Bequemlichkeit und schnelle Versorgung.",
+        "features": [
+          "Verschreibungen",
+          "OTC-Medikamente",
+          "Nahrungsergänzung",
+          "Medikationsberatung"
+        ]
       },
-      "preventive": {
+      "preventiveCare": {
         "name": "Prävention & Vorsorge",
-        "description": "Proaktive Gesundheitsvorsorge und Screening-Programme für Ihre langfristige Gesundheit."
+        "shortDescription": "Proaktive Gesundheitsvorsorge und Screening-Programme für Ihre langfristige Gesundheit.",
+        "longDescription": "Vorsorge ist besser als Nachsorge. Unsere Präventionsprogramme umfassen umfassende Gesundheitsscreenings, Impfprogramme und individuelle Wellnesspläne.",
+        "features": [
+          "Gesundheitsscreening",
+          "Impfprogramme",
+          "Reisemedizin",
+          "Wellnessberatung"
+        ]
       },
       "emergency": {
         "name": "Notfallbehandlung",
-        "description": "Walk-in-Notfallversorgung für akute Erkrankungen ohne lange Wartezeiten."
+        "shortDescription": "Walk-in-Notfallversorgung für akute Erkrankungen ohne lange Wartezeiten.",
+        "longDescription": "Unsere Praxen bieten Notfallversorgung für akute Erkrankungen. Unser erfahrenes Team behandelt ein breites Spektrum an Notfällen mit Professionalität und Fürsorge.",
+        "features": [
+          "Walk-in Notfall",
+          "Wundversorgung",
+          "Akute Erkrankungen",
+          "Kleinere Verletzungen"
+        ]
       },
       "ironTherapy": {
         "name": "Eisenmangel-Therapie",
-        "description": "Spezialisierte Eiseninfusionen bei Erschöpfung und Eisenmangel – schnell und wirksam."
+        "shortDescription": "Spezialisierte Eiseninfusionen bei Erschöpfung und Eisenmangel – schnell und wirksam.",
+        "longDescription": "Unsere Eiseninfusionstherapie behandelt Müdigkeit und Erschöpfung durch Eisenmangel. Unter ärztlicher Aufsicht erhalten Sie eine wirksame intravenöse Eisenbehandlung.",
+        "features": [
+          "Eiseninfusionen",
+          "Blutuntersuchung",
+          "Müdigkeitsbehandlung",
+          "Nachsorge"
+        ]
       },
       "earCleaning": {
         "name": "Ohrenspülung",
-        "description": "Professionelle Ohrenreinigung durch erfahrene Fachkräfte."
+        "shortDescription": "Professionelle Ohrenreinigung durch erfahrene Fachkräfte.",
+        "longDescription": "Unsere professionelle Ohrenspülung entfernt Cerumen-Pfropfen und stellt die optimale Hörfunktion wieder her – schnell, sicher und schmerzfrei.",
+        "features": [
+          "Cerumen-Entfernung",
+          "Schmerzfrei",
+          "Kurze Behandlungszeit",
+          "Nachkontrolle"
+        ]
       },
       "drivingFitness": {
         "name": "Fahreignungsabklärung",
-        "description": "Medizinische Beurteilung der Fahreignung nach gesetzlichen Anforderungen der Schweiz."
+        "shortDescription": "Medizinische Beurteilung der Fahreignung nach gesetzlichen Anforderungen der Schweiz.",
+        "longDescription": "Wir führen die medizinische Fahreignungsabklärung gemäss den Anforderungen des Strassenverkehrsamtes durch – zuverlässig und termingerecht.",
+        "features": [
+          "Sehtest",
+          "Reaktionstest",
+          "Ärztliches Attest",
+          "Strassenverkehrsamt-konform"
+        ]
+      },
+      "naturalMedicineLongevity": {
+        "name": "Natural Medicine & Longevity",
+        "shortDescription": "Präventive Vitalitätstherapien für Langlebigkeit – IV-Infusionen, NAD+, Ozon-Therapie, Peptide, Rotlicht, PEMF und Hormonoptimierung.",
+        "longDescription": "Unser Longevity- und Naturheilprogramm kombiniert evidenzbasierte Präventivmedizin mit modernen Vitalitätstherapien. Wir bieten: hochdosierte Vitamin-C-Infusionen, NAD+-Infusionen, Glutathion, Aminosäuren, Vitamin-Shots (B12, D3, B-Komplex), Ozon-Autohämotherapie, PRP-Eigenbluttherapie, Peptidtherapie, Rotlichttherapie, PEMF-Therapie und Mikronährstofftherapie. Ergänzend bieten wir spezialisierte Programme für Stress & Burnout, Long-Covid, Hormonoptimierung sowie individuelle Ernährungs- und Lebensstilberatung.",
+        "features": [
+          "NAD+-Infusionen",
+          "Ozon-Autohämotherapie",
+          "Hochdosis Vitamin C",
+          "PRP-Eigenbluttherapie",
+          "Peptidtherapie",
+          "Rotlichttherapie",
+          "PEMF-Therapie",
+          "Hormonoptimierung",
+          "Burnout & Stressmedizin",
+          "Long-Covid-Therapie"
+        ]
       }
+    },
+    "detail": {
+      "about": "Über diese Leistung",
+      "included": "Was ist enthalten",
+      "offeredAt": "Diese Leistung wird an folgenden Standorten angeboten.",
+      "whereToFind": "Wo finden Sie diese Leistung",
+      "viewClinic": "Praxis ansehen",
+      "related": "Ähnliche Leistungen",
+      "learnMore": "Mehr erfahren",
+      "clinic": "Praxis",
+      "clinics": "Praxen"
     }
   },
   "team": {
@@ -295,6 +519,25 @@
     "hours": "Öffnungszeiten",
     "bookHere": "Hier Termin buchen",
     "directions": "Route anzeigen",
+    "network": {
+      "subtitle": "Entdecken Sie unser Netzwerk medizinischer Praxen in der Schweiz – jede davon engagiert für exzellente, persönliche Gesundheitsversorgung.",
+      "stats": {
+        "praxen": "5 Praxen",
+        "staedte": "5 Städte",
+        "specialists": "50+ Spezialisten"
+      }
+    },
+    "filter": {
+      "city": "Stadt",
+      "type": "Typ",
+      "allCities": "Alle Städte",
+      "allCategories": "Alle Kategorien",
+      "found": "{count} Praxen gefunden",
+      "foundSingle": "1 Praxis gefunden",
+      "noMatch": "Keine Praxen entsprechen Ihren Filtern",
+      "noMatchHint": "Passen Sie Ihre Stadt- oder Kategorieauswahl an.",
+      "clearFilters": "Filter zurücksetzen"
+    },
     "descriptions": {
       "seefeld": "Ihre vertrauenswürdige Hausarztpraxis im Herzen von Zürich Seefeld mit umfassender Grundversorgung und persönlichem Service.",
       "duebendorf": "Eine moderne Hausarztpraxis in Dübendorf mit Schwerpunkt auf Allgemeinmedizin, Notfallbehandlung und Prävention.",
@@ -306,6 +549,31 @@
       "naturheilmedizin": "Ganzheitliches Naturheilzentrum mit komplementären Therapien und integrativen Gesundheitsansätzen.",
       "urohealth": "Spezialisiertes Urologiezentrum mit umfassender urologischer Versorgung und modernster Technologie.",
       "jerumed-shop": "Online-Shop für Medizinprodukte mit Arzneimitteln, Gesundheitsartikel und Wellness-Produkten."
+    },
+    "longDescriptions": {
+      "seefeld": "Die Hausarztpraxis Seefeld ist seit über 15 Jahren für die Bevölkerung im Seefeld tätig. Unser Team erfahrener Allgemeinmediziner bietet umfassende medizinische Leistungen in moderner, einladender Umgebung – von Routineuntersuchungen bis zur Akutversorgung.",
+      "duebendorf": "Unsere Praxis in Dübendorf verbindet langjährige medizinische Erfahrung mit modernster Technologie. Wir sind spezialisiert auf Familienmedizin und bieten ein breites Leistungsspektrum – von Routineuntersuchungen bis zur Notfallversorgung.",
+      "altstetten": "Im dynamischen Quartier Altstetten bieten wir umfassende Grundversorgung mit erweiterten diagnostischen Möglichkeiten. Unsere Apotheke und Röntgenanlage vor Ort ermöglichen eine schnelle und effiziente Patientenversorgung.",
+      "winterthur": "Unsere Praxis in Winterthur bietet hochwertige Familienmedizin in einer herzlichen, professionellen Atmosphäre. Wir legen grossen Wert auf langfristige Patientenbeziehungen und eine auf den Einzelnen abgestimmte Betreuung.",
+      "wald": "Die Praxis Felsenau in Wald bietet einen persönlichen Ansatz in der Gesundheitsversorgung in entspannter, gemeinschaftsorientierter Atmosphäre. Unser Team legt den Fokus auf Prävention und das Wohlbefinden jedes einzelnen Patienten.",
+      "medesthec": "MedEsthec ist unser Premium-Zentrum für ästhetische Medizin mit modernsten Behandlungen zur Schönheit und Verjüngung. Unser Spezialistenteam verbindet medizinische Expertise mit künstlerischem Blick für natürliche, stilvolle Resultate.",
+      "beauty-altstetten": "Unsere Schönheitspraxis in Altstetten bietet ein umfangreiches Portfolio ästhetischer Behandlungen in luxuriöser, entspannter Atmosphäre – von nicht-invasiven Hautbehandlungen bis zu fortgeschrittenen kosmetischen Verfahren.",
+      "naturheilmedizin": "Unser Naturheilzentrum verbindet traditionelle Heilmethoden mit modernem medizinischem Wissen. Wir bieten ein umfassendes Angebot komplementärer Therapien zur Unterstützung der natürlichen Selbstheilungskräfte und ganzheitlichen Gesundheitsförderung.",
+      "urohealth": "UroHealth ist unser spezialisiertes Urologiezentrum mit einem vollständigen Leistungsangebot in der Urologie. Unsere erfahrenen Urologen setzen modernste Technologie für Diagnose und Behandlung ein.",
+      "jerumed-shop": "Der Jerumed Shop ist Ihre vertrauenswürdige Online-Adresse für Pharmaprodukte, Medizinbedarf und Wellnessartikel. Wir bieten eine kuratierte Auswahl hochwertiger Gesundheitsprodukte mit bequemer Lieferung in der ganzen Schweiz."
+    },
+    "detail": {
+      "about": "Über diese Praxis",
+      "services": "Angebotene Leistungen",
+      "openingHours": "Öffnungszeiten",
+      "closed": "Geschlossen",
+      "contactInfo": "Kontaktinformationen",
+      "visitWebsite": "Website besuchen",
+      "openingSoon": "Bald verfügbar",
+      "currentlyActive": "Aktuell geöffnet",
+      "comingSoon": "Bald verfügbar",
+      "doctorsHere": "Ärzte in dieser Praxis",
+      "otherLocations": "Weitere Standorte"
     }
   },
   "gallery": {

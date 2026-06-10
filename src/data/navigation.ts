@@ -19,7 +19,6 @@ export const navigation: NavItem[] = [
     href: "/services",
     children: [
       { label: "All Services", href: "/services", description: "Complete service overview" },
-      { label: "General Medicine", href: "/services/general-medicine" },
       { label: "Cardiology", href: "/services/cardiology" },
       { label: "Laboratory", href: "/services/laboratory" },
       { label: "Beauty & Aesthetics", href: "/services/beauty-treatments" },

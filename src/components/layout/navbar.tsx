@@ -27,7 +27,6 @@ const navRoutes = [
     key: "services", href: "/services",
     children: [
       { href: "/services", labelKey: "Alle Leistungen", desc: "" },
-      { href: "/services/hausarztmedizin", labelKey: "Hausarztmedizin", desc: "" },
       { href: "/services/herzuntersuchung", labelKey: "Herzuntersuchung (EKG)", desc: "" },
       { href: "/services/labor", labelKey: "Labor & Diagnostik", desc: "" },
       { href: "/services/aesthetische-medizin", labelKey: "Ästhetische Medizin", desc: "" },

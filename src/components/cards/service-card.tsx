@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle, Stethoscope, Heart, FlaskConical, Wind, ScanLine, Sparkles, Pill, Shield, Siren, Droplets } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { ArrowRight, CheckCircle, Stethoscope, Heart, FlaskConical, Wind, ScanLine, Sparkles, Pill, Shield, Siren, Droplets, Leaf, Zap } from "lucide-react";
 import { Service } from "@/types";
 import type { LucideIcon } from "lucide-react";
 
@@ -17,15 +18,28 @@ const iconMap: Record<string, LucideIcon> = {
   Shield,
   Siren,
   Droplets,
+  Leaf,
+  Zap,
 };
 
+function toTranslationKey(id: string) {
+  return id.replace(/-([a-z])/g, (_: string, c: string) => c.toUpperCase());
+}
+
 interface ServiceCardProps {
-  service: Service;
-  index?: number;
+  readonly service: Service;
+  readonly index?: number;
 }
 
 export default function ServiceCard({ service, index = 0 }: ServiceCardProps) {
+  const t = useTranslations("services");
+  const td = useTranslations("services.detail");
   const Icon = iconMap[service.icon] ?? Stethoscope;
+  const key = toTranslationKey(service.id);
+
+  const name = t(`items.${key}.name`);
+  const shortDescription = t(`items.${key}.shortDescription`);
+  const features = t.raw(`items.${key}.features`) as string[];
 
   return (
     <motion.div
@@ -42,27 +56,27 @@ export default function ServiceCard({ service, index = 0 }: ServiceCardProps) {
 
       {/* Name */}
       <h3 className="font-bold text-lg text-text-primary dark:text-text-dark-primary mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-        {service.name}
+        {name}
       </h3>
 
       {/* Description */}
       <p className="text-sm text-text-secondary dark:text-text-dark-secondary leading-relaxed mb-4 line-clamp-2 flex-1">
-        {service.shortDescription}
+        {shortDescription}
       </p>
 
       {/* Category + Clinic count */}
       <div className="flex items-center gap-2 mb-4">
         <span className="px-2.5 py-1 text-[11px] font-medium rounded-full bg-gray-100 dark:bg-white/10 text-text-muted dark:text-text-dark-muted capitalize">
-          {service.category}
+          {t(`categories.${service.category}`)}
         </span>
         <span className="text-xs text-text-muted dark:text-text-dark-muted">
-          {service.clinicIds.length} {service.clinicIds.length === 1 ? "clinic" : "clinics"}
+          {service.clinicIds.length} {service.clinicIds.length === 1 ? td("clinic") : td("clinics")}
         </span>
       </div>
 
       {/* Features */}
       <div className="flex flex-wrap gap-1.5 mb-5">
-        {service.features.slice(0, 3).map((feature) => (
+        {features.slice(0, 3).map((feature) => (
           <span
             key={feature}
             className="flex items-center gap-1 px-2 py-0.5 text-[11px] font-medium rounded-full bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400"
@@ -78,7 +92,7 @@ export default function ServiceCard({ service, index = 0 }: ServiceCardProps) {
         href={`/services/${service.slug}`}
         className="flex items-center justify-center gap-2 py-2.5 text-sm font-semibold text-white gradient-primary rounded-xl hover:shadow-lg hover:shadow-primary-500/20 transition-all"
       >
-        Learn More <ArrowRight className="w-4 h-4" />
+        {td("learnMore")} <ArrowRight className="w-4 h-4" />
       </Link>
     </motion.div>
   );

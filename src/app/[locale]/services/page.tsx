@@ -5,21 +5,10 @@ import { Stethoscope, Mail } from "lucide-react";
 import { services, serviceCategories } from "@/data/services";
 import ServiceCard from "@/components/cards/service-card";
 import Link from "next/link";
-
-const categoryLabels: Record<string, string> = {
-  general: "General",
-  diagnostics: "Diagnostics",
-  cardiology: "Cardiology",
-  pulmonology: "Pulmonology",
-  radiology: "Radiology",
-  laboratory: "Laboratory",
-  beauty: "Beauty",
-  pharmacy: "Pharmacy",
-  preventive: "Preventive",
-  emergency: "Emergency",
-};
+import { useTranslations } from "next-intl";
 
 export default function ServicesPage() {
+  const t = useTranslations("services");
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   const filtered = useMemo(() => {
@@ -34,13 +23,13 @@ export default function ServicesPage() {
         <div className="container-wide max-w-3xl">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 dark:bg-primary-500/10 rounded-full mb-6">
             <Stethoscope className="w-4 h-4 text-primary-600 dark:text-primary-400" />
-            <span className="text-sm font-medium text-primary-700 dark:text-primary-300">What We Offer</span>
+            <span className="text-sm font-medium text-primary-700 dark:text-primary-300">{t("hero.badge")}</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-text-primary dark:text-text-dark-primary mb-4">
-            Our Medical <span className="gradient-text">Services</span>
+            {t("hero.title")} <span className="gradient-text">{t("hero.titleHighlight")}</span>
           </h1>
           <p className="text-xl text-text-secondary dark:text-text-dark-secondary leading-relaxed">
-            Comprehensive healthcare services delivered by experienced specialists across our network of clinics.
+            {t("hero.subtitle")}
           </p>
         </div>
       </section>
@@ -53,15 +42,15 @@ export default function ServicesPage() {
               onClick={() => setSelectedCategory("all")}
               className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === "all" ? "gradient-primary text-white shadow-md" : "bg-surface-dim dark:bg-surface-dark-dim text-text-secondary dark:text-text-dark-secondary border border-border-light dark:border-border-dark hover:border-primary-300"}`}
             >
-              All Services
+              {t("filterAll")}
             </button>
             {serviceCategories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all capitalize ${selectedCategory === cat ? "gradient-primary text-white shadow-md" : "bg-surface-dim dark:bg-surface-dark-dim text-text-secondary dark:text-text-dark-secondary border border-border-light dark:border-border-dark hover:border-primary-300"}`}
+                className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === cat ? "gradient-primary text-white shadow-md" : "bg-surface-dim dark:bg-surface-dark-dim text-text-secondary dark:text-text-dark-secondary border border-border-light dark:border-border-dark hover:border-primary-300"}`}
               >
-                {categoryLabels[cat] ?? cat}
+                {t(`categories.${cat}`)}
               </button>
             ))}
           </div>
@@ -84,17 +73,17 @@ export default function ServicesPage() {
         <div className="container-wide">
           <div className="rounded-3xl p-8 md:p-12 bg-gradient-to-br from-primary-50 to-emerald-50 dark:from-primary-500/10 dark:to-emerald-500/10 border border-primary-100 dark:border-primary-500/20 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-text-primary dark:text-text-dark-primary mb-3">
-              Can&apos;t find what you need?
+              {t("cta.title")}
             </h2>
             <p className="text-text-secondary dark:text-text-dark-secondary mb-6 max-w-xl mx-auto">
-              Our team is happy to discuss your specific healthcare needs and find the right service for you.
+              {t("cta.subtitle")}
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-7 py-3.5 text-white gradient-primary rounded-2xl font-semibold hover:shadow-xl hover:shadow-primary-500/25 transition-all hover:-translate-y-0.5"
             >
               <Mail className="w-5 h-5" />
-              Contact Us
+              {t("cta.button")}
             </Link>
           </div>
         </div>
