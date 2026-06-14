@@ -117,7 +117,7 @@ export default async function DoctorPage({ params }: { readonly params: Promise<
             {/* Info */}
             <div className="md:col-span-2 pt-4">
               <h1 className="text-3xl md:text-4xl font-bold text-text-primary dark:text-text-dark-primary mb-1">{doctor.name}</h1>
-              <p className="text-lg text-text-secondary dark:text-text-dark-secondary italic mb-4">{doctorTitle}</p>
+              <p className="text-lg text-text-secondary dark:text-text-dark-secondary italic mb-4 whitespace-pre-line">{doctorTitle}</p>
 
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 dark:bg-primary-500/10 rounded-full text-sm font-medium text-primary-700 dark:text-primary-300 mb-6">
                 {doctorSpecialty}

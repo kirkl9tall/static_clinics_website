@@ -65,7 +65,7 @@ export default function DoctorCard({ doctor, index = 0 }: DoctorCardProps) {
         <h3 className="font-bold text-base text-text-primary dark:text-text-dark-primary mb-1 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors leading-tight">
           {doctor.name}
         </h3>
-        <p className="text-xs text-primary-600 dark:text-primary-400 font-medium mb-3 line-clamp-2">
+        <p className="text-xs text-primary-600 dark:text-primary-400 font-medium mb-3 whitespace-pre-line">
           {title}
         </p>
 

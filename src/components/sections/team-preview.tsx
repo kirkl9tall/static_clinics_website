@@ -63,7 +63,7 @@ export default function TeamPreview() {
                   <h3 className="font-semibold text-text-primary dark:text-text-dark-primary group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                     {doc.name}
                   </h3>
-                  <p className="text-xs text-primary-600 dark:text-primary-400 font-medium mt-0.5 mb-3">
+                  <p className="text-xs text-primary-600 dark:text-primary-400 font-medium mt-0.5 mb-3 whitespace-pre-line">
                     {titleMap[doc.id] ?? doc.title}
                   </p>
 

@@ -658,17 +658,17 @@
   },
   "doctors": {
     "abuawad": {
-      "title": "Praktischer Arzt, Allgemeinmedizin FMH – Leitung Jerumed",
+      "title": "Praktischer Arzt\nAllgemeinmedizin FMH\nLeitung Jerumed",
       "specialty": "Allgemeinmedizin",
       "bio": "Als Praxenleiter von Jerumed vereint A. Abuawad hervorragende klinische Fähigkeiten mit strategischem Gesundheitsmanagement. Er steht für Qualität und patientenorientierte Betreuung."
     },
     "rodriguez": {
-      "title": "Praktischer Ärztin, Allgemeinmedizin – Leitung Jerumed",
+      "title": "Praktischer Ärztin\nAllgemeinmedizin\nLeitung Jerumed",
       "specialty": "Allgemeinmedizin",
       "bio": "Dr. Rodriguez bringt eine herzliche, patientenorientierte Herangehensweise in die Allgemeinmedizin mit besonderem Fokus auf Frauengesundheit und Prävention."
     },
     "kassar": {
-      "title": "Facharzt Kardiologie FMH, Facharzt Allgemein Innere Medizin FMH",
+      "title": "Facharzt Kardiologie FMH\nFacharzt Allgemein Innere Medizin FMH",
       "specialty": "Allgemeinmedizin",
       "bio": "Dr. Kassar wird in Kürze Teil unseres Teams. Biografie und weitere Details folgen."
     },
@@ -683,12 +683,12 @@
       "bio": "Med. Jamil Alsaaydeh ist Facharzt für Urologie und Kinderurologie. Als Belegarzt bietet er umfassende urologische Versorgung für Erwachsene und Kinder."
     },
     "fiknete": {
-      "title": "Allgemein Medizin, Spezialisierung in Bereich der Aesthetische Medizin",
+      "title": "Allgemein Medizin\nSpezialisierung in Bereich der Aesthetische Medizin",
       "specialty": "Ästhetische Medizin",
       "bio": "Dr. med. Demaili Fiknete ist eine Fachärztin für Ästhetische Medizin mit über 10 Jahren klinischer Erfahrung in Radiologie, Strahlentherapie, Neurologie und Notfallmedizin. Seit 2019 konzentriert sie sich ausschließlich auf nicht-invasive ästhetische Behandlungen."
     },
     "bachtsetzis": {
-      "title": "Allgemein Medizin, Spezialisierung in Longevity Medizin",
+      "title": "Allgemein Medizin\nSpezialisierung in Longevity Medizin",
       "specialty": "Allgemeinmedizin",
       "bio": "Chris Bachtsetzis ist ein international tätiger Mediziner mit Schwerpunkt auf Allgemeinmedizin, Prävention und modernen Ansätzen der Gesundheitsoptimierung."
     }
