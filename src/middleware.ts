@@ -21,8 +21,10 @@ export default function middleware(request: NextRequest) {
 
   const response = intlMiddleware(req);
 
-  // Strip any leaked internal port from redirect Location headers
-  const location = response.headers.get("location");
+  // Strip any leaked internal port from redirect Location headers — only when
+  // behind a reverse proxy. Locally (e.g. localhost:3000) the port is real and
+  // must be preserved, otherwise redirects point at port 80 and 404.
+  const location = forwardedHost ? response.headers.get("location") : null;
   if (location) {
     try {
       const loc = new URL(location);

@@ -28,7 +28,7 @@ export default function DoctorCard({ doctor, index = 0 }: DoctorCardProps) {
     abuawad: td("abuawad.title"),
     rodriguez: td("rodriguez.title"),
     kassar: td("kassar.title"),
-    muhamad: td("muhamad.title"),
+    zahran: td("zahran.title"),
     alsaaydeh: td("alsaaydeh.title"),
     fiknete: td("fiknete.title"),
     bachtsetzis: td("bachtsetzis.title"),

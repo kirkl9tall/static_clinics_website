@@ -658,37 +658,37 @@
   },
   "doctors": {
     "abuawad": {
-      "title": "Dip. Physician – Practice Director",
+      "title": "General Practitioner, General Medicine FMH – Head of Jerumed",
       "specialty": "General Medicine",
       "bio": "As Practice Director of Jerumed, A. Abuawad combines excellent clinical skills with strategic health management. He stands for quality and patient-centered care."
     },
     "rodriguez": {
-      "title": "Dip. Physician – Practice Director",
+      "title": "General Practitioner, General Medicine – Head of Jerumed",
       "specialty": "General Medicine",
       "bio": "Dr. Rodriguez brings a warm, patient-centered approach to general medicine with a special focus on women's health and prevention."
     },
     "kassar": {
-      "title": "General Medicine",
+      "title": "Specialist Cardiology FMH, Specialist General Internal Medicine FMH",
       "specialty": "General Medicine",
       "bio": "Dr. Kassar will soon join our team. Biography and further details to follow."
     },
-    "muhamad": {
-      "title": "Dip. Physician General Medicine",
+    "zahran": {
+      "title": "Specialist in General Medicine (Teaching Physician)",
       "specialty": "General Medicine",
-      "bio": "Dr. Muhamad is a dedicated general practitioner with an interest in sports medicine and internal medicine. He cares for patients with diligence and empathy."
+      "bio": "Dr. med. Amin Zahran is a specialist in general medicine and works as a teaching physician. He cares for patients with diligence and empathy."
     },
     "alsaaydeh": {
-      "title": "Specialist Urology & Pediatric Urology",
+      "title": "Specialist in Urology",
       "specialty": "Urology",
       "bio": "Med. Jamil Alsaaydeh is a specialist in urology and pediatric urology. As an attending physician, he provides comprehensive urological care for adults and children."
     },
     "fiknete": {
-      "title": "Specialist Aesthetic Medicine",
+      "title": "General Medicine, Specialization in Aesthetic Medicine",
       "specialty": "Aesthetic Medicine",
       "bio": "Dr. med. Demaili Fiknete is a specialist in aesthetic medicine with over 10 years of clinical experience in radiology, radiation therapy, neurology and emergency medicine. Since 2019, she has focused exclusively on non-invasive aesthetic treatments."
     },
     "bachtsetzis": {
-      "title": "Specialist General Medicine – Health Optimization",
+      "title": "General Medicine, Specialization in Longevity Medicine",
       "specialty": "General Medicine",
       "bio": "Chris Bachtsetzis is an internationally active physician specializing in general medicine, prevention, and modern approaches to health optimization."
     }

@@ -18,7 +18,7 @@ export default function TeamPreview() {
     abuawad: td("abuawad.specialty"),
     rodriguez: td("rodriguez.specialty"),
     kassar: td("kassar.specialty"),
-    muhamad: td("muhamad.specialty"),
+    zahran: td("zahran.specialty"),
     alsaaydeh: td("alsaaydeh.specialty"),
     fiknete: td("fiknete.specialty"),
     bachtsetzis: td("bachtsetzis.specialty"),

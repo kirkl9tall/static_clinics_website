@@ -658,37 +658,37 @@
   },
   "doctors": {
     "abuawad": {
-      "title": "Dipl. Arzt – Jerumed Praxenleiter",
+      "title": "Praktischer Arzt, Allgemeinmedizin FMH – Leitung Jerumed",
       "specialty": "Allgemeinmedizin",
       "bio": "Als Praxenleiter von Jerumed vereint A. Abuawad hervorragende klinische Fähigkeiten mit strategischem Gesundheitsmanagement. Er steht für Qualität und patientenorientierte Betreuung."
     },
     "rodriguez": {
-      "title": "Dipl. Ärztin – Jerumed Praxenleiterin",
+      "title": "Praktischer Ärztin, Allgemeinmedizin – Leitung Jerumed",
       "specialty": "Allgemeinmedizin",
       "bio": "Dr. Rodriguez bringt eine herzliche, patientenorientierte Herangehensweise in die Allgemeinmedizin mit besonderem Fokus auf Frauengesundheit und Prävention."
     },
     "kassar": {
-      "title": "Allgemeinmedizin",
+      "title": "Facharzt Kardiologie FMH, Facharzt Allgemein Innere Medizin FMH",
       "specialty": "Allgemeinmedizin",
       "bio": "Dr. Kassar wird in Kürze Teil unseres Teams. Biografie und weitere Details folgen."
     },
-    "muhamad": {
-      "title": "Dipl. Arzt Allgemeinmedizin",
+    "zahran": {
+      "title": "Facharzt für Allgemein Medizin (Lehrarzt)",
       "specialty": "Allgemeinmedizin",
-      "bio": "Dr. Muhamad ist ein engagierter Allgemeinmediziner mit Interesse an Sportmedizin und innerer Medizin. Er betreut Patienten mit Sorgfalt und Einfühlungsvermögen."
+      "bio": "Dr. med. Amin Zahran ist Facharzt für Allgemeinmedizin und als Lehrarzt tätig. Er betreut Patienten mit Sorgfalt und Einfühlungsvermögen."
     },
     "alsaaydeh": {
-      "title": "Facharzt Urologie & Kinderurologie",
+      "title": "Facharzt für Urologie",
       "specialty": "Urologie",
       "bio": "Med. Jamil Alsaaydeh ist Facharzt für Urologie und Kinderurologie. Als Belegarzt bietet er umfassende urologische Versorgung für Erwachsene und Kinder."
     },
     "fiknete": {
-      "title": "Fachärztin Ästhetische Medizin",
+      "title": "Allgemein Medizin, Spezialisierung in Bereich der Aesthetische Medizin",
       "specialty": "Ästhetische Medizin",
       "bio": "Dr. med. Demaili Fiknete ist eine Fachärztin für Ästhetische Medizin mit über 10 Jahren klinischer Erfahrung in Radiologie, Strahlentherapie, Neurologie und Notfallmedizin. Seit 2019 konzentriert sie sich ausschließlich auf nicht-invasive ästhetische Behandlungen."
     },
     "bachtsetzis": {
-      "title": "Facharzt Allgemeinmedizin – Gesundheitsoptimierung",
+      "title": "Allgemein Medizin, Spezialisierung in Longevity Medizin",
       "specialty": "Allgemeinmedizin",
       "bio": "Chris Bachtsetzis ist ein international tätiger Mediziner mit Schwerpunkt auf Allgemeinmedizin, Prävention und modernen Ansätzen der Gesundheitsoptimierung."
     }
