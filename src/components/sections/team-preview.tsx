@@ -14,14 +14,14 @@ export default function TeamPreview() {
   const tc = useTranslations("common");
   const td = useTranslations("doctors");
   const featured = doctors.slice(0, 6);
-  const specialtyMap: Record<string, string> = {
-    abuawad: td("abuawad.specialty"),
-    rodriguez: td("rodriguez.specialty"),
-    kassar: td("kassar.specialty"),
-    zahran: td("zahran.specialty"),
-    alsaaydeh: td("alsaaydeh.specialty"),
-    fiknete: td("fiknete.specialty"),
-    bachtsetzis: td("bachtsetzis.specialty"),
+  const titleMap: Record<string, string> = {
+    abuawad: td("abuawad.title"),
+    rodriguez: td("rodriguez.title"),
+    kassar: td("kassar.title"),
+    zahran: td("zahran.title"),
+    alsaaydeh: td("alsaaydeh.title"),
+    fiknete: td("fiknete.title"),
+    bachtsetzis: td("bachtsetzis.title"),
   };
 
   return (
@@ -64,7 +64,7 @@ export default function TeamPreview() {
                     {doc.name}
                   </h3>
                   <p className="text-xs text-primary-600 dark:text-primary-400 font-medium mt-0.5 mb-3">
-                    {specialtyMap[doc.id] ?? doc.specialty}
+                    {titleMap[doc.id] ?? doc.title}
                   </p>
 
                   <div className="space-y-2 text-xs text-text-muted dark:text-text-dark-muted mb-4">
