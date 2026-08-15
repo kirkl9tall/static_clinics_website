@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useRef, ReactNode } from "react";
-import { motion, useInView, useAnimation, Variant } from "framer-motion";
+import { useEffect, useRef, useState, ReactNode } from "react";
 
 interface ScrollRevealProps {
   children: ReactNode;
@@ -11,13 +10,6 @@ interface ScrollRevealProps {
   duration?: number;
 }
 
-const directionVariants: Record<string, { hidden: Variant; visible: Variant }> = {
-  up: { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0 } },
-  down: { hidden: { opacity: 0, y: -40 }, visible: { opacity: 1, y: 0 } },
-  left: { hidden: { opacity: 0, x: -40 }, visible: { opacity: 1, x: 0 } },
-  right: { hidden: { opacity: 0, x: 40 }, visible: { opacity: 1, x: 0 } },
-};
-
 export default function ScrollReveal({
   children,
   className = "",
@@ -25,26 +17,51 @@ export default function ScrollReveal({
   direction = "up",
   duration = 0.6,
 }: ScrollRevealProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-  const controls = useAnimation();
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "-80px" }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
     }
-  }, [isInView, controls]);
+
+    return () => observer.disconnect();
+  }, []);
+
+  const getTransform = () => {
+    switch (direction) {
+      case "up": return "translateY(40px)";
+      case "down": return "translateY(-40px)";
+      case "left": return "translateX(-40px)";
+      case "right": return "translateX(40px)";
+      default: return "translateY(40px)";
+    }
+  };
 
   return (
-    <motion.div
+    <div
       ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={directionVariants[direction]}
-      transition={{ duration, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={className}
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? "none" : getTransform(),
+        transitionDuration: `${duration}s`,
+        transitionDelay: `${delay}s`,
+        transitionProperty: "opacity, transform",
+        transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

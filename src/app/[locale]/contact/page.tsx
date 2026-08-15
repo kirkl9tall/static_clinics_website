@@ -17,7 +17,7 @@ export default function ContactPage() {
 
   const contactCards = [
     { icon: Phone, titleKey: "info.phone",      value: "044 244 09 90",         href: "tel:+41442440990",       color: "bg-primary-50 dark:bg-primary-500/10 text-primary-600 dark:text-primary-400" },
-    { icon: Mail,  titleKey: "info.email",       value: "jerumed@hin.ch",        href: "mailto:jerumed@hin.ch",  color: "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400" },
+    { icon: Mail,  titleKey: "info.email",       value: "jerumed@hin.ch",        href: "mailto:jerumed@hin.ch",  color: "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400" },
     { icon: MapPin, titleKey: "info.headOffice", value: "Baarerstrasse 82, 6300 Zug", href: "#",              color: "bg-violet-50 dark:bg-violet-500/10 text-violet-600 dark:text-violet-400" },
   ];
 
@@ -104,7 +104,7 @@ export default function ContactPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="p-8 rounded-2xl bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 text-center"
                 >
-                  <CheckCircle className="w-16 h-16 text-emerald-500 mx-auto mb-4" />
+                  <CheckCircle className="w-16 h-16 text-emerald-700 dark:text-emerald-400 mx-auto mb-4" />
                   <h3 className="text-xl font-bold text-text-primary dark:text-text-dark-primary mb-2">{t("form.messageSent")}</h3>
                   <p className="text-text-secondary dark:text-text-dark-secondary">{t("form.messageSentDesc")}</p>
                   <button
@@ -126,7 +126,7 @@ export default function ContactPage() {
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
                         placeholder={t("form.name")}
-                        className="w-full px-4 py-3 rounded-xl border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-text-primary dark:text-text-dark-primary placeholder:text-text-muted focus:outline-none focus:border-primary-400 dark:focus:border-primary-500 transition-colors"
+                        className="w-full px-4 py-3 rounded-xl border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-text-primary dark:text-text-dark-primary placeholder:text-text-muted dark:placeholder:text-text-dark-muted focus:outline-none focus:border-primary-400 dark:focus:border-primary-500 transition-colors"
                       />
                     </div>
                     <div>
@@ -138,7 +138,7 @@ export default function ContactPage() {
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                         placeholder="your@email.com"
-                        className="w-full px-4 py-3 rounded-xl border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-text-primary dark:text-text-dark-primary placeholder:text-text-muted focus:outline-none focus:border-primary-400 dark:focus:border-primary-500 transition-colors"
+                        className="w-full px-4 py-3 rounded-xl border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-text-primary dark:text-text-dark-primary placeholder:text-text-muted dark:placeholder:text-text-dark-muted focus:outline-none focus:border-primary-400 dark:focus:border-primary-500 transition-colors"
                       />
                     </div>
                   </div>
@@ -152,7 +152,7 @@ export default function ContactPage() {
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
                         placeholder="+41 ..."
-                        className="w-full px-4 py-3 rounded-xl border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-text-primary dark:text-text-dark-primary placeholder:text-text-muted focus:outline-none focus:border-primary-400 dark:focus:border-primary-500 transition-colors"
+                        className="w-full px-4 py-3 rounded-xl border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-text-primary dark:text-text-dark-primary placeholder:text-text-muted dark:placeholder:text-text-dark-muted focus:outline-none focus:border-primary-400 dark:focus:border-primary-500 transition-colors"
                       />
                     </div>
                     <div>
@@ -181,7 +181,7 @@ export default function ContactPage() {
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
                       placeholder={t("form.messagePlaceholder")}
-                      className="w-full px-4 py-3 rounded-xl border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-text-primary dark:text-text-dark-primary placeholder:text-text-muted focus:outline-none focus:border-primary-400 dark:focus:border-primary-500 transition-colors resize-none"
+                      className="w-full px-4 py-3 rounded-xl border border-border-light dark:border-border-dark bg-white dark:bg-surface-dark text-text-primary dark:text-text-dark-primary placeholder:text-text-muted dark:placeholder:text-text-dark-muted focus:outline-none focus:border-primary-400 dark:focus:border-primary-500 transition-colors resize-none"
                     />
                   </div>
 
@@ -212,7 +212,7 @@ export default function ContactPage() {
                       {row.hours ? (
                         <span className="font-medium text-text-primary dark:text-text-dark-primary">{row.hours}</span>
                       ) : (
-                        <span className="text-rose-500">{tclinics("closed")}</span>
+                        <span className="text-rose-700 dark:text-rose-400 font-medium">{tclinics("closed")}</span>
                       )}
                     </div>
                   ))}

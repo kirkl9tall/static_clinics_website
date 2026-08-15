@@ -1,7 +1,6 @@
 "use client";
 
 import { Link } from "@/navigation";
-import { motion } from "framer-motion";
 import ScrollReveal from "@/components/shared/scroll-reveal";
 import SectionHeader from "@/components/shared/section-header";
 import { services } from "@/data/services";
@@ -26,8 +25,7 @@ export default function ServicesPreview() {
         <ScrollReveal>
           <SectionHeader
             badge={t("badge")}
-            title={t("title")}
-            highlight={t("titleHighlight")}
+            title="Von Ästhetischer Medizin bis Longevity – das Jerumed-Spektrum an einem Ort"
             subtitle={t("subtitle")}
           />
         </ScrollReveal>
@@ -39,9 +37,8 @@ export default function ServicesPreview() {
             return (
               <ScrollReveal key={service.id} delay={i * 0.05}>
                 <Link href={`/services/${service.slug}`}>
-                  <motion.div
-                    whileHover={{ y: -4, scale: 1.02 }}
-                    className="group p-6 rounded-2xl bg-surface-dim dark:bg-surface-dark-dim border border-border-light dark:border-border-dark hover:border-primary-200 dark:hover:border-primary-700 hover:shadow-card-hover transition-all duration-300 text-center h-full"
+                  <div
+                    className="group p-6 rounded-2xl bg-surface-dim dark:bg-surface-dark-dim border border-border-light dark:border-border-dark hover:border-primary-200 dark:hover:border-primary-700 hover:shadow-card-hover hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 text-center h-full"
                   >
                     <div className="w-14 h-14 rounded-2xl bg-primary-50 dark:bg-primary-500/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-100 dark:group-hover:bg-primary-500/20 transition-colors">
                       <Icon className="w-7 h-7 text-primary-600 dark:text-primary-400" />
@@ -52,7 +49,7 @@ export default function ServicesPreview() {
                     <p className="text-xs text-text-muted dark:text-text-dark-muted line-clamp-2 leading-relaxed">
                       {ts(`items.${key}.shortDescription`)}
                     </p>
-                  </motion.div>
+                  </div>
                 </Link>
               </ScrollReveal>
             );

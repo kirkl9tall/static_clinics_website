@@ -11,13 +11,13 @@ const values = [
     icon: Heart,
     title: "Patient-First",
     description: "Every decision we make centers on the well-being, dignity, and experience of our patients.",
-    color: "bg-rose-50 dark:bg-rose-500/10 text-rose-600 dark:text-rose-400",
+    color: "bg-rose-50 dark:bg-rose-500/10 text-rose-700 dark:text-rose-400",
   },
   {
     icon: Star,
     title: "Excellence",
     description: "We maintain the highest standards of clinical practice, continuously improving through education and innovation.",
-    color: "bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400",
+    color: "bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-400",
   },
   {
     icon: Zap,
@@ -29,7 +29,7 @@ const values = [
     icon: Network,
     title: "Integration",
     description: "Our network model ensures seamless coordination between specialists, clinics, and services across Switzerland.",
-    color: "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
+    color: "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400",
   },
 ];
 

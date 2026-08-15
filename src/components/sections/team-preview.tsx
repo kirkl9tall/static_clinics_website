@@ -1,18 +1,18 @@
 "use client";
 
 import { Link } from "@/navigation";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import ScrollReveal from "@/components/shared/scroll-reveal";
 import SectionHeader from "@/components/shared/section-header";
 import { doctors } from "@/data/doctors";
 import { Globe, ArrowRight } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function TeamPreview() {
   const t = useTranslations("home.team");
   const tc = useTranslations("common");
   const td = useTranslations("doctors");
+  const locale = useLocale();
   const featured = doctors.slice(0, 6);
   const titleMap: Record<string, string> = {
     abuawad: td("abuawad.title"),
@@ -30,8 +30,7 @@ export default function TeamPreview() {
         <ScrollReveal>
           <SectionHeader
             badge={t("badge")}
-            title={t("title")}
-            highlight={t("titleHighlight")}
+            title="Unser Ärzteteam: Dr. Awad Abuawad, Dr. Fedi Farah & weitere Spezialisten"
             subtitle={t("subtitle")}
           />
         </ScrollReveal>
@@ -39,9 +38,8 @@ export default function TeamPreview() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {featured.map((doc, i) => (
             <ScrollReveal key={doc.id} delay={i * 0.1}>
-              <motion.div
-                whileHover={{ y: -4 }}
-                className="group bg-white dark:bg-surface-dark rounded-2xl border border-border-light dark:border-border-dark overflow-hidden hover:shadow-card-hover transition-all duration-300"
+              <div
+                className="group bg-white dark:bg-surface-dark rounded-2xl border border-border-light dark:border-border-dark overflow-hidden hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="relative aspect-[3/4] bg-gradient-to-br from-primary-100 to-emerald-100 dark:from-primary-900/30 dark:to-emerald-900/30 overflow-hidden">
                   {doc.image ? (
@@ -68,7 +66,7 @@ export default function TeamPreview() {
                   </p>
 
                   <div className="space-y-2 text-xs text-text-muted dark:text-text-dark-muted mb-4">
-<div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2">
                       <Globe className="w-3.5 h-3.5" />
                       <span>{doc.languages.join(", ")}</span>
                     </div>
@@ -78,12 +76,14 @@ export default function TeamPreview() {
                     <Link
                       href={`/team/${doc.slug}`}
                       className="w-full text-center px-3 py-2 text-xs font-semibold text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-500/10 rounded-xl hover:bg-primary-100 dark:hover:bg-primary-500/20 transition-colors"
+                      aria-label={`${tc("profile")} – ${doc.name}`}
                     >
                       {tc("profile")}
+                      <span className="sr-only"> {locale === "de" ? `von ${doc.name}` : `of ${doc.name}`}</span>
                     </Link>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </ScrollReveal>
           ))}
         </div>

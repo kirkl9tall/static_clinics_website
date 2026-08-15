@@ -574,6 +574,18 @@
       "comingSoon": "Bald verfügbar",
       "doctorsHere": "Ärzte in dieser Praxis",
       "otherLocations": "Weitere Standorte"
+    },
+    "seoTitles": {
+      "wald": "Hausarztpraxis Felsenau in Wald (ZH) | Ärzte Wald ZH | Praxen Jerumed",
+      "altstetten": "Hausarztpraxis Altstetten | Ärztezentrum Zürich Altstetten | Praxen Jerumed",
+      "seefeld": "Hausarztpraxis Seefeld | Hausarzt Zürich am Seefeld | Praxen Jerumed",
+      "duebendorf": "Hausarztpraxis Dübendorf | Arzt & Notfall ohne Termin | Praxen Jerumed"
+    },
+    "seoDesc": {
+      "wald": "Ihre Hausarztpraxis Felsenau in Wald (ZH). Erfahrenes Ärzte-Team für Allgemeinmedizin, Prävention und Notfälle. Neue Patienten willkommen! Jetzt online Termin buchen.",
+      "altstetten": "Moderne Hausarztpraxis in Zürich Altstetten mit eigener Apotheke & Röntgen. Umfassende medizinische Versorgung. Neue Patienten willkommen! Gleich Termin buchen.",
+      "seefeld": "Ihre vertrauensvolle Hausarztpraxis im Herzen von Zürich Seefeld. Kompetente Ärzte für Allgemeinmedizin. Neue Patienten willkommen! Jetzt online Termin buchen.",
+      "duebendorf": "Ihre Hausarztpraxis in Dübendorf. Erfahrenes Team für Allgemeinmedizin. Auch Notfälle und Behandlungen ohne Termin (Walk-in) möglich. Neue Patienten willkommen!"
     }
   },
   "gallery": {
@@ -654,7 +666,8 @@
     },
     "copyright": "Alle Rechte vorbehalten.",
     "privacy": "Datenschutz",
-    "imprint": "Impressum"
+    "imprint": "Impressum",
+    "googleReviews": "Bewerten Sie uns auf Google"
   },
   "doctors": {
     "abuawad": {
@@ -680,7 +693,9 @@
     "alsaaydeh": {
       "title": "Facharzt für Urologie",
       "specialty": "Urologie",
-      "bio": "Med. Jamil Alsaaydeh ist Facharzt für Urologie und Kinderurologie. Als Belegarzt bietet er umfassende urologische Versorgung für Erwachsene und Kinder."
+      "bio": "Med. Jamil Alsaaydeh ist Facharzt für Urologie und Kinderurologie. Als Belegarzt bietet er umfassende urologische Versorgung für Erwachsene und Kinder.",
+      "seoTitle": "Dr. med. Jamil Alsaaydeh | Urologie Seefeld & Dübendorf | Praxen Jerumed",
+      "seoDesc": "Dr. med. Jamil Alsaaydeh ist erfahrener Facharzt für Urologie. Vereinbaren Sie einen Termin für kompetente Beratung und Behandlung."
     },
     "fiknete": {
       "title": "Allgemein Medizin\nSpezialisierung in Bereich der Aesthetische Medizin",

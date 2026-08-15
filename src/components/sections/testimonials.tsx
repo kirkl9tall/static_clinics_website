@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from "@/components/shared/scroll-reveal";
 import SectionHeader from "@/components/shared/section-header";
 import { testimonials } from "@/data/testimonials";
@@ -31,31 +30,33 @@ export default function Testimonials() {
 
         <ScrollReveal>
           <div className="max-w-3xl mx-auto relative">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={current}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3 }}
-                className="bg-surface-dim dark:bg-surface-dark-dim rounded-3xl p-8 md:p-12 border border-border-light dark:border-border-dark text-center relative"
+            <div className="relative overflow-hidden">
+              <div
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${current * 100}%)` }}
               >
-                <Quote className="w-10 h-10 text-primary-200 dark:text-primary-800 mx-auto mb-6" />
-                <p className="text-lg md:text-xl text-text-primary dark:text-text-dark-primary leading-relaxed mb-6 italic">
-                  &ldquo;{textMap[testimonials[current].id]}&rdquo;
-                </p>
-                <div className="flex items-center justify-center gap-1 mb-4">
-                  {[1, 2, 3, 4, 5].map((n) => (
-                    <Star
-                      key={n}
-                      className={`w-4 h-4 ${n <= testimonials[current].rating ? "text-amber-400 fill-amber-400" : "text-gray-300"}`}
-                    />
-                  ))}
-                </div>
-                <p className="font-semibold text-text-primary dark:text-text-dark-primary">{testimonials[current].name}</p>
-                <p className="text-sm text-text-muted dark:text-text-dark-muted">{testimonials[current].clinic}</p>
-              </motion.div>
-            </AnimatePresence>
+                {testimonials.map((testimonial, i) => (
+                  <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
+                    <div className="bg-surface-dim dark:bg-surface-dark-dim rounded-3xl p-8 md:p-12 border border-border-light dark:border-border-dark text-center relative mx-auto">
+                      <Quote className="w-10 h-10 text-primary-200 dark:text-primary-800 mx-auto mb-6" />
+                      <p className="text-lg md:text-xl text-text-primary dark:text-text-dark-primary leading-relaxed mb-6 italic">
+                        &ldquo;{textMap[testimonial.id]}&rdquo;
+                      </p>
+                      <div className="flex items-center justify-center gap-1 mb-4">
+                        {[1, 2, 3, 4, 5].map((n) => (
+                          <Star
+                            key={n}
+                            className={`w-4 h-4 ${n <= testimonial.rating ? "text-amber-400 fill-amber-400" : "text-gray-300"}`}
+                          />
+                        ))}
+                      </div>
+                      <p className="font-semibold text-text-primary dark:text-text-dark-primary">{testimonial.name}</p>
+                      <p className="text-sm text-text-muted dark:text-text-dark-muted">{testimonial.clinic}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
 
             <div className="flex items-center justify-center gap-4 mt-8">
               <button onClick={prev} className="p-2 rounded-xl border border-border-light dark:border-border-dark hover:bg-gray-50 dark:hover:bg-white/5 transition-colors" aria-label="Previous testimonial">

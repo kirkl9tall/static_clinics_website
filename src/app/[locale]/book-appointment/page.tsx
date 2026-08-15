@@ -154,9 +154,9 @@ function StepDoctor({ selected, clinicFilter, onSelect }: { selected: Doctor | n
   const tc = useTranslations("common");
   const filtered = clinicFilter ? doctors.filter((d) => d.clinicIds.includes(clinicFilter.id)) : doctors;
   const availColor: Record<Doctor["availability"], string> = {
-    available: "text-emerald-600 dark:text-emerald-400",
-    limited: "text-amber-600 dark:text-amber-400",
-    unavailable: "text-red-500",
+    available: "text-emerald-700 dark:text-emerald-400",
+    limited: "text-amber-800 dark:text-amber-400",
+    unavailable: "text-red-700 dark:text-red-400",
   };
   const availLabel: Record<Doctor["availability"], string> = {
     available: tc("available"),
@@ -249,7 +249,7 @@ function StepPatientInfo({ form, onChange, errors }: {
   errors: Partial<Record<keyof BookingForm, string>>;
 }) {
   const inputCls = (field: keyof BookingForm) =>
-    `w-full px-4 py-3 rounded-xl border text-text-primary dark:text-text-dark-primary bg-surface dark:bg-surface-dark-dim placeholder:text-text-muted focus:outline-none transition-colors ${errors[field] ? "border-red-400 focus:border-red-500" : "border-border-light dark:border-border-dark focus:border-primary-400 dark:focus:border-primary-500"}`;
+    `w-full px-4 py-3 rounded-xl border text-text-primary dark:text-text-dark-primary bg-surface dark:bg-surface-dark-dim placeholder:text-text-muted dark:placeholder:text-text-dark-muted focus:outline-none transition-colors ${errors[field] ? "border-red-400 focus:border-red-500" : "border-border-light dark:border-border-dark focus:border-primary-400 dark:focus:border-primary-500"}`;
 
   return (
     <div>

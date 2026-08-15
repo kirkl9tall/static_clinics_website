@@ -1,19 +1,20 @@
 "use client";
 
 import { Link } from "@/navigation";
-import { motion } from "framer-motion";
+
 import Image from "next/image";
 import ScrollReveal from "@/components/shared/scroll-reveal";
 import SectionHeader from "@/components/shared/section-header";
 import { clinics } from "@/data/clinics";
 import { MapPin, ArrowUpRight, ExternalLink, Building2 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function NetworkGrid() {
   const t = useTranslations("home.network");
   const tc = useTranslations("common");
   const td = useTranslations("clinics.descriptions");
+  const locale = useLocale();
 
   return (
     <section className="py-24 lg:py-32 bg-surface-dim dark:bg-surface-dark-dim">
@@ -21,8 +22,7 @@ export default function NetworkGrid() {
         <ScrollReveal>
           <SectionHeader
             badge={t("badge")}
-            title={t("title")}
-            highlight={t("titleHighlight")}
+            title="Unsere Standorte in der Zürich-Region: Allgemeinmedizin & Urologie in Ihrer Nähe"
             subtitle={t("subtitle")}
           />
         </ScrollReveal>
@@ -30,8 +30,8 @@ export default function NetworkGrid() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {clinics.map((clinic, i) => (
             <ScrollReveal key={clinic.id} delay={i * 0.05}>
-              <motion.div
-                whileHover={{ y: -4 }}
+              <div
+                
                 className={cn(
                   "group relative bg-white dark:bg-surface-dark rounded-2xl border border-border-light dark:border-border-dark overflow-hidden transition-all duration-300",
                   "hover:shadow-card-hover hover:border-primary-200 dark:hover:border-primary-700"
@@ -66,7 +66,7 @@ export default function NetworkGrid() {
                       </div>
                     </div>
                     {clinic.isComingSoon && (
-                      <span className="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded-full">
+                      <span className="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 rounded-full">
                         {tc("comingSoon")}
                       </span>
                     )}
@@ -93,8 +93,11 @@ export default function NetworkGrid() {
                     <Link
                       href={`/clinics/${clinic.slug}`}
                       className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-xs font-semibold text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-500/10 rounded-xl hover:bg-primary-100 dark:hover:bg-primary-500/20 transition-colors"
+                      aria-label={`${tc("learnMore")} – ${clinic.name}`}
                     >
-                      {tc("learnMore")} <ArrowUpRight className="w-3.5 h-3.5" />
+                      {tc("learnMore")}
+                      <span className="sr-only"> {locale === "de" ? `über ${clinic.name}` : `about ${clinic.name}`}</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
                     </Link>
                     {clinic.website && clinic.website !== "#" && (
                       <a
@@ -102,14 +105,14 @@ export default function NetworkGrid() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 px-3 py-2.5 text-xs font-semibold rounded-xl border border-border-light dark:border-border-dark text-text-secondary dark:text-text-dark-secondary hover:border-primary-300 dark:hover:border-primary-700 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-500/10 transition-all whitespace-nowrap"
-                        aria-label={`Visit ${clinic.name} website`}
+                        aria-label={locale === "de" ? `Website von ${clinic.name} besuchen` : `Visit website of ${clinic.name}`}
                       >
                         <ExternalLink className="w-3.5 h-3.5" /> Website
                       </a>
                     )}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </ScrollReveal>
           ))}
         </div>

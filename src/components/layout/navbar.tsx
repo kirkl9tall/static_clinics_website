@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { usePathname, useRouter, Link } from "@/navigation";
-import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, Phone, Mail } from "lucide-react";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
@@ -86,12 +85,14 @@ export default function Navbar() {
               <button
                 onClick={() => switchLocale("de")}
                 className={cn("px-3 py-1 text-xs font-medium transition-colors", locale === "de" ? "bg-white text-primary-700" : "text-primary-200 hover:text-white")}
+                aria-label="Deutsch"
               >
                 DE
               </button>
               <button
                 onClick={() => switchLocale("en")}
                 className={cn("px-3 py-1 text-xs font-medium transition-colors", locale === "en" ? "bg-white text-primary-700" : "text-primary-200 hover:text-white")}
+                aria-label="English"
               >
                 EN
               </button>
@@ -110,12 +111,17 @@ export default function Navbar() {
       >
         <nav className="container-wide flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
+          <Link
+            href="/"
+            className="flex items-center group"
+            aria-label={locale === "de" ? "Praxen Jerumed Startseite" : "Praxen Jerumed Homepage"}
+          >
             <Image
-              src="/praxen-jerumed.png"
+              src="/praxen-jerumed.webp"
               alt="Praxen Jerumed – Ihr Gesundheitsnetzwerk in der Schweiz"
               width={200}
               height={60}
+              sizes="200px"
               className="h-10 w-auto object-contain"
               priority
             />
@@ -126,7 +132,7 @@ export default function Navbar() {
             {navRoutes.map((item) => (
               <div
                 key={item.href}
-                className="relative"
+                className="relative group"
                 role="none"
                 onMouseEnter={() => item.children && setActiveDropdown(item.key)}
                 onMouseLeave={() => setActiveDropdown(null)}
@@ -144,32 +150,29 @@ export default function Navbar() {
                   {item.children && <ChevronDown className="w-3.5 h-3.5" />}
                 </Link>
 
-                <AnimatePresence>
-                  {item.children && activeDropdown === item.key && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 8 }}
-                      transition={{ duration: 0.15 }}
-                      className="absolute top-full left-0 mt-1 w-72 bg-white dark:bg-surface-dark-dim rounded-2xl shadow-elevated border border-border-light dark:border-border-dark p-2 z-50"
-                    >
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href as "/"}
-                          className="block px-4 py-3 rounded-xl text-sm hover:bg-primary-50 dark:hover:bg-primary-500/10 transition-colors group"
-                        >
-                          <span className="font-medium text-text-primary dark:text-text-dark-primary group-hover:text-primary-600 dark:group-hover:text-primary-400">
-                            {child.labelKey}
-                          </span>
-                          {child.desc && (
-                            <span className="block text-xs text-text-muted dark:text-text-dark-muted mt-0.5">{child.desc}</span>
-                          )}
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {item.children && (
+                  <div
+                    className={cn(
+                      "absolute top-full left-0 mt-1 w-72 bg-white dark:bg-surface-dark-dim rounded-2xl shadow-elevated border border-border-light dark:border-border-dark p-2 z-50 transition-all duration-200 origin-top",
+                      activeDropdown === item.key ? "opacity-100 scale-100 visible" : "opacity-0 scale-95 invisible"
+                    )}
+                  >
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href as "/"}
+                        className="block px-4 py-3 rounded-xl text-sm hover:bg-primary-50 dark:hover:bg-primary-500/10 transition-colors group"
+                      >
+                        <span className="font-medium text-text-primary dark:text-text-dark-primary group-hover:text-primary-600 dark:group-hover:text-primary-400">
+                          {child.labelKey}
+                        </span>
+                        {child.desc && (
+                          <span className="block text-xs text-text-muted dark:text-text-dark-muted mt-0.5">{child.desc}</span>
+                        )}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -178,8 +181,8 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             {/* Mobile language toggle */}
             <div className="lg:hidden flex items-center gap-1 border border-border-light dark:border-border-dark rounded-lg overflow-hidden">
-              <button onClick={() => switchLocale("de")} className={cn("px-2 py-1 text-xs font-medium transition-colors", locale === "de" ? "bg-primary-500 text-white" : "text-text-muted")}>DE</button>
-              <button onClick={() => switchLocale("en")} className={cn("px-2 py-1 text-xs font-medium transition-colors", locale === "en" ? "bg-primary-500 text-white" : "text-text-muted")}>EN</button>
+              <button onClick={() => switchLocale("de")} className={cn("px-2 py-1 text-xs font-medium transition-colors", locale === "de" ? "bg-primary-500 text-white" : "text-text-muted")} aria-label="Deutsch">DE</button>
+              <button onClick={() => switchLocale("en")} className={cn("px-2 py-1 text-xs font-medium transition-colors", locale === "en" ? "bg-primary-500 text-white" : "text-text-muted")} aria-label="English">EN</button>
             </div>
             <div className="lg:hidden">
               <ThemeToggle />
@@ -187,6 +190,7 @@ export default function Navbar() {
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
+              aria-label={mobileOpen ? (locale === "de" ? "Menü schließen" : "Close menu") : (locale === "de" ? "Menü öffnen" : "Open menu")}
             >
               {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -195,43 +199,39 @@ export default function Navbar() {
       </header>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden fixed inset-x-0 top-[64px] z-40 bg-white dark:bg-surface-dark border-b border-border-light dark:border-border-dark overflow-hidden"
-          >
-            <div className="container-wide py-6 space-y-2 max-h-[70vh] overflow-y-auto">
-              {navRoutes.map((item, i) => (
-                <motion.div key={item.href} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.04 }}>
-                  <Link
-                    href={item.href as "/"}
-                    className={cn(
-                      "block px-4 py-3 rounded-xl text-base font-medium transition-colors",
-                      pathname === item.href
-                        ? "text-primary-600 bg-primary-50 dark:text-primary-400 dark:bg-primary-500/10"
-                        : "text-text-primary dark:text-text-dark-primary hover:bg-gray-50 dark:hover:bg-white/5"
-                    )}
-                  >
-                    {navMap[item.key] ?? item.key}
-                  </Link>
-                  {item.children && (
-                    <div className="ml-4 mt-1 space-y-1">
-                      {item.children.map((child) => (
-                        <Link key={child.href} href={child.href as "/"} className="block px-4 py-2 text-sm text-text-primary dark:text-text-dark-secondary hover:text-primary-600 rounded-lg">
-                          {child.labelKey}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+      <div
+        className={cn(
+          "lg:hidden fixed inset-x-0 top-[64px] z-40 bg-white dark:bg-surface-dark border-b border-border-light dark:border-border-dark overflow-hidden transition-all duration-300",
+          mobileOpen ? "max-h-[70vh] opacity-100 visible" : "max-h-0 opacity-0 invisible"
         )}
-      </AnimatePresence>
+      >
+        <div className="container-wide py-6 space-y-2 overflow-y-auto max-h-[70vh]">
+          {navRoutes.map((item, i) => (
+            <div key={item.href} className="animate-in fade-in slide-in-from-left-4" style={{ animationDelay: `${i * 50}ms`, animationFillMode: "both" }}>
+              <Link
+                href={item.href as "/"}
+                className={cn(
+                  "block px-4 py-3 rounded-xl text-base font-medium transition-colors",
+                  pathname === item.href
+                    ? "text-primary-600 bg-primary-50 dark:text-primary-400 dark:bg-primary-500/10"
+                    : "text-text-primary dark:text-text-dark-primary hover:bg-gray-50 dark:hover:bg-white/5"
+                )}
+              >
+                {navMap[item.key] ?? item.key}
+              </Link>
+              {item.children && (
+                <div className="ml-4 mt-1 space-y-1">
+                  {item.children.map((child) => (
+                    <Link key={child.href} href={child.href as "/"} className="block px-4 py-2 text-sm text-text-primary dark:text-text-dark-secondary hover:text-primary-600 rounded-lg">
+                      {child.labelKey}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
     </>
   );
 }

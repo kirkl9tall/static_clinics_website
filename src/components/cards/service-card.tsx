@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { ArrowRight, CheckCircle, Stethoscope, Heart, FlaskConical, Wind, ScanLine, Sparkles, Pill, Shield, Siren, Droplets, Leaf, Zap } from "lucide-react";
 import { Service } from "@/types";
 import type { LucideIcon } from "lucide-react";
@@ -34,6 +34,7 @@ interface ServiceCardProps {
 export default function ServiceCard({ service, index = 0 }: ServiceCardProps) {
   const t = useTranslations("services");
   const td = useTranslations("services.detail");
+  const locale = useLocale();
   const Icon = iconMap[service.icon] ?? Stethoscope;
   const key = toTranslationKey(service.id);
 
@@ -91,8 +92,11 @@ export default function ServiceCard({ service, index = 0 }: ServiceCardProps) {
       <Link
         href={`/services/${service.slug}`}
         className="flex items-center justify-center gap-2 py-2.5 text-sm font-semibold text-white gradient-primary rounded-xl hover:shadow-lg hover:shadow-primary-500/20 transition-all"
+        aria-label={`${td("learnMore")} – ${name}`}
       >
-        {td("learnMore")} <ArrowRight className="w-4 h-4" />
+        {td("learnMore")}
+        <span className="sr-only"> {locale === "de" ? `über ${name}` : `about ${name}`}</span>
+        <ArrowRight className="w-4 h-4" />
       </Link>
     </motion.div>
   );

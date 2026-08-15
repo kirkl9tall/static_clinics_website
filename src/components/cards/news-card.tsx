@@ -11,7 +11,7 @@ const categoryConfig: Record<string, { label: string; badgeCls: string; gradient
   news: { label: "News", badgeCls: "bg-blue-50 text-blue-700 dark:bg-blue-500/15 dark:text-blue-300", gradientFrom: "from-blue-100", gradientTo: "to-primary-100 dark:from-blue-900/30 dark:to-primary-900/30", emoji: "📰" },
   "health-tips": { label: "Health Tips", badgeCls: "bg-emerald-50 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300", gradientFrom: "from-emerald-100", gradientTo: "to-teal-100 dark:from-emerald-900/30 dark:to-teal-900/30", emoji: "💊" },
   careers: { label: "Careers", badgeCls: "bg-purple-50 text-purple-700 dark:bg-purple-500/15 dark:text-purple-300", gradientFrom: "from-purple-100", gradientTo: "to-violet-100 dark:from-purple-900/30 dark:to-violet-900/30", emoji: "💼" },
-  updates: { label: "Updates", badgeCls: "bg-amber-50 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300", gradientFrom: "from-amber-100", gradientTo: "to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30", emoji: "🔬" },
+  updates: { label: "Updates", badgeCls: "bg-amber-50 text-amber-800 dark:bg-amber-500/15 dark:text-amber-300", gradientFrom: "from-amber-100", gradientTo: "to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30", emoji: "🔬" },
   research: { label: "Research", badgeCls: "bg-indigo-50 text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-300", gradientFrom: "from-indigo-100", gradientTo: "to-blue-100 dark:from-indigo-900/30 dark:to-blue-900/30", emoji: "🔍" },
 };
 

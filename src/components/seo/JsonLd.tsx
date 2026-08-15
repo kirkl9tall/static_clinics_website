@@ -17,23 +17,113 @@ const BASE_URL = "https://praxen-jerumed.ch";
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalOrganization",
-  name: "Praxen Jerumed",
-  url: BASE_URL,
-  logo: `${BASE_URL}/praxen-jerumed.png`,
-  description:
-    "Praxen Jerumed ist ein Netzwerk von Fachpraxen in der Schweiz – Hausarztmedizin, ästhetische Medizin, Labor und mehr.",
-  address: {
+  "@id": "https://praxen-jerumed.ch/#organization",
+  "name": "Praxen Jerumed",
+  "legalName": "Praxen Jerumed AG",
+  "url": "https://praxen-jerumed.ch",
+  "logo": "https://praxen-jerumed.ch/logo.png",
+  "image": "https://praxen-jerumed.ch/og-image.jpg",
+  "description": "Das Jerumed-Netzwerk vereint Hausarztpraxen in Dübendorf, Winterthur, Zürich-Altstetten, Zürich-Seefeld und Wald. Allgemeinmedizin, Urologie und Ästhetische Medizin in der ganzen Zürich-Region.",
+  "telephone": "+41 44 244 09 90",
+  "email": "info@praxen-jerumed.ch",
+  "address": {
     "@type": "PostalAddress",
-    addressCountry: "CH",
-    addressRegion: "Zürich",
+    "addressLocality": "Zürich",
+    "addressCountry": "CH"
   },
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+41-44-244-09-90",
-    contactType: "customer service",
-    availableLanguage: ["German", "English", "Arabic"],
-  },
-  sameAs: ["https://praxen-jerumed.ch"],
+  "areaServed": [
+    { "@type": "City", "name": "Dübendorf" },
+    { "@type": "City", "name": "Winterthur" },
+    { "@type": "City", "name": "Zürich" },
+    { "@type": "City", "name": "Wald" }
+  ],
+  "medicalSpecialty": [
+    "General Practice",
+    "Urology",
+    "Aesthetic Medicine",
+    "Preventive Medicine"
+  ],
+  "employee": [
+    {
+      "@type": "Physician",
+      "name": "Dr. Awad Abuawad",
+      "jobTitle": "Gründer & Hausarzt",
+      "url": "https://praxen-jerumed.ch/team/dr-awad-abuawad",
+      "sameAs": "https://med-esthec.ch/team/dr-abuawad"
+    },
+    {
+      "@type": "Physician",
+      "name": "Dr. Fedi Farah",
+      "jobTitle": "Hausarzt Dübendorf",
+      "url": "https://praxen-jerumed.ch/team/dr-fedi-farah"
+    }
+  ],
+  "subOrganization": [
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://hausarztpraxis-duebendorf.ch/#clinic",
+      "name": "Hausarztpraxis Dübendorf",
+      "url": "https://hausarztpraxis-duebendorf.ch",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dübendorf",
+        "postalCode": "8600",
+        "addressCountry": "CH"
+      }
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://hausarztpraxis-winterthur.ch/#clinic",
+      "name": "Hausarztpraxis Winterthur",
+      "url": "https://hausarztpraxis-winterthur.ch",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Eichgutstrasse 1",
+        "addressLocality": "Winterthur",
+        "postalCode": "8400",
+        "addressCountry": "CH"
+      }
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://praxis-altstetten.ch/#clinic",
+      "name": "Hausarztpraxis Zürich Altstetten",
+      "url": "https://praxis-altstetten.ch",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Badenerstrasse 621",
+        "addressLocality": "Zürich",
+        "postalCode": "8048",
+        "addressCountry": "CH"
+      }
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://praxis-seefeld.ch/#clinic",
+      "name": "Hausarztpraxis Zürich Seefeld",
+      "url": "https://praxis-seefeld.ch",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Zürich",
+        "postalCode": "8008",
+        "addressCountry": "CH"
+      }
+    },
+    {
+      "@type": "MedicalClinic",
+      "name": "Hausarztpraxis Wald",
+      "url": "https://praxen-jerumed.ch/praxis-wald",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Wald",
+        "addressCountry": "CH"
+      }
+    }
+  ],
+  "sameAs": [
+    "https://jerumed.com",
+    "https://med-esthec.ch"
+  ]
 };
 
 /** LocalBusiness / MedicalClinic schema for a single clinic. */
@@ -61,7 +151,7 @@ export function clinicSchema(clinic: {
     description: clinic.description,
     telephone: clinic.phone,
     email: clinic.email,
-    image: `${BASE_URL}/praxen-jerumed.png`,
+    image: `${BASE_URL}/praxen-jerumed.webp`,
     address: {
       "@type": "PostalAddress",
       streetAddress: clinic.address,

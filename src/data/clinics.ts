@@ -1,6 +1,6 @@
 import { Clinic, OpeningHours } from "@/types";
 
-const DAYS = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"] as const;
+const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] as const;
 const CLOSED = { open: "", close: "", isClosed: true } as const;
 
 function schedule(hours: Partial<Record<typeof DAYS[number], { open: string; close: string }>>): OpeningHours[] {
@@ -83,7 +83,7 @@ export const clinics: Clinic[] = [
     email: "praxis-duebendorf@hin.ch",
     website: "https://www.hausarztpraxis-duebendorf.ch/",
     image: "/images/clinic-duebendorf.jpg",
-    logo: "/jeru2.jpeg",
+    logo: "/jeru2.webp",
     services: ["Allgemeinmedizin", "Notfallversorgung", "Präventivmedizin", "Labor", "EKG", "Spirometrie"],
     openingHours: schedule({
       Monday: hb(), Tuesday: hb(), Thursday: hb(), Saturday: hb(),
@@ -104,7 +104,7 @@ export const clinics: Clinic[] = [
     email: "praxis-altstetten@hin.ch",
     website: "https://praxis-altstetten.ch/",
     image: "/images/clinic-altstetten.jpg",
-    logo: "/jeru1.jpeg",
+    logo: "/jeru1.webp",
     services: ["Allgemeinmedizin", "Röntgen", "Apotheke", "Labor", "Impfungen", "Reisemedizin"],
     openingHours: schedule({
       Tuesday: hb(), Wednesday: hb(), Thursday: hb(), Friday: hb(), Saturday: hb(),
@@ -126,7 +126,7 @@ export const clinics: Clinic[] = [
     email: "praxis-winterthur@hin.ch",
     website: "https://www.hausarztpraxis-winterthur.ch/",
     image: "/images/clinic-winterthur.jpg",
-    logo: "/jeru2.jpeg",
+    logo: "/jeru2.webp",
     services: ["Allgemeinmedizin", "Vorsorgeuntersuchungen", "Chronische Erkrankungen", "Labor", "EKG"],
     openingHours: schedule({
       Tuesday: hb(), Wednesday: hb(), Thursday: hb(), Friday: hb(), Saturday: hb(),
@@ -149,7 +149,7 @@ export const clinics: Clinic[] = [
     email: "praxis-felsenau@hin.ch",
     website: "https://praxis-felsenau.ch",
     image: "/images/clinic-wald.jpg",
-    logo: "/jeru3.jpeg",
+    logo: "/jeru3.webp",
     services: ["Allgemeinmedizin", "Prävention", "Impfungen", "Labor", "Gesundheitsberatung"],
     openingHours: schedule({
       Monday: hb(), Wednesday: hb(), Thursday: hb(), Saturday: hb(),
@@ -172,7 +172,7 @@ export const clinics: Clinic[] = [
     email: "info@medesthec.ch",
     website: "https://med-esthec.ch/",
     image: "/images/clinic-medesthec.jpg",
-    logo: "/jeru4.jpeg",
+    logo: "/jeru4.webp",
     services: ["Botox", "Filler", "Hautverjüngung", "Lasertherapie", "Körperformung", "PRP-Therapie"],
     openingHours: schedule({
       Wednesday: h("14:00", "18:00"),
@@ -238,7 +238,7 @@ export const clinics: Clinic[] = [
     email: "urohealth@jerumed.com",
     website: "https://swissurohealth.ch/",
     image: "/images/clinic-uro.jpg",
-    logo: "/swisurohealth.png",
+    logo: "/swisurohealth.webp",
     services: ["Urologische Beratung", "Prostatabehandlung", "Nierensteinbehandlung", "Blasengesundheit", "Männergesundheit"],
     openingHours: schedule({
       Monday: h("08:00", "17:00"),
@@ -261,7 +261,7 @@ export const clinics: Clinic[] = [
     email: "shop@jerumed.com",
     website: "https://www.jerumed.com/",
     image: "/images/clinic-shop.jpg",
-    logo: "/jerumed_shop.png",
+    logo: "/jerumed_shop.webp",
     services: ["Pharmazeutika", "Medizinbedarf", "Wellnessprodukte", "Nahrungsergänzung", "Körperpflege"],
     openingHours: allDay(),
     accentColor: "#f59e0b",

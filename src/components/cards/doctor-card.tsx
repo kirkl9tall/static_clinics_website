@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Doctor } from "@/types";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 
 function getInitials(name: string) {
@@ -24,6 +24,7 @@ interface DoctorCardProps {
 export default function DoctorCard({ doctor, index = 0 }: DoctorCardProps) {
   const td = useTranslations("doctors");
   const tc = useTranslations("common");
+  const locale = useLocale();
   const titleMap: Record<string, string> = {
     abuawad: td("abuawad.title"),
     rodriguez: td("rodriguez.title"),
@@ -69,7 +70,7 @@ export default function DoctorCard({ doctor, index = 0 }: DoctorCardProps) {
           {title}
         </p>
 
-<div className="flex flex-wrap gap-1.5 mb-4">
+        <div className="flex flex-wrap gap-1.5 mb-4">
           {doctor.languages.slice(0, 3).map((lang) => (
             <span key={lang} className="px-2 py-0.5 text-[10px] font-medium rounded-full bg-gray-100 dark:bg-white/10 text-text-muted dark:text-text-dark-muted">
               {lang}
@@ -80,8 +81,10 @@ export default function DoctorCard({ doctor, index = 0 }: DoctorCardProps) {
         <Link
           href={`/team/${doctor.slug}`}
           className="w-full py-2 text-xs font-semibold rounded-xl border border-primary-200 dark:border-primary-700 text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-500/10 transition-colors text-center"
+          aria-label={`${tc("profile")} – ${doctor.name}`}
         >
           {tc("profile")}
+          <span className="sr-only"> {locale === "de" ? `von ${doctor.name}` : `of ${doctor.name}`}</span>
         </Link>
       </div>
     </motion.div>

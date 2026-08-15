@@ -574,6 +574,18 @@
       "comingSoon": "Coming Soon",
       "doctorsHere": "Doctors at This Practice",
       "otherLocations": "Other Locations"
+    },
+    "seoTitles": {
+      "wald": "Medical Practice Felsenau in Wald (ZH) | Doctors Wald ZH | Praxen Jerumed",
+      "altstetten": "Medical Practice Altstetten | Medical Center Zurich Altstetten | Praxen Jerumed",
+      "seefeld": "Medical Practice Seefeld | Doctor Zurich Seefeld | Praxen Jerumed",
+      "duebendorf": "Medical Practice Dübendorf | Doctor & Emergencies without Appointment | Praxen Jerumed"
+    },
+    "seoDesc": {
+      "wald": "Your medical practice Felsenau in Wald (ZH). Experienced team of doctors for general medicine, prevention, and emergencies. New patients welcome! Book online now.",
+      "altstetten": "Modern medical practice in Zurich Altstetten with in-house pharmacy & X-ray. Comprehensive medical care. New patients welcome! Book your appointment now.",
+      "seefeld": "Your trusted medical practice in the heart of Zurich Seefeld. Competent doctors for general medicine. New patients welcome! Book an appointment online now.",
+      "duebendorf": "Your medical practice in Dübendorf. Experienced team for general medicine. Emergencies and treatments without appointment (walk-in) are also possible. New patients welcome!"
     }
   },
   "gallery": {
@@ -654,7 +666,8 @@
     },
     "copyright": "All rights reserved.",
     "privacy": "Privacy Policy",
-    "imprint": "Imprint"
+    "imprint": "Imprint",
+    "googleReviews": "Review us on Google"
   },
   "doctors": {
     "abuawad": {
@@ -680,7 +693,9 @@
     "alsaaydeh": {
       "title": "Specialist in Urology",
       "specialty": "Urology",
-      "bio": "Med. Jamil Alsaaydeh is a specialist in urology and pediatric urology. As an attending physician, he provides comprehensive urological care for adults and children."
+      "bio": "Med. Jamil Alsaaydeh is a specialist in urology and pediatric urology. As an attending physician, he provides comprehensive urological care for adults and children.",
+      "seoTitle": "Dr. med. Jamil Alsaaydeh | Urology Seefeld & Dübendorf | Praxen Jerumed",
+      "seoDesc": "Dr. med. Jamil Alsaaydeh is an experienced specialist in urology. Book an appointment for competent advice and treatment."
     },
     "fiknete": {
       "title": "General Medicine\nSpecialization in Aesthetic Medicine",

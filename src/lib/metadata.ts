@@ -16,7 +16,7 @@ export function createLayoutMetadata(path: string, translations: LocaleMeta) {
   };
 }
 const SITE_NAME = "Praxen Jerumed";
-const OG_IMAGE = `${BASE_URL}/praxen-jerumed.png`;
+const OG_IMAGE = `${BASE_URL}/praxen-jerumed.webp`;
 
 export function createMetadata(
   title: string,
@@ -51,6 +51,7 @@ export function createMetadata(
       languages: {
         [locale === "de" ? "de-CH" : "en"]: url,
         [altLocale === "de" ? "de-CH" : "en"]: altUrl,
+        "x-default": `${BASE_URL}/de${path}`,
       },
     },
   };

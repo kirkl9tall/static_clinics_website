@@ -2,7 +2,7 @@
 
 import { Link } from "@/navigation";
 import Image from "next/image";
-import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowUpRight, Star } from "lucide-react";
 import { clinics } from "@/data/clinics";
 import { useTranslations } from "next-intl";
 
@@ -18,14 +18,24 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-flex mb-6">
               <Image
-                src="/praxen-jerumed.png"
+                src="/praxen-jerumed.webp"
                 alt="Praxen Jerumed – Ihr Gesundheitsnetzwerk in der Schweiz"
                 width={180}
                 height={54}
+                sizes="180px"
                 className="h-10 w-auto object-contain"
               />
             </Link>
             <p className="text-sm text-gray-400 leading-relaxed mb-6">{t("description")}</p>
+            <a 
+              href="https://g.page/r/CVCYR7477lcLEBM/review" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 text-white text-sm font-medium rounded-xl border border-white/10 transition-all mb-6 w-fit"
+            >
+              <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+              {t("googleReviews")}
+            </a>
             <div className="space-y-3 text-sm">
               <a href="tel:+41442440990" className="flex items-center gap-2 hover:text-primary-400 transition-colors">
                 <Phone className="w-4 h-4 text-primary-500" /> 044 244 09 90
@@ -88,7 +98,7 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder={t("newsletter.placeholder")}
-                className="flex-1 px-4 py-2.5 bg-gray-800 border border-gray-700 rounded-xl text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-primary-500 transition-colors"
+                className="flex-1 px-4 py-2.5 bg-gray-800 border border-gray-700 rounded-xl text-sm text-white placeholder:text-gray-400 focus:outline-none focus:border-primary-500 transition-colors"
               />
               <button type="submit" className="px-4 py-2.5 gradient-primary text-white text-sm font-medium rounded-xl hover:shadow-lg hover:shadow-primary-500/25 transition-all">
                 {t("newsletter.subscribe")}
@@ -99,7 +109,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-gray-800">
-        <div className="container-wide py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+        <div className="container-wide py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
           <p>Designed by Jerumed Nexus</p>
           <div className="flex items-center gap-6">
             <Link href="/" className="hover:text-gray-300 transition-colors">{t("privacy")}</Link>

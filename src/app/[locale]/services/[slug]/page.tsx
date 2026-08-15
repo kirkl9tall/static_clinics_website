@@ -34,9 +34,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title: `${name} | Praxen Jerumed`,
       description,
-      images: [{ url: "/praxen-jerumed.png", width: 1200, height: 630 }],
+      images: [{ url: "/praxen-jerumed.webp", width: 1200, height: 630 }],
     },
-    alternates: { canonical: `https://praxen-jerumed.ch/de/services/${slug}` },
+    alternates: {
+      canonical: `https://praxen-jerumed.ch/${locale}/services/${slug}`,
+      languages: {
+        "de-CH": `https://praxen-jerumed.ch/de/services/${slug}`,
+        "en": `https://praxen-jerumed.ch/en/services/${slug}`,
+        "x-default": `https://praxen-jerumed.ch/de/services/${slug}`,
+      },
+    },
   };
 }
 
@@ -105,7 +112,7 @@ export default async function ServicePage({ params }: { readonly params: Promise
                 <div className="grid sm:grid-cols-2 gap-3">
                   {features.map((feature) => (
                     <div key={feature} className="flex items-center gap-3 p-4 rounded-xl bg-surface-dim dark:bg-surface-dark-dim border border-border-light dark:border-border-dark">
-                      <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-emerald-700 dark:text-emerald-400 flex-shrink-0" />
                       <span className="text-sm font-medium text-text-primary dark:text-text-dark-primary">{feature}</span>
                     </div>
                   ))}

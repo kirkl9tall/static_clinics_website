@@ -18,16 +18,24 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const clinic = getClinicBySlug(slug);
   if (!clinic) return { title: "Clinic" };
   const t = await getTranslations({ locale, namespace: "clinics" });
-  const description = t(`descriptions.${clinic.id}` as Parameters<typeof t>[0]);
+  const seoTitle = t.has(`seoTitles.${clinic.id}`) ? t(`seoTitles.${clinic.id}`) : clinic.name;
+  const description = t.has(`seoDesc.${clinic.id}`) ? t(`seoDesc.${clinic.id}`) : t(`descriptions.${clinic.id}` as Parameters<typeof t>[0]);
   return {
-    title: clinic.name,
+    title: seoTitle,
     description,
     openGraph: {
-      title: `${clinic.name} | Praxen Jerumed`,
+      title: seoTitle,
       description,
-      images: [{ url: clinic.logo || "/praxen-jerumed.png", width: 1200, height: 630 }],
+      images: [{ url: clinic.logo || "/praxen-jerumed.webp", width: 1200, height: 630 }],
     },
-    alternates: { canonical: `https://praxen-jerumed.ch/de/clinics/${slug}` },
+    alternates: {
+      canonical: `https://praxen-jerumed.ch/${locale}/clinics/${slug}`,
+      languages: {
+        "de-CH": `https://praxen-jerumed.ch/de/clinics/${slug}`,
+        "en": `https://praxen-jerumed.ch/en/clinics/${slug}`,
+        "x-default": `https://praxen-jerumed.ch/de/clinics/${slug}`,
+      },
+    },
   };
 }
 
@@ -121,7 +129,7 @@ export default async function ClinicPage({ params }: { readonly params: Promise<
                     <div key={hours.day} className="flex justify-between items-center px-5 py-3 border-b border-border-light dark:border-border-dark last:border-0 odd:bg-surface-dim dark:odd:bg-surface-dark-dim">
                       <span className="text-sm font-medium text-text-secondary dark:text-text-dark-secondary w-28">{hours.day}</span>
                       {hours.isClosed ? (
-                        <span className="text-sm text-rose-500 font-medium">{t("detail.closed")}</span>
+                        <span className="text-sm text-rose-700 dark:text-rose-400 font-medium">{t("detail.closed")}</span>
                       ) : (
                         <span className="text-sm font-medium text-text-primary dark:text-text-dark-primary">{hours.close ? `${hours.open} – ${hours.close}` : hours.open}</span>
                       )}
@@ -156,7 +164,7 @@ export default async function ClinicPage({ params }: { readonly params: Promise<
                   </div>
                 </div>
                 <div className="mt-4 pt-4 border-t border-border-light dark:border-border-dark">
-                  <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-full ${clinic.isComingSoon ? "bg-amber-50 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400" : "bg-emerald-50 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400"}`}>
+                  <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-full ${clinic.isComingSoon ? "bg-amber-50 text-amber-800 dark:bg-amber-500/10 dark:text-amber-400" : "bg-emerald-50 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400"}`}>
                     <span className={`w-2 h-2 rounded-full ${clinic.isComingSoon ? "bg-amber-500" : "bg-emerald-500"}`} />
                     {clinic.isComingSoon ? t("detail.openingSoon") : t("detail.currentlyActive")}
                   </span>
@@ -183,9 +191,9 @@ export default async function ClinicPage({ params }: { readonly params: Promise<
                   <p className="text-xs text-text-muted dark:text-text-dark-muted mt-1">{doctor.specialty}</p>
                   {(() => {
                     const avail = doctor.availability;
-                    let cls = "bg-gray-100 text-gray-500";
-                    if (avail === "available") cls = "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-400";
-                    else if (avail === "limited") cls = "bg-amber-100 text-amber-700";
+                    let cls = "bg-gray-100 text-gray-600 dark:bg-surface-dark-bright dark:text-text-dark-secondary";
+                    if (avail === "available") cls = "bg-emerald-100 text-emerald-800 dark:bg-emerald-500/20 dark:text-emerald-400";
+                    else if (avail === "limited") cls = "bg-amber-100 text-amber-800 dark:bg-amber-500/20 dark:text-amber-400";
                     return <span className={`inline-block mt-2 px-2 py-0.5 text-[10px] font-semibold rounded-full ${cls}`}>{tc(avail)}</span>;
                   })()}
                 </Link>

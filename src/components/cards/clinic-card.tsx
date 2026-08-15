@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { MapPin, Phone, ArrowRight, ExternalLink } from "lucide-react";
 import { Clinic } from "@/types";
+import { useTranslations, useLocale } from "next-intl";
 
 interface ClinicCardProps {
   clinic: Clinic;
@@ -13,6 +14,8 @@ interface ClinicCardProps {
 }
 
 export default function ClinicCard({ clinic, index = 0, descriptionOverride }: ClinicCardProps) {
+  const tc = useTranslations("common");
+  const locale = useLocale();
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -44,7 +47,7 @@ export default function ClinicCard({ clinic, index = 0, descriptionOverride }: C
             )}
           </div>
           {clinic.isComingSoon && (
-            <span className="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-500/30">
+            <span className="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-400 border border-amber-200 dark:border-amber-500/30">
               Coming Soon
             </span>
           )}
@@ -94,8 +97,11 @@ export default function ClinicCard({ clinic, index = 0, descriptionOverride }: C
           <Link
             href={`/clinics/${clinic.slug}`}
             className="flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-semibold text-white gradient-primary rounded-xl hover:shadow-lg hover:shadow-primary-500/20 transition-all"
+            aria-label={`${tc("learnMore")} – ${clinic.name}`}
           >
-            Learn More <ArrowRight className="w-4 h-4" />
+            {tc("learnMore")}
+            <span className="sr-only"> {locale === "de" ? `über ${clinic.name}` : `about ${clinic.name}`}</span>
+            <ArrowRight className="w-4 h-4" />
           </Link>
           {clinic.website && clinic.website !== "#" && (
             <a
@@ -103,7 +109,7 @@ export default function ClinicCard({ clinic, index = 0, descriptionOverride }: C
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 px-3 py-2.5 text-sm font-semibold rounded-xl border border-border-light dark:border-border-dark text-text-secondary dark:text-text-dark-secondary hover:border-primary-300 dark:hover:border-primary-700 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-500/10 transition-all"
-              aria-label={`Visit ${clinic.name} website`}
+              aria-label={locale === "de" ? `Website von ${clinic.name} besuchen` : `Visit website of ${clinic.name}`}
             >
               <ExternalLink className="w-4 h-4" />
             </a>

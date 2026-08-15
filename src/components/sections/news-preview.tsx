@@ -5,7 +5,6 @@ import ScrollReveal from "@/components/shared/scroll-reveal";
 import SectionHeader from "@/components/shared/section-header";
 import { articles } from "@/data/articles";
 import { ArrowRight, Clock } from "lucide-react";
-import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 
 export default function NewsPreview() {
@@ -30,9 +29,8 @@ export default function NewsPreview() {
           {latest.map((article, i) => (
             <ScrollReveal key={article.id} delay={i * 0.1}>
               <Link href={`/news/${article.slug}`}>
-                <motion.article
-                  whileHover={{ y: -4 }}
-                  className="group bg-white dark:bg-surface-dark rounded-2xl border border-border-light dark:border-border-dark overflow-hidden hover:shadow-card-hover transition-all duration-300 h-full flex flex-col"
+                <article
+                  className="group bg-white dark:bg-surface-dark rounded-2xl border border-border-light dark:border-border-dark overflow-hidden hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 h-full flex flex-col"
                 >
                   <div className="h-48 bg-gradient-to-br from-primary-100 to-emerald-100 dark:from-primary-900/30 dark:to-emerald-900/30 flex items-center justify-center">
                     <span className="text-4xl">📰</span>
@@ -57,7 +55,7 @@ export default function NewsPreview() {
                       {tc("readMore")} <ArrowRight className="w-4 h-4" />
                     </div>
                   </div>
-                </motion.article>
+                </article>
               </Link>
             </ScrollReveal>
           ))}

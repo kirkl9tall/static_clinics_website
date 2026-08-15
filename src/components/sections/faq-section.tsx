@@ -5,7 +5,6 @@ import ScrollReveal from "@/components/shared/scroll-reveal";
 import SectionHeader from "@/components/shared/section-header";
 import { faqs, faqCategories } from "@/data/faqs";
 import { ChevronDown } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 
@@ -68,20 +67,18 @@ export default function FAQSection() {
                   <span className="font-medium text-text-primary dark:text-text-dark-primary pr-4">{t(`items.${faq.id}.question` as Parameters<typeof t>[0])}</span>
                   <ChevronDown className={cn("w-5 h-5 text-text-muted flex-shrink-0 transition-transform duration-200", openId === faq.id && "rotate-180")} />
                 </button>
-                <AnimatePresence>
-                  {openId === faq.id && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <div className="px-5 pb-5 text-sm text-text-secondary dark:text-text-dark-secondary leading-relaxed">
-                        {t(`items.${faq.id}.answer` as Parameters<typeof t>[0])}
-                      </div>
-                    </motion.div>
+                <div
+                  className={cn(
+                    "grid transition-all duration-200 ease-in-out",
+                    openId === faq.id ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
                   )}
-                </AnimatePresence>
+                >
+                  <div className="overflow-hidden">
+                    <div className="px-5 pb-5 text-sm text-text-secondary dark:text-text-dark-secondary leading-relaxed">
+                      {t(`items.${faq.id}.answer` as Parameters<typeof t>[0])}
+                    </div>
+                  </div>
+                </div>
               </div>
             </ScrollReveal>
           ))}

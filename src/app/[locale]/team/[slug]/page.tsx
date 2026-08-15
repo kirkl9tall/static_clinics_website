@@ -14,19 +14,29 @@ export async function generateStaticParams() {
   return doctors.map((d) => ({ slug: d.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }): Promise<Metadata> {
+  const { slug, locale } = await params;
   const doctor = getDoctorBySlug(slug);
   if (!doctor) return { title: "Doctor" };
+  const td = await getTranslations({ locale, namespace: "doctors" });
+  const seoTitle = td.has(`${doctor.id}.seoTitle`) ? td(`${doctor.id}.seoTitle`) : `${doctor.name} | Praxen Jerumed`;
+  const seoDesc = td.has(`${doctor.id}.seoDesc`) ? td(`${doctor.id}.seoDesc`) : doctor.bio;
   return {
-    title: doctor.name,
-    description: doctor.bio,
+    title: seoTitle,
+    description: seoDesc,
     openGraph: {
-      title: `${doctor.name} | Praxen Jerumed`,
-      description: doctor.bio,
-      images: doctor.image ? [{ url: doctor.image, width: 800, height: 1000 }] : [{ url: "/praxen-jerumed.png" }],
+      title: seoTitle,
+      description: seoDesc,
+      images: doctor.image ? [{ url: doctor.image, width: 800, height: 1000 }] : [{ url: "/praxen-jerumed.webp" }],
     },
-    alternates: { canonical: `https://praxen-jerumed.ch/de/team/${slug}` },
+    alternates: {
+      canonical: `https://praxen-jerumed.ch/${locale}/team/${slug}`,
+      languages: {
+        "de-CH": `https://praxen-jerumed.ch/de/team/${slug}`,
+        "en": `https://praxen-jerumed.ch/en/team/${slug}`,
+        "x-default": `https://praxen-jerumed.ch/de/team/${slug}`,
+      },
+    },
   };
 }
 
@@ -35,12 +45,12 @@ function getInitials(name: string) {
 }
 
 const availabilityCls = {
-  available: "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-400",
-  limited: "bg-amber-100 text-amber-700 dark:bg-amber-500/20 dark:text-amber-400",
-  unavailable: "bg-gray-100 text-gray-500 dark:bg-gray-700 dark:text-gray-400",
+  available: "bg-emerald-100 text-emerald-800 dark:bg-emerald-500/20 dark:text-emerald-400",
+  limited: "bg-amber-100 text-amber-800 dark:bg-amber-500/20 dark:text-amber-400",
+  unavailable: "bg-gray-100 text-gray-600 dark:bg-surface-dark-bright dark:text-text-dark-secondary",
 };
 
-const knownDoctorIds = new Set(["abuawad","rodriguez","kassar","zahran","alsaaydeh","fiknete","bachtsetzis"]);
+const knownDoctorIds = new Set(["abuawad", "rodriguez", "kassar", "zahran", "alsaaydeh", "fiknete", "bachtsetzis"]);
 
 export default async function DoctorPage({ params }: { readonly params: Promise<{ slug: string; locale: string }> }) {
   const { slug, locale } = await params;
@@ -183,13 +193,13 @@ export default async function DoctorPage({ params }: { readonly params: Promise<
                 </div>
                 <div className="p-6 rounded-2xl bg-surface-dim dark:bg-surface-dark-dim border border-border-light dark:border-border-dark">
                   <h3 className="font-bold text-text-primary dark:text-text-dark-primary mb-4 flex items-center gap-2">
-                    <BadgeCheck className="w-5 h-5 text-emerald-500" />
+                    <BadgeCheck className="w-5 h-5 text-emerald-700 dark:text-emerald-400" />
                     {t("certifications")}
                   </h3>
                   <div className="space-y-3">
                     {doctor.certifications.map((cert) => (
                       <div key={cert} className="flex items-start gap-2 text-sm text-text-secondary dark:text-text-dark-secondary">
-                        <BadgeCheck className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                        <BadgeCheck className="w-4 h-4 text-emerald-700 dark:text-emerald-400 mt-0.5 flex-shrink-0" />
                         {cert}
                       </div>
                     ))}

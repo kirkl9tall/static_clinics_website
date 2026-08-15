@@ -1,43 +1,50 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
 
-interface AnimatedCounterProps {
-  end: number;
-  duration?: number;
-  suffix?: string;
-  prefix?: string;
-  className?: string;
-}
-
-export default function AnimatedCounter({
-  end,
-  duration = 2,
-  suffix = "",
-  prefix = "",
-  className = "",
-}: AnimatedCounterProps) {
+export default function AnimatedCounter({ end, suffix = "", duration = 2 }: { end: number; suffix?: string; duration?: number }) {
   const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    if (!isInView) return;
-    let startTime: number | null = null;
-    const step = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * end));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [isInView, end, duration]);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          observer.disconnect();
+          
+          let start = 0;
+          const endValue = end;
+          const totalFrames = Math.round(duration * 60);
+          const increment = endValue / totalFrames;
+          
+          let currentFrame = 0;
+          const timer = setInterval(() => {
+            currentFrame++;
+            start += increment;
+            
+            if (currentFrame >= totalFrames) {
+              setCount(endValue);
+              clearInterval(timer);
+            } else {
+              setCount(Math.floor(start));
+            }
+          }, 1000 / 60);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    
+    return () => observer.disconnect();
+  }, [end, duration]);
 
   return (
-    <motion.span ref={ref} className={className}>
-      {prefix}{count}{suffix}
-    </motion.span>
+    <span ref={ref}>
+      {count}
+      {suffix}
+    </span>
   );
 }
