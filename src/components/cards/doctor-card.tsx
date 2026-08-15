@@ -30,7 +30,6 @@ export default function DoctorCard({ doctor, index = 0 }: DoctorCardProps) {
     kassar: td("kassar.title"),
     zahran: td("zahran.title"),
     alsaaydeh: td("alsaaydeh.title"),
-    fiknete: td("fiknete.title"),
     bachtsetzis: td("bachtsetzis.title"),
   };
   const title = titleMap[doctor.id] ?? doctor.title;

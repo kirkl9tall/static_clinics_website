@@ -16,40 +16,71 @@ const inter = Inter({
 const BASE_URL = "https://praxen-jerumed.ch";
 const OG_IMAGE = `${BASE_URL}/praxen-jerumed.png`;
 
-export const metadata: Metadata = {
-  metadataBase: new URL(BASE_URL),
-  title: {
-    default: "Praxen Jerumed – Ihr Gesundheitsnetzwerk in der Schweiz",
-    template: "%s | Praxen Jerumed",
+const siteMeta = {
+  de: {
+    title: "Praxen Jerumed – Ihr Hausarzt-Netzwerk in Zürich, Dübendorf & Winterthur",
+    description: "Das Jerumed-Ärztenetzwerk: Allgemeinmedizin, Urologie & Ästhetik in Zürich, Dübendorf, Winterthur & Wald. Neue Patienten willkommen. Jetzt Praxis finden!",
+    keywords: ["Hausarzt Zürich", "Hausarzt Dübendorf", "Hausarzt Winterthur", "Hausarzt Wald", "Praxen Jerumed", "Arztpraxis Schweiz", "Urologie Zug", "Ästhetische Medizin Zürich", "Allgemeinmedizin", "Felsenau Wald"],
+    ogLocale: "de_CH",
   },
-  description: "Praxen Jerumed ist ein Netzwerk von Fachpraxen in der Schweiz – Hausarztmedizin, ästhetische Medizin, Labor und mehr.",
-  keywords: ["Hausarzt Zürich", "Hausarzt Dübendorf", "Hausarzt Winterthur", "Hausarzt Wald", "Praxen Jerumed", "Arztpraxis Schweiz", "Urologie Zug", "Ästhetische Medizin Zürich", "Allgemeinmedizin", "Felsenau Wald"],
-  authors: [{ name: "Praxen Jerumed" }],
-  openGraph: {
-    type: "website",
-    url: BASE_URL,
-    siteName: "Praxen Jerumed",
-    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Praxen Jerumed" }],
+  en: {
+    title: "Praxen Jerumed – Your Family Doctor Network in Zurich, Dübendorf & Winterthur",
+    description: "The Jerumed physician network: general medicine, urology & aesthetic medicine in Zurich, Dübendorf, Winterthur & Wald. New patients welcome – find your practice today!",
+    keywords: ["family doctor Zurich", "GP Dübendorf", "doctor Winterthur", "doctor Wald", "Praxen Jerumed", "medical practice Switzerland", "urology", "aesthetic medicine Zurich", "general medicine", "English speaking doctor Zurich"],
+    ogLocale: "en_US",
   },
-  twitter: {
-    card: "summary_large_image",
-    images: [OG_IMAGE],
-  },
-  alternates: {
-    canonical: BASE_URL,
-    languages: {
-      "de-CH": `${BASE_URL}/de`,
-      "en":    `${BASE_URL}/en`,
+} as const;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const m = siteMeta[locale as keyof typeof siteMeta] ?? siteMeta.de;
+
+  return {
+    metadataBase: new URL(BASE_URL),
+    // The suffix is applied here only — the root layout deliberately defines no
+    // template, otherwise every sub-page title got the site name twice.
+    title: {
+      default: m.title,
+      template: "%s | Praxen Jerumed",
     },
-  },
-};
+    description: m.description,
+    keywords: [...m.keywords],
+    authors: [{ name: "Praxen Jerumed" }],
+    openGraph: {
+      type: "website",
+      url: `${BASE_URL}/${locale}`,
+      siteName: "Praxen Jerumed",
+      title: m.title,
+      description: m.description,
+      locale: m.ogLocale,
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Praxen Jerumed" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: m.title,
+      description: m.description,
+      images: [OG_IMAGE],
+    },
+    alternates: {
+      canonical: `${BASE_URL}/${locale}`,
+      languages: {
+        "de-CH": `${BASE_URL}/de`,
+        "en":    `${BASE_URL}/en`,
+      },
+    },
+  };
+}
 
 export default async function LocaleLayout({
   children,
   params,
 }: {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  readonly children: React.ReactNode;
+  readonly params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
 

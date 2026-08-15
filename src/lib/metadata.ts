@@ -29,7 +29,13 @@ export function createMetadata(
   const altUrl = `${BASE_URL}/${altLocale}${path}`;
 
   return {
-    title: `${title} | ${SITE_NAME}`,
+    // Bare title: the locale layout's template appends " | Praxen Jerumed" once.
+    // The template is repeated here so nested pages (e.g. /team/[slug]) keep the
+    // suffix instead of falling back to a bare title.
+    title: {
+      default: title,
+      template: `%s | ${SITE_NAME}`,
+    },
     description,
     openGraph: {
       type: "website",

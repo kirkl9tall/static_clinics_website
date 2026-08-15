@@ -14,8 +14,8 @@
   "home": {
     "hero": {
       "badge": "Ihr Gesundheitspartner in der Schweiz",
-      "title": "Ihre Gesundheit,",
-      "titleHighlight": "unser Engagement",
+      "title": "Praxen Jerumed – Ihr Hausarzt-Netzwerk in",
+      "titleHighlight": "Zürich, Dübendorf, Winterthur & Wald",
       "subtitle": "Praxen Jerumed ist ein Netzwerk spezialisierter Fachpraxen, das sich durch hohe Qualität, Vertrauen und patientenorientierte Betreuung auszeichnet.",
       "ctaPrimary": "Termin vereinbaren",
       "ctaSecondary": "Unsere Praxen entdecken"
@@ -53,22 +53,22 @@
     },
     "network": {
       "badge": "Unser Netzwerk",
-      "title": "Unsere Praxen",
-      "titleHighlight": "in Ihrer Nähe",
+      "title": "Unsere Standorte in der Zürich-Region:",
+      "titleHighlight": "Allgemeinmedizin & Urologie in Ihrer Nähe",
       "subtitle": "Entdecken Sie unser Netzwerk moderner Standorte, bereit, alle Ihre medizinischen Bedürfnisse professionell und persönlich zu betreuen.",
       "cta": "Alle Praxen anzeigen"
     },
     "services": {
       "badge": "Unsere Leistungen",
-      "title": "Umfassende",
-      "titleHighlight": "Medizinische Versorgung",
+      "title": "Von Ästhetischer Medizin bis Longevity –",
+      "titleHighlight": "das Jerumed-Spektrum an einem Ort",
       "subtitle": "Von der Grundversorgung bis zur spezialisierten Behandlung – wir bieten Ihnen ein breites Spektrum an medizinischen Leistungen.",
       "cta": "Alle Leistungen anzeigen"
     },
     "team": {
       "badge": "Unser Team",
-      "title": "Immer für",
-      "titleHighlight": "Sie da",
+      "title": "Unser Ärzteteam: Dr. Awad Abuawad,",
+      "titleHighlight": "Dr. Fedi Farah & weitere Spezialisten",
       "subtitle": "Erfahrene Ärzte und Fachkräfte, die sich mit Leidenschaft für Ihre Gesundheit einsetzen.",
       "cta": "Unser Team kennenlernen"
     },
@@ -363,7 +363,7 @@
       "beautyTreatments": {
         "name": "Ästhetische Medizin",
         "shortDescription": "Nicht-invasive und minimal-invasive Schönheitsbehandlungen bei MedEsthec – von Botox & Filler über Laser bis zu Körperformung und Vaginaler Verjüngung.",
-        "longDescription": "MedEsthec bietet ein umfassendes Spektrum ästhetisch-medizinischer Behandlungen unter ärztlicher Aufsicht von Dr. med. Demaili Fiknete. Zu den Leistungen zählen: Hyaluronsäure-Filler (Lippen, Wangen, Jawline, Tränenrinne), Botulinum-Toxin / Botox, RF-Microneedling & CO₂-Laser (SecretPro), Biorevitalisation & Skinbooster, Mesotherapie, Hylase-Korrektur, Endolifting, Sculptra & Biostimulatoren, Radiofrequenz SECTUM, Polynukleotide, permanente Laser-Haarentfernung, Vaginale Verjüngung sowie personalisierte DR. FIDEM DRIPs (Nährstoffinfusionen) und medizinische Hautpflege mit ZO® Skin Health.",
+        "longDescription": "MedEsthec bietet ein umfassendes Spektrum ästhetisch-medizinischer Behandlungen unter erfahrener ärztlicher Aufsicht. Zu den Leistungen zählen: Hyaluronsäure-Filler (Lippen, Wangen, Jawline, Tränenrinne), Botulinum-Toxin / Botox, RF-Microneedling & CO₂-Laser (SecretPro), Biorevitalisation & Skinbooster, Mesotherapie, Hylase-Korrektur, Endolifting, Sculptra & Biostimulatoren, Radiofrequenz SECTUM, Polynukleotide, permanente Laser-Haarentfernung, Vaginale Verjüngung sowie personalisierte DR. FIDEM DRIPs (Nährstoffinfusionen) und medizinische Hautpflege mit ZO® Skin Health.",
         "features": [
           "Hyaluronsäure-Filler",
           "Botox / Botulinum-Toxin",
@@ -681,11 +681,6 @@
       "title": "Facharzt für Urologie",
       "specialty": "Urologie",
       "bio": "Med. Jamil Alsaaydeh ist Facharzt für Urologie und Kinderurologie. Als Belegarzt bietet er umfassende urologische Versorgung für Erwachsene und Kinder."
-    },
-    "fiknete": {
-      "title": "Allgemein Medizin\nSpezialisierung in Bereich der Aesthetische Medizin",
-      "specialty": "Ästhetische Medizin",
-      "bio": "Dr. med. Demaili Fiknete ist eine Fachärztin für Ästhetische Medizin mit über 10 Jahren klinischer Erfahrung in Radiologie, Strahlentherapie, Neurologie und Notfallmedizin. Seit 2019 konzentriert sie sich ausschließlich auf nicht-invasive ästhetische Behandlungen."
     },
     "bachtsetzis": {
       "title": "Allgemein Medizin\nSpezialisierung in Longevity Medizin",

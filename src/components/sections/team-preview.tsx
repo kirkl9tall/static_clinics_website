@@ -20,7 +20,6 @@ export default function TeamPreview() {
     kassar: td("kassar.title"),
     zahran: td("zahran.title"),
     alsaaydeh: td("alsaaydeh.title"),
-    fiknete: td("fiknete.title"),
     bachtsetzis: td("bachtsetzis.title"),
   };
 

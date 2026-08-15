@@ -14,8 +14,8 @@
   "home": {
     "hero": {
       "badge": "Your Health Partner in Switzerland",
-      "title": "Your Health,",
-      "titleHighlight": "Our Commitment",
+      "title": "Praxen Jerumed – Your Family Doctor Network in",
+      "titleHighlight": "Zurich, Dübendorf, Winterthur & Wald",
       "subtitle": "Praxen Jerumed is a network of specialized medical practices distinguished by high quality, trust, and patient-centered care.",
       "ctaPrimary": "Book Appointment",
       "ctaSecondary": "Explore Our Clinics"
@@ -53,22 +53,22 @@
     },
     "network": {
       "badge": "Our Network",
-      "title": "Our Clinics",
-      "titleHighlight": "Near You",
+      "title": "Our Locations in the Zurich Region:",
+      "titleHighlight": "General Medicine & Urology Near You",
       "subtitle": "Discover our network of modern locations, ready to serve all your medical needs professionally and personally.",
       "cta": "View All Clinics"
     },
     "services": {
       "badge": "Our Services",
-      "title": "Comprehensive",
-      "titleHighlight": "Medical Care",
+      "title": "From Aesthetic Medicine to Longevity –",
+      "titleHighlight": "the Full Jerumed Spectrum in One Place",
       "subtitle": "From primary care to specialized treatment – we offer you a wide range of medical services.",
       "cta": "View All Services"
     },
     "team": {
       "badge": "Our Team",
-      "title": "Always Here",
-      "titleHighlight": "for You",
+      "title": "Our Medical Team: Dr. Awad Abuawad,",
+      "titleHighlight": "Dr. Fedi Farah & Further Specialists",
       "subtitle": "Experienced physicians and specialists who are passionate about your health.",
       "cta": "Meet Our Team"
     },
@@ -363,7 +363,7 @@
       "beautyTreatments": {
         "name": "Aesthetic Medicine",
         "shortDescription": "Non-invasive and minimally invasive aesthetic treatments at MedEsthec – Botox & fillers, laser, body contouring, and vaginal rejuvenation.",
-        "longDescription": "MedEsthec offers a comprehensive range of aesthetic medical treatments under the medical supervision of Dr. med. Demaili Fiknete. Services include: Hyaluronic acid fillers (lips, cheeks, jawline, tear troughs), Botulinum Toxin / Botox, RF Microneedling & CO₂ Laser (SecretPro), Biorevitalization & Skinboosters, Mesotherapy, Hyaluronidase correction, Endolifting, Sculptra & Biostimulators, Radiofrequency SECTUM, Polynucleotides, permanent laser hair removal, Vaginal Rejuvenation, personalised DR. FIDEM DRIPs (nutrient infusions), and medical skincare with ZO® Skin Health.",
+        "longDescription": "MedEsthec offers a comprehensive range of aesthetic medical treatments under experienced medical supervision. Services include: Hyaluronic acid fillers (lips, cheeks, jawline, tear troughs), Botulinum Toxin / Botox, RF Microneedling & CO₂ Laser (SecretPro), Biorevitalization & Skinboosters, Mesotherapy, Hyaluronidase correction, Endolifting, Sculptra & Biostimulators, Radiofrequency SECTUM, Polynucleotides, permanent laser hair removal, Vaginal Rejuvenation, personalised DR. FIDEM DRIPs (nutrient infusions), and medical skincare with ZO® Skin Health.",
         "features": [
           "Hyaluronic Acid Fillers",
           "Botox / Botulinum Toxin",
@@ -681,11 +681,6 @@
       "title": "Specialist in Urology",
       "specialty": "Urology",
       "bio": "Med. Jamil Alsaaydeh is a specialist in urology and pediatric urology. As an attending physician, he provides comprehensive urological care for adults and children."
-    },
-    "fiknete": {
-      "title": "General Medicine\nSpecialization in Aesthetic Medicine",
-      "specialty": "Aesthetic Medicine",
-      "bio": "Dr. med. Demaili Fiknete is a specialist in aesthetic medicine with over 10 years of clinical experience in radiology, radiation therapy, neurology and emergency medicine. Since 2019, she has focused exclusively on non-invasive aesthetic treatments."
     },
     "bachtsetzis": {
       "title": "General Medicine\nSpecialization in Longevity Medicine",

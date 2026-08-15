@@ -40,7 +40,7 @@ const availabilityCls = {
   unavailable: "bg-gray-100 text-gray-500 dark:bg-gray-700 dark:text-gray-400",
 };
 
-const knownDoctorIds = new Set(["abuawad","rodriguez","kassar","zahran","alsaaydeh","fiknete","bachtsetzis"]);
+const knownDoctorIds = new Set(["abuawad","rodriguez","kassar","zahran","alsaaydeh","bachtsetzis"]);
 
 export default async function DoctorPage({ params }: { readonly params: Promise<{ slug: string; locale: string }> }) {
   const { slug, locale } = await params;
@@ -52,17 +52,17 @@ export default async function DoctorPage({ params }: { readonly params: Promise<
 
   const titleMap: Record<string, string> = {
     abuawad: td("abuawad.title"), rodriguez: td("rodriguez.title"), kassar: td("kassar.title"),
-    zahran: td("zahran.title"), alsaaydeh: td("alsaaydeh.title"), fiknete: td("fiknete.title"),
+    zahran: td("zahran.title"), alsaaydeh: td("alsaaydeh.title"),
     bachtsetzis: td("bachtsetzis.title"),
   };
   const bioMap: Record<string, string> = {
     abuawad: td("abuawad.bio"), rodriguez: td("rodriguez.bio"), kassar: td("kassar.bio"),
-    zahran: td("zahran.bio"), alsaaydeh: td("alsaaydeh.bio"), fiknete: td("fiknete.bio"),
+    zahran: td("zahran.bio"), alsaaydeh: td("alsaaydeh.bio"),
     bachtsetzis: td("bachtsetzis.bio"),
   };
   const specialtyMap: Record<string, string> = {
     abuawad: td("abuawad.specialty"), rodriguez: td("rodriguez.specialty"), kassar: td("kassar.specialty"),
-    zahran: td("zahran.specialty"), alsaaydeh: td("alsaaydeh.specialty"), fiknete: td("fiknete.specialty"),
+    zahran: td("zahran.specialty"), alsaaydeh: td("alsaaydeh.specialty"),
     bachtsetzis: td("bachtsetzis.specialty"),
   };
 

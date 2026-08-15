@@ -54,7 +54,7 @@ export const services: Service[] = [
     slug: "aesthetische-medizin",
     name: "Ästhetische Medizin",
     shortDescription: "Nicht-invasive und minimal-invasive Schönheitsbehandlungen bei MedEsthec – von Botox & Filler über Laser bis zu Körperformung und Vaginaler Verjüngung.",
-    longDescription: "MedEsthec bietet ein umfassendes Spektrum ästhetisch-medizinischer Behandlungen unter ärztlicher Aufsicht von Dr. med. Demaili Fiknete. Zu den Leistungen zählen: Hyaluronsäure-Filler (Lippen, Wangen, Jawline, Tränenrinne), Botulinum-Toxin / Botox, RF-Microneedling & CO₂-Laser (SecretPro), Biorevitalisation & Skinbooster, Mesotherapie, Hylase-Korrektur, Endolifting, Sculptra & Biostimulatoren, Radiofrequenz SECTUM, Juläine Polynukleotide, permanente Laser-Haarentfernung, Vaginale Verjüngung sowie personalisierte DR. FIDEM DRIPs (Nährstoffinfusionen) und medizinische Hautpflege mit ZO® Skin Health.",
+    longDescription: "MedEsthec bietet ein umfassendes Spektrum ästhetisch-medizinischer Behandlungen unter erfahrener ärztlicher Aufsicht. Zu den Leistungen zählen: Hyaluronsäure-Filler (Lippen, Wangen, Jawline, Tränenrinne), Botulinum-Toxin / Botox, RF-Microneedling & CO₂-Laser (SecretPro), Biorevitalisation & Skinbooster, Mesotherapie, Hylase-Korrektur, Endolifting, Sculptra & Biostimulatoren, Radiofrequenz SECTUM, Juläine Polynukleotide, permanente Laser-Haarentfernung, Vaginale Verjüngung sowie personalisierte DR. FIDEM DRIPs (Nährstoffinfusionen) und medizinische Hautpflege mit ZO® Skin Health.",
     icon: "Sparkles",
     category: "beauty",
     image: "/images/service-beauty.jpg",
